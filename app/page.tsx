@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { CTA } from "./components/CTA";
 import { EventCards } from "./components/EventCards";
 import { Hero } from "./components/Hero";
@@ -25,8 +26,14 @@ export default function Home() {
       />
 
       <section className="section founder-section" aria-labelledby="founder-title">
-        <div className="founder-portrait" aria-hidden="true">
-          <span>Maria</span>
+        <div className="founder-portrait">
+          <Image
+            src="/Maria.jpg"
+            alt="Maria, founder of Vedic Astrology"
+            fill
+            sizes="(max-width: 900px) 100vw, 38vw"
+            priority
+          />
         </div>
         <div className="founder-content">
           <p className="eyebrow">{home.founder.eyebrow}</p>

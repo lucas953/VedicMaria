@@ -487,52 +487,41 @@ h3 {
 
 .founder-portrait {
   position: relative;
-  display: grid;
   min-height: 560px;
-  place-items: end center;
   overflow: hidden;
   border: 1px solid rgba(201, 148, 46, 0.42);
   border-radius: var(--radius);
-  background:
-    radial-gradient(circle at 50% 26%, rgba(255, 242, 182, 0.92) 0 16%, transparent 17%),
-    repeating-linear-gradient(90deg, rgba(255, 248, 231, 0.08) 0 1px, transparent 1px 42px),
-    linear-gradient(150deg, rgba(38, 63, 46, 0.94), rgba(167, 65, 40, 0.84)),
-    var(--green);
+  background: var(--cream-deep);
   box-shadow: var(--shadow);
 }
 
 .founder-portrait::before {
   position: absolute;
-  inset: 12%;
-  border: 1px solid rgba(255, 249, 235, 0.28);
-  border-radius: 50%;
+  inset: 16px;
+  z-index: 1;
+  border: 1px solid rgba(255, 248, 231, 0.62);
+  border-radius: calc(var(--radius) - 2px);
   content: "";
+  pointer-events: none;
 }
 
 .founder-portrait::after {
   position: absolute;
-  bottom: -18%;
-  width: 72%;
-  aspect-ratio: 0.86;
-  border-radius: 50% 50% 8px 8px;
+  inset: 0;
   background:
-    radial-gradient(circle at 50% 18%, #f3cfa6 0 16%, transparent 17%),
-    linear-gradient(180deg, #6f3327 0 24%, #f2d7aa 25% 36%, #7e8a4c 37%);
+    linear-gradient(180deg, transparent 54%, rgba(53, 34, 22, 0.22)),
+    radial-gradient(circle at 50% 15%, rgba(255, 248, 231, 0.12), transparent 34%);
   content: "";
+  pointer-events: none;
 }
 
-.founder-portrait span {
-  position: relative;
-  z-index: 1;
+.founder-portrait img {
+  display: block;
   width: 100%;
-  padding: 0 24px 24px;
-  color: rgba(255, 249, 235, 0.9);
-  font-family: var(--display);
-  font-size: clamp(2.2rem, 4.6vw, 4.2rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  text-align: center;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .founder-content {
@@ -876,6 +865,10 @@ textarea {
   .founder-portrait {
     min-height: 360px;
     max-width: 520px;
+  }
+
+  .founder-portrait img {
+    min-height: 360px;
   }
 
   .card-grid,
