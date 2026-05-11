@@ -66,7 +66,8 @@ export default function Home() {
         title={home.cta.title}
         text={home.cta.text}
         buttonLabel={home.cta.button}
-        href="/consultation"
+        emailPlaceholder={home.cta.placeholder}
+        variant="newsletter"
       />
     </>
   );

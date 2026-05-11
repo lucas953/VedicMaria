@@ -65,6 +65,16 @@ a {
   text-decoration: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 img,
 svg {
   max-width: 100%;
@@ -652,6 +662,62 @@ h3 {
   margin-bottom: 0;
 }
 
+.community-cta {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  margin-inline: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  background: #b51d22;
+  box-shadow: none;
+  text-align: center;
+}
+
+.community-cta::before {
+  display: none;
+}
+
+.community-cta h2 {
+  margin-bottom: 10px;
+  color: #fff8e7;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+}
+
+.community-cta p {
+  max-width: 900px;
+  color: #fff8e7;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 500;
+}
+
+.community-form {
+  display: grid;
+  grid-template-columns: minmax(260px, 520px) auto;
+  gap: 10px;
+  width: min(720px, 100%);
+}
+
+.community-form label {
+  display: block;
+}
+
+.community-form input {
+  min-height: 48px;
+  border-color: rgba(255, 248, 231, 0.55);
+  border-radius: 10px;
+  background: #fff8e7;
+}
+
+.community-form .button {
+  min-height: 48px;
+  border-color: rgba(142, 18, 22, 0.26);
+  background: #a9181d;
+  box-shadow: inset 0 0 0 1px rgba(255, 248, 231, 0.08);
+}
+
 .event-card time {
   display: inline-flex;
   margin-bottom: 16px;
@@ -1029,6 +1095,14 @@ textarea {
 
   .cta {
     margin-inline: 16px;
+  }
+
+  .community-cta {
+    margin-inline: 0;
+  }
+
+  .community-form {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -116,10 +116,11 @@ export const copy = {
         text: "Join intimate workshops and circles designed for reflection, learning, and renewal."
       },
       cta: {
-        title: "Join cosmic guidance",
+        title: "Join our cosmic community",
         text:
-          "Begin a thoughtful journey into your chart, timing, relationships, and spiritual direction with grounded support.",
-        button: "Join Cosmic Guidance"
+          "Receive planetary updates, astrological insights, and exclusive guidance.",
+        button: "Subscribe",
+        placeholder: "Enter your email"
       },
       services: [
         {
@@ -489,10 +490,11 @@ export const copy = {
         text: "Присъединете се към камерни семинари и кръгове за размисъл, учене и обновление."
       },
       cta: {
-        title: "Присъединете се към космическо напътствие",
+        title: "Присъединете се към нашата космическа общност",
         text:
-          "Започнете осъзнато пътуване към вашата карта, време, взаимоотношения и духовна посока със заземена подкрепа.",
-        button: "Присъединете се"
+          "Получавайте планетарни новини, астрологични прозрения и специални насоки.",
+        button: "Абониране",
+        placeholder: "Въведете вашия имейл"
       },
       services: [
         {
