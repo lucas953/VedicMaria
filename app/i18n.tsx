@@ -116,10 +116,10 @@ export const copy = {
         text: "Join intimate workshops and circles designed for reflection, learning, and renewal."
       },
       cta: {
-        title: "Find the right next step",
+        title: "Join cosmic guidance",
         text:
-          "A personal consultation can clarify your timing, environment, wellbeing habits, and spiritual priorities.",
-        button: "Book a Consultation"
+          "Begin a thoughtful journey into your chart, timing, relationships, and spiritual direction with grounded support.",
+        button: "Join Cosmic Guidance"
       },
       services: [
         {
@@ -489,10 +489,10 @@ export const copy = {
         text: "Присъединете се към камерни семинари и кръгове за размисъл, учене и обновление."
       },
       cta: {
-        title: "Открийте следващата правилна стъпка",
+        title: "Присъединете се към космическо напътствие",
         text:
-          "Личната консултация може да внесе яснота за вашето време, среда, навици за благополучие и духовни приоритети.",
-        button: "Запазете консултация"
+          "Започнете осъзнато пътуване към вашата карта, време, взаимоотношения и духовна посока със заземена подкрепа.",
+        button: "Присъединете се"
       },
       services: [
         {

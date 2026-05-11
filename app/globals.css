@@ -674,6 +674,7 @@ h3 {
 
 .event-carousel {
   position: relative;
+  max-width: 980px;
 }
 
 .carousel-controls {
@@ -710,22 +711,52 @@ h3 {
   transform: translateY(-2px);
 }
 
+.event-carousel-viewport {
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 2px);
+}
+
 .event-carousel-track {
-  display: grid;
-  grid-auto-columns: minmax(300px, 420px);
-  grid-auto-flow: column;
-  gap: clamp(16px, 2.4vw, 26px);
-  margin-inline: calc(clamp(20px, 7vw, 104px) * -1);
-  overflow-x: auto;
-  padding: 4px clamp(20px, 7vw, 104px) 18px;
-  scroll-padding-inline: clamp(20px, 7vw, 104px);
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  display: flex;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .carousel-card {
+  flex: 0 0 100%;
   min-height: 100%;
-  scroll-snap-align: start;
+}
+
+.carousel-card .button {
+  width: fit-content;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(181, 29, 34, 0.22);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    width 180ms ease;
+}
+
+.carousel-dots button.active,
+.carousel-dots button:hover,
+.carousel-dots button:focus-visible {
+  width: 28px;
+  background: #b51d22;
+  transform: translateY(-1px);
 }
 
 .two-column {
