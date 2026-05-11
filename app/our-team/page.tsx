@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { useLanguage } from "../i18n";
 
@@ -27,13 +28,20 @@ export default function OurTeamPage() {
           {page.members.map((member) => (
             <article className="team-card" key={member.name}>
               <div className="team-photo">
-                <Image src={member.image} alt={member.name} fill sizes="(max-width: 900px) 100vw, 33vw" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 900px) 160px, 180px"
+                />
               </div>
               <div className="team-content">
                 <p className="team-role">{member.role}</p>
                 <h3>{member.name}</h3>
-                <p>{member.bio}</p>
-                <p>{member.details}</p>
+                <p>{member.intro}</p>
+                <Link className="button secondary" href={`/our-team/${member.slug}`}>
+                  {t.common.learnMore}
+                </Link>
               </div>
             </article>
           ))}

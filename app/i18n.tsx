@@ -59,7 +59,8 @@ export const copy = {
     },
     common: {
       learnMore: "Learn more",
-      registerInterest: "Register Interest"
+      registerInterest: "Register Interest",
+      backToTeam: "Back to Our Team"
     },
     footer: {
       text:
@@ -394,31 +395,63 @@ export const copy = {
         ],
         members: [
           {
+            slug: "maria",
+            name: "Maria",
+            role: "Founder | Clinical Psychologist | Vedic Astrologer",
+            image: "/Maria.jpg",
+            intro:
+              "Maria combines over 25 years of clinical psychology experience with deep study of Vedic Astrology.",
+            bio: [
+              "Maria is a Clinical Psychologist with over 25 years of professional experience, bringing deep insight, empathy, and a profound understanding of human nature to her work.",
+              "Her journey into astrology began more than 15 years ago, when a growing passion for this ancient symbolic language led her to explore its deeper spiritual and philosophical dimensions. She soon found her path in Vedic Astrology, a timeless tradition rooted in the rich wisdom of India.",
+              "Maria's fascination with India's vast cultural and spiritual heritage inspired her to study with some of the great astrologers of our time, including K. N. Rao, one of the most respected figures in the field of Jyotish. She holds a diploma in Vedic Astrology from AAA Vedic Astrology University.",
+              "Today, Maria is dedicated to sharing the wisdom of Vedic Astrology in a grounded, accessible, and meaningful way. She is currently creating a Vedic Astrology Society in Bulgaria, where she organizes regular lectures, educational events, and inspiring gatherings with knowledgeable guests and teachers from around the world.",
+              "Through her unique combination of psychology and Vedic Astrology, Maria offers a compassionate approach that supports self-understanding, personal growth, and a deeper connection with life's greater patterns."
+            ]
+          },
+          {
+            slug: "paritosh-banerjee",
             name: "Prof. Paritosh Banerjee",
             role: "Vedic Numerology and Vastu",
             image: "/team-paritosh.png",
-            bio:
-              "A Vedic Numerology and Vastu Guru specialist with over twenty years of experience consulting individual clients and organizations. He conducts Vastu Shastra courses across Europe and is a leading lecturer and member of the Dhakuria Institute of Astrological Sciences in Kolkata, India.",
-            details:
-              "Prof. Banerjee holds multiple international certificates and awards, including Sankhattyo Bharati Awards, International Jyotish Vastu Guru Award, and Jyotish-Vastu Padmasree Award. During his visits to Bulgaria, he conducts lectures, personal consultations, and Vastu and Numerology courses for beginner and advanced students."
+            intro:
+              "A Vedic Numerology and Vastu specialist with over twenty years of international teaching and consulting experience.",
+            bio: [
+              "Prof. Paritosh Banerjee is a Vedic Numerology and Vastu Guru specialist with over twenty years of experience in consulting individual clients and organizations. He conducts Vastu Shastra courses in Russia, Ukraine, Poland, Denmark, Italy and other countries.",
+              "Paritosh Banerjee is a leading lecturer and member of the Dhakuria Institute of Astrological Sciences, Kolkata, India. He holds a number of international certificates and awards such as Sankhattyo Bharati Awards, International Jyotish Vastu Guru Award, Jyotish-Vastu Padmasree Award and others.",
+              "Prof. Banerjee has conducted six Vastu and Numerology courses for beginners and advanced level with Bulgarian participants in the last two years. During his visits to Bulgaria, he conducts lectures and personal consultations on Vastu and Numerology."
+            ]
           },
           {
+            slug: "venu-sasikumar",
             name: "Dr. Venu Sasikumar (BAMS, MD)",
             role: "Ayurveda",
             image: "/team-venu.jpg",
-            bio:
-              "A prominent Ayurveda practitioner, lecturer, and event organizer with more than twenty years of practice. He holds degrees in Ayurveda from Dr. M.G.R. Medical University and Rajiv Gandhi University of Health Sciences.",
-            details:
-              "Dr. Venu integrates Ayurveda, psychotherapy, Marma therapy, energy healing, Panchakarma, and traditional massage therapies. His holistic approach supports people with physical and mental disorders, psychosomatic illnesses, emotional trauma, and overall wellbeing."
+            intro:
+              "An Ayurveda practitioner and lecturer integrating Panchakarma, Marma therapy, psychotherapy, and holistic healing.",
+            bio: [
+              "Dr. Venu Sasikumar is a prominent figure in the field of Ayurveda, known for his contributions as both a lecturer and an event organizer. He plays a key role in organizing major events that attract participants from all over the world.",
+              "He holds a Bachelor of Arts in Ayurveda (BAMS), as well as a B.A. from Dr. M.G.R. Medical University, and a Master of Arts in Ayurveda (MD) from Rajiv Gandhi University of Health Sciences.",
+              "Dr. Venu has been practicing Ayurveda for over 20 years, developing his own distinctive style of treatment that integrates Ayurveda, psychotherapy, Marma therapy, and energy healing. He specializes in Panchakarma and traditional massage therapies.",
+              "His expertise in Ayurveda, especially Panchakarma and holistic treatments, is highly regarded, making him a sought-after instructor in the field. He has trained numerous Ayurvedic and Panchakarma practitioners both in India and internationally.",
+              "Dr. Venu's holistic methods are extremely beneficial for patients suffering from physical and mental disorders. He specializes in the management of psychosomatic illnesses, using counselling and deep meditation techniques designed to work with old emotional traumas.",
+              "As an expert in Tantra Therapy, Dr. Venu uses Tantric healing methods to enhance personal energy and promote holistic health through comprehensive, personalized strategies."
+            ]
           },
           {
+            slug: "arjun-chakraborty",
             name: "Arjun Chakraborty",
             role: "Vedic Astrology",
             image: "/team-arjun.jpg",
-            bio:
-              "A Vedic astrologer from Kolkata with nearly twenty-five years of experience in Jyotish. He inherited the ancient knowledge of astrology from his uncle and teaches at respected astrological institutions.",
-            details:
-              "Arjun Chakraborty teaches at Hatibagan Tole and the Institute of Astrological Science and is a member of Grahamitra Gems. He has lectured and trained students in Bulgaria, Lithuania, Latvia, Estonia, Kazakhstan, Russia, and beyond."
+            intro:
+              "A Vedic astrologer from Kolkata with nearly twenty-five years of experience teaching and practicing Jyotish.",
+            bio: [
+              "For nearly a quarter of a century, Prof. Arjun Chakraborty has been working in the field of Vedic astrology, known as Jyotish, and is already an established name in it.",
+              "He was born in Calcutta and inherited the ancient knowledge of Jyotish from his uncle. He is a professor at the classical astrological school Hatibagan Tole, teaches at the Institute of Astrological Science, and is a member of the famous astrological organization Grahamitra Gems.",
+              "For nearly 10 years, he has been traveling the world, giving lectures, training beginners and advanced lovers of Vedic astrology.",
+              "He inherited his profession and vocation from his uncle, a famous astrologer for his time in Calcutta. Vedic astrology is a teaching that is traditionally and often passed down within the family in India. This is how the secrets and sacredness of knowledge are preserved.",
+              "Arjun Chakraborty has visited Bulgaria several times at the invitation of the Bulgarian Association for Vedic Astrology and the East-West Indological Foundation. He has given lectures and trainings on Vedic astrology not only in Bulgaria, but also in Lithuania, Latvia, Estonia, Kazakhstan, and Russia."
+            ]
           }
         ]
       },
@@ -462,7 +495,8 @@ export const copy = {
     },
     common: {
       learnMore: "Научете повече",
-      registerInterest: "Заявете интерес"
+      registerInterest: "Заявете интерес",
+      backToTeam: "Назад към екипа"
     },
     footer: {
       text:
@@ -797,31 +831,63 @@ export const copy = {
         ],
         members: [
           {
+            slug: "maria",
+            name: "Мария",
+            role: "Основател | Клиничен психолог | Ведически астролог",
+            image: "/Maria.jpg",
+            intro:
+              "Мария съчетава над 25 години опит в клиничната психология с дълбоко изучаване на ведическата астрология.",
+            bio: [
+              "Мария е клиничен психолог с над 25 години професионален опит и внася в работата си дълбока проницателност, емпатия и разбиране за човешката природа.",
+              "Пътят и към астрологията започва преди повече от 15 години, когато растящият интерес към този древен символен език я отвежда към неговите по-дълбоки духовни и философски измерения. Скоро тя открива своя път във ведическата астрология, вечна традиция, вкоренена в богатата мъдрост на Индия.",
+              "Очарованието на Мария от огромното културно и духовно наследство на Индия я вдъхновява да учи при някои от големите астролози на нашето време, включително К. Н. Рао. Тя притежава диплома по ведическа астрология от AAA Vedic Astrology University.",
+              "Днес Мария е посветена на това да споделя мъдростта на ведическата астрология по заземен, достъпен и смислен начин. В момента тя създава Общество по ведическа астрология в България, където организира редовни лекции, образователни събития и вдъхновяващи срещи с опитни гости и учители от цял свят.",
+              "Чрез уникалното си съчетание от психология и ведическа астрология Мария предлага състрадателен подход, който подкрепя себепознанието, личностното израстване и по-дълбоката връзка с по-големите модели на живота."
+            ]
+          },
+          {
+            slug: "paritosh-banerjee",
             name: "Проф. Паритош Банерджи",
             role: "Ведическа нумерология и Васту",
             image: "/team-paritosh.png",
-            bio:
-              "Специалист по ведическа нумерология и Васту с над двадесет години опит в консултирането на индивидуални клиенти и организации. Провежда курсове по Васту Шастра в различни европейски държави и е водещ лектор и член на Dhakuria Institute of Astrological Sciences в Калкута, Индия.",
-            details:
-              "Проф. Банерджи има множество международни сертификати и отличия, сред които Sankhattyo Bharati Awards, International Jyotish Vastu Guru Award и Jyotish-Vastu Padmasree Award. При посещенията си в България провежда лекции, лични консултации и курсове по Васту и нумерология."
+            intro:
+              "Специалист по ведическа нумерология и Васту с над двадесет години международен преподавателски и консултантски опит.",
+            bio: [
+              "Проф. Паритош Банерджи е специалист по ведическа нумерология и Васту с над двадесет години опит в консултирането на индивидуални клиенти и организации. Провежда курсове по Васту Шастра в Русия, Украйна, Полша, Дания, Италия и други държави.",
+              "Паритош Банерджи е водещ лектор и член на Dhakuria Institute of Astrological Sciences, Калкута, Индия. Притежава редица международни сертификати и отличия, сред които Sankhattyo Bharati Awards, International Jyotish Vastu Guru Award, Jyotish-Vastu Padmasree Award и други.",
+              "Проф. Банерджи е провел шест курса по Васту и нумерология за начинаещи и напреднали български участници през последните две години. При посещенията си в България провежда лекции и лични консултации по Васту и нумерология."
+            ]
           },
           {
+            slug: "venu-sasikumar",
             name: "Д-р Вену Сасикумар (BAMS, MD)",
             role: "Аюрведа",
             image: "/team-venu.jpg",
-            bio:
-              "Изтъкнат Аюрведа практик, лектор и организатор на събития с повече от двадесет години практика. Притежава образование по Аюрведа от Dr. M.G.R. Medical University и Rajiv Gandhi University of Health Sciences.",
-            details:
-              "Д-р Вену съчетава Аюрведа, психотерапия, Марма терапия, енергийно лечение, Панчакарма и традиционни масажни терапии. Неговият холистичен подход подкрепя хора с физически и психични нарушения, психосоматични състояния, емоционални травми и нужда от цялостно благополучие."
+            intro:
+              "Аюрведа практик и лектор, който съчетава Панчакарма, Марма терапия, психотерапия и холистично лечение.",
+            bio: [
+              "Д-р Вену Сасикумар е изтъкната фигура в областта на Аюрведа, известен с приноса си като лектор и организатор на събития. Той играе ключова роля в организирането на големи събития, които привличат участници от цял свят.",
+              "Притежава образование по Аюрведа (BAMS), както и степен от Dr. M.G.R. Medical University и магистърска степен по Аюрведа (MD) от Rajiv Gandhi University of Health Sciences.",
+              "Д-р Вену практикува Аюрведа повече от 20 години, развивайки свой отличителен стил на лечение, който интегрира Аюрведа, психотерапия, Марма терапия и енергийно лечение. Специализира в Панчакарма и традиционни масажни терапии.",
+              "Неговата експертиза в Аюрведа, особено в Панчакарма и холистичните терапии, е високо ценена и го прави търсен преподавател. Обучил е множество Аюрведа и Панчакарма практици в Индия и в международен план.",
+              "Холистичните методи на д-р Вену са изключително полезни за пациенти, страдащи от физически и психични нарушения. Той специализира в управлението на психосоматични заболявания чрез консултиране и дълбоки медитативни техники, насочени към стари емоционални травми.",
+              "Като експерт в Tantra Therapy, д-р Вену използва тантрични лечебни методи за засилване на личната енергия и насърчаване на цялостното здраве чрез персонализирани стратегии."
+            ]
           },
           {
+            slug: "arjun-chakraborty",
             name: "Арджун Чакраборти",
             role: "Ведическа астрология",
             image: "/team-arjun.jpg",
-            bio:
-              "Ведически астролог от Калкута с почти двадесет и пет години опит в Джйотиш. Наследява древното знание за астрологията от своя чичо и преподава в уважавани астрологични институции.",
-            details:
-              "Арджун Чакраборти преподава в Hatibagan Tole и Institute of Astrological Science и е член на Grahamitra Gems. Той е изнасял лекции и обучения в България, Литва, Латвия, Естония, Казахстан, Русия и други страни."
+            intro:
+              "Ведически астролог от Калкута с почти двадесет и пет години опит в преподаването и практиката на Джйотиш.",
+            bio: [
+              "В продължение на почти четвърт век проф. Арджун Чакраборти работи в областта на ведическата астрология, позната като Джйотиш, и вече е утвърдено име в нея.",
+              "Роден е в Калкута и наследява древното знание за Джйотиш от своя чичо. Той е преподавател в класическата астрологична школа Hatibagan Tole, преподава в Institute of Astrological Science и е член на известната астрологична организация Grahamitra Gems.",
+              "В продължение на близо 10 години пътува по света, изнася лекции и обучава начинаещи и напреднали любители на ведическата астрология.",
+              "Той наследява професията и призванието си от своя чичо, известен астролог за времето си в Калкута. Ведическата астрология е учение, което в Индия традиционно често се предава в семейството. Така се съхраняват тайните и свещеността на знанието.",
+              "Арджун Чакраборти е посещавал България няколко пъти по покана на Българската асоциация по ведическа астрология и фондация Изток-Запад. Изнасял е лекции и обучения по ведическа астрология не само в България, но и в Литва, Латвия, Естония, Казахстан и Русия."
+            ]
           }
         ]
       },
