@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Hero } from "../components/Hero";
-import { ServiceCards } from "../components/ServiceCards";
-import { cardsFromTuples, useLanguage } from "../i18n";
+import { useLanguage } from "../i18n";
 
 export default function OurTeamPage() {
   const { t } = useLanguage();
@@ -23,7 +23,21 @@ export default function OurTeamPage() {
           <h2 id="team-members">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <ServiceCards services={cardsFromTuples(page.cards)} />
+        <div className="team-grid">
+          {page.members.map((member) => (
+            <article className="team-card" key={member.name}>
+              <div className="team-photo">
+                <Image src={member.image} alt={member.name} fill sizes="(max-width: 900px) 100vw, 33vw" />
+              </div>
+              <div className="team-content">
+                <p className="team-role">{member.role}</p>
+                <h3>{member.name}</h3>
+                <p>{member.bio}</p>
+                <p>{member.details}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );
