@@ -14,11 +14,13 @@ export type Language = "en" | "bg";
 const navPaths = {
   home: "/",
   astrology: "/vedic-astrology",
+  numerology: "/numerology",
   consultation: "/consultation",
   vastu: "/vastu",
   ayurveda: "/ayurveda",
   trips: "/trips",
   events: "/upcoming-events",
+  team: "/our-team",
   contact: "/contact"
 };
 
@@ -40,11 +42,13 @@ export const copy = {
     nav: [
       { label: "Home", href: navPaths.home },
       { label: "Vedic Astrology", href: navPaths.astrology },
+      { label: "Numerology", href: navPaths.numerology },
       { label: "Consultation", href: navPaths.consultation },
       { label: "Vastu", href: navPaths.vastu },
       { label: "Ayurveda", href: navPaths.ayurveda },
       { label: "Trips", href: navPaths.trips },
       { label: "Upcoming Events", href: navPaths.events },
+      { label: "Our Team", href: navPaths.team },
       { label: "Contact", href: navPaths.contact }
     ],
     contact: {
@@ -84,7 +88,7 @@ export const copy = {
     home: {
       hero: {
         eyebrow: "Traditional insight for modern wellbeing",
-        title: "Vedic astrology for clarity, healing, and inner direction",
+        title: "Discover your cosmic blueprint",
         description:
           "A calm, trustworthy space for astrology readings, consultation, Vastu harmony, Ayurveda lifestyle guidance, sacred journeys, and seasonal events.",
         primary: "Book a Consultation",
@@ -195,8 +199,8 @@ export const copy = {
           primary: "Request a Reading"
         },
         heading: {
-          eyebrow: "What we explore",
-          title: "Clear readings with practical next steps",
+          eyebrow: "Clear readings with practical next steps",
+          title: "Cosmic blueprint and karmic understanding",
           text: "Sessions are designed to feel compassionate, specific, and useful in real life."
         },
         cards: [
@@ -212,6 +216,34 @@ export const copy = {
           text:
             "Share your question, birth details, and preferred session style so we can prepare a focused consultation.",
           button: "Request a Reading"
+        }
+      },
+      numerology: {
+        hero: {
+          eyebrow: "Sacred numbers",
+          title: "Numerology Guidance",
+          description:
+            "Explore the symbolic meaning of your birth date, name patterns, personal year cycles, and the numbers shaping your life path.",
+          primary: "Request Numerology Guidance"
+        },
+        heading: {
+          eyebrow: "Numbers and rhythm",
+          title: "Insight through your personal numbers",
+          text:
+            "Numerology sessions offer a grounded way to reflect on timing, personality patterns, relationships, and meaningful life choices."
+        },
+        cards: [
+          ["Life Path Number", "Understand the core themes, gifts, and lessons carried by your date of birth."],
+          ["Personal Year Cycle", "Explore the tone of your current year and the choices it supports."],
+          ["Name Numerology", "Review the energetic pattern of names, initials, and personal expression."],
+          ["Relationship Numbers", "Reflect on compatibility, communication, and shared rhythm through numerological patterns."],
+          ["Decision Timing", "Use number cycles as an additional lens for planning transitions, launches, and personal milestones."]
+        ],
+        cta: {
+          title: "Discover the wisdom in your numbers",
+          text:
+            "Share your birth date, name, and current question so we can prepare a meaningful numerology session.",
+          button: "Request Guidance"
         }
       },
       consultation: {
@@ -301,8 +333,8 @@ export const copy = {
       },
       trips: {
         hero: {
-          eyebrow: "Sacred travel",
-          title: "Spiritual and Wellness Trips",
+          eyebrow: "Spiritual and Wellness Trips",
+          title: "Sacred travel",
           description:
             "Explore pilgrimage journeys, retreats, cultural tours, Ayurveda wellness trips, and custom group experiences.",
           primary: "Plan a Journey"
@@ -341,6 +373,25 @@ export const copy = {
             "These sample events can be replaced with the latest workshops, retreats, and community gatherings."
         }
       },
+      team: {
+        hero: {
+          eyebrow: "Our team",
+          title: "Meet the people behind the work",
+          description:
+            "A small, thoughtful team supporting astrology, education, consultation, retreats, and community events with care."
+        },
+        heading: {
+          eyebrow: "Guides and collaborators",
+          title: "Grounded support for your spiritual journey",
+          text:
+            "This page can grow with practitioner profiles, guest teachers, retreat collaborators, and event partners."
+        },
+        cards: [
+          ["Maria", "Founder, clinical psychologist, and Vedic astrology practitioner bringing depth, empathy, and spiritual insight."],
+          ["Guest Teachers", "Invited astrologers, Ayurveda practitioners, and spiritual educators for lectures and special gatherings."],
+          ["Retreat Partners", "Trusted collaborators supporting sacred travel, event care, and group experiences."]
+        ]
+      },
       contact: {
         hero: {
           eyebrow: "Contact",
@@ -364,11 +415,13 @@ export const copy = {
     nav: [
       { label: "Начало", href: navPaths.home },
       { label: "Ведическа астрология", href: navPaths.astrology },
+      { label: "Нумерология", href: navPaths.numerology },
       { label: "Консултация", href: navPaths.consultation },
       { label: "Васту", href: navPaths.vastu },
       { label: "Аюрведа", href: navPaths.ayurveda },
       { label: "Пътувания", href: navPaths.trips },
       { label: "Предстоящи събития", href: navPaths.events },
+      { label: "Нашият екип", href: navPaths.team },
       { label: "Контакт", href: navPaths.contact }
     ],
     contact: {
@@ -408,7 +461,7 @@ export const copy = {
     home: {
       hero: {
         eyebrow: "Традиционно знание за съвременно благополучие",
-        title: "Ведическа астрология за яснота, изцеление и вътрешна посока",
+        title: "Открийте своя космически план",
         description:
           "Спокойно и доверено пространство за астрологични прочити, консултации, Васту хармония, Аюрведични насоки, свещени пътувания и сезонни събития.",
         primary: "Запазете консултация",
@@ -519,8 +572,8 @@ export const copy = {
           primary: "Заявете прочит"
         },
         heading: {
-          eyebrow: "Какво изследваме",
-          title: "Ясни прочити с практични следващи стъпки",
+          eyebrow: "Ясни прочити с практични следващи стъпки",
+          title: "Космически план и кармично разбиране",
           text: "Сесиите са създадени да бъдат състрадателни, конкретни и полезни в реалния живот."
         },
         cards: [
@@ -536,6 +589,34 @@ export const copy = {
           text:
             "Споделете въпроса си, рождените данни и предпочитания стил на сесия, за да подготвим фокусирана консултация.",
           button: "Заявете прочит"
+        }
+      },
+      numerology: {
+        hero: {
+          eyebrow: "Свещени числа",
+          title: "Нумерологични насоки",
+          description:
+            "Изследвайте символното значение на рождената дата, моделите в името, личните годишни цикли и числата, които оформят житейския ви път.",
+          primary: "Заявете нумерологична консултация"
+        },
+        heading: {
+          eyebrow: "Числа и ритъм",
+          title: "Прозрение чрез вашите лични числа",
+          text:
+            "Нумерологичните сесии предлагат заземен начин за размисъл върху време, лични модели, взаимоотношения и важни избори."
+        },
+        cards: [
+          ["Число на жизнения път", "Разберете основните теми, дарби и уроци, носени от рождената ви дата."],
+          ["Лична годишна вибрация", "Изследвайте тона на текущата година и изборите, които тя подкрепя."],
+          ["Нумерология на името", "Прегледайте енергийния модел на имена, инициали и личното изразяване."],
+          ["Числа във взаимоотношенията", "Размислете върху съвместимост, общуване и общ ритъм чрез нумерологични модели."],
+          ["Време за решения", "Използвайте числовите цикли като допълнителна перспектива за преходи, начинания и лични етапи."]
+        ],
+        cta: {
+          title: "Открийте мъдростта във вашите числа",
+          text:
+            "Споделете рождената си дата, име и текущ въпрос, за да подготвим смислена нумерологична сесия.",
+          button: "Заявете насоки"
         }
       },
       consultation: {
@@ -625,8 +706,8 @@ export const copy = {
       },
       trips: {
         hero: {
-          eyebrow: "Свещени пътувания",
-          title: "Духовни и уелнес пътувания",
+          eyebrow: "Духовни и уелнес пътувания",
+          title: "Свещени пътувания",
           description:
             "Разгледайте поклоннически пътувания, ретрийти, културни турове, Аюрведични програми и персонализирани групови преживявания.",
           primary: "Планирайте пътуване"
@@ -664,6 +745,25 @@ export const copy = {
           text:
             "Тези примерни събития могат да бъдат заменени с актуални семинари, ретрийти и общностни срещи."
         }
+      },
+      team: {
+        hero: {
+          eyebrow: "Нашият екип",
+          title: "Запознайте се с хората зад работата",
+          description:
+            "Малък и внимателен екип, който подкрепя астрология, обучение, консултации, ретрийти и общностни събития с грижа."
+        },
+        heading: {
+          eyebrow: "Водачи и сътрудници",
+          title: "Заземена подкрепа за вашия духовен път",
+          text:
+            "Тази страница може да се развива с профили на практици, гост-учители, партньори за ретрийти и събития."
+        },
+        cards: [
+          ["Мария", "Основател, клиничен психолог и практик по ведическа астрология, който носи дълбочина, емпатия и духовна проницателност."],
+          ["Гост-учители", "Поканени астролози, Аюрведа практици и духовни преподаватели за лекции и специални срещи."],
+          ["Партньори за ретрийти", "Доверени сътрудници, които подкрепят свещени пътувания, грижа за събития и групови преживявания."]
+        ]
       },
       contact: {
         hero: {
