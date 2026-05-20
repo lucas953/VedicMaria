@@ -99,11 +99,15 @@ export const copy = {
         eyebrow: "Founder",
         title: "Meet Maria",
         paragraphs: [
-          "Maria is a Clinical Psychologist with over 25 years of professional experience, bringing deep insight, empathy, and a profound understanding of human nature to her work.",
-          "Her journey into astrology began more than 15 years ago, when a growing passion for this ancient symbolic language led her to explore its deeper spiritual and philosophical dimensions. She soon found her path in Vedic Astrology, a timeless tradition rooted in the rich wisdom of India.",
-          "Maria's fascination with India's vast cultural and spiritual heritage inspired her to study with some of the great astrologers of our time, including K. N. Rao, one of the most respected figures in the field of Jyotish. She holds a diploma in Vedic Astrology from AAA Vedic Astrology University.",
-          "Today, Maria is dedicated to sharing the wisdom of Vedic Astrology in a grounded, accessible, and meaningful way. She is currently creating a Vedic Astrology Society in Bulgaria, where she organizes regular lectures, educational events, and inspiring gatherings with knowledgeable guests and teachers from around the world.",
-          "Through her unique combination of psychology and Vedic Astrology, Maria offers a compassionate approach that supports self-understanding, personal growth, and a deeper connection with life's greater patterns."
+          "For over 25 years, I have worked as a Clinical Psychologist, listening deeply to the stories, emotions, and inner journeys that shape our lives. Yet, more than 15 years ago, I discovered that some stories are written in a far older language — the language of the stars.",
+          "This calling led me to the profound wisdom of Vedic Astrology and to India, where I studied with some of the most respected teachers of our time, including K. N. Rao and A. V. Sundaram, as well as traditional Nadi astrologers who preserve ancient lineages of knowledge passed down through generations.",
+          "To me, Vedic Astrology is the “Eye of the Vedas” — a sacred system that illuminates the deeper patterns of life, karma, purpose, and transformation. It is not only a tool for prediction, but a path toward greater self-awareness and inner alignment.",
+          "I hold a diploma from the American Academy of Vedic Art and Science (AAA) and continue to deepen my studies as a lifelong student of this timeless tradition.",
+          "Inspired by a desire to share this wisdom with others, I founded the Vedic Astrology Society in Bulgaria, where I organize lectures, gatherings, and educational events, inviting teachers, seekers, and inspiring voices from around the world.",
+          "During our sessions, I bring together the grounded empathy of psychology, the spiritual clarity of Vedic Astrology, and the humility of a fellow seeker still learning from life itself. I am not simply here to read your chart — I am here to help you understand yourself more deeply and reconnect with the path your soul came here to walk.",
+          "Together, we look beyond the surface and explore the beautiful and meaningful script of your life.",
+          "See you under the stars,",
+          "Maria"
         ]
       },
       servicesHeading: {
@@ -550,11 +554,15 @@ export const copy = {
         eyebrow: "Основател",
         title: "Запознайте се с Мария",
         paragraphs: [
-          "Мария е клиничен психолог с над 25 години професионален опит и внася в работата си дълбока проницателност, емпатия и разбиране за човешката природа.",
-          "Пътят и към астрологията започва преди повече от 15 години, когато растящият интерес към този древен символен език я отвежда към неговите по-дълбоки духовни и философски измерения. Скоро тя открива своя път във ведическата астрология, вечна традиция, вкоренена в богатата мъдрост на Индия.",
-          "Очарованието на Мария от огромното културно и духовно наследство на Индия я вдъхновява да учи при някои от големите астролози на нашето време, включително К. Н. Рао, една от най-уважаваните фигури в областта на Джйотиш. Тя притежава диплома по ведическа астрология от AAA Vedic Astrology University.",
-          "Днес Мария е посветена на това да споделя мъдростта на ведическата астрология по заземен, достъпен и смислен начин. В момента тя създава Общество по ведическа астрология в България, където организира редовни лекции, образователни събития и вдъхновяващи срещи с опитни гости и учители от цял свят.",
-          "Чрез уникалното си съчетание от психология и ведическа астрология Мария предлага състрадателен подход, който подкрепя себепознанието, личностното израстване и по-дълбоката връзка с по-големите модели на живота."
+          "Повече от 25 години работя като клиничен психолог, вслушвайки се дълбоко в историите, емоциите и вътрешните пътешествия, които оформят живота ни. Но преди повече от 15 години открих, че някои истории са написани на много по-древен език — езика на звездите.",
+          "Това призвание ме отведе към дълбоката мъдрост на ведическата астрология и към Индия, където учих при едни от най-уважаваните учители на нашето време, включително К. Н. Рао и А. В. Сундарам, както и при традиционни Нади астролози, които пазят древни линии на знание, предавани през поколенията.",
+          "За мен ведическата астрология е „Окото на Ведите“ — свещена система, която осветява по-дълбоките модели на живота, кармата, предназначението и трансформацията. Тя не е само инструмент за предсказание, а път към по-голямо себепознание и вътрешно съзвучие.",
+          "Притежавам диплома от American Academy of Vedic Art and Science (AAA) и продължавам да задълбочавам обучението си като вечен ученик на тази безвременна традиция.",
+          "Вдъхновена от желанието да споделям тази мъдрост с другите, основах Обществото по ведическа астрология в България, където организирам лекции, срещи и образователни събития, канейки учители, търсещи хора и вдъхновяващи гласове от цял свят.",
+          "По време на нашите сесии съчетавам заземената емпатия на психологията, духовната яснота на ведическата астрология и смирението на спътник в търсенето, който все още се учи от самия живот. Не съм тук просто, за да прочета вашата карта — тук съм, за да ви помогна да разберете себе си по-дълбоко и да се свържете отново с пътя, по който душата ви е дошла да върви.",
+          "Заедно поглеждаме отвъд повърхността и изследваме красивия и смислен сценарий на вашия живот.",
+          "Ще се видим под звездите,",
+          "Мария"
         ]
       },
       servicesHeading: {
