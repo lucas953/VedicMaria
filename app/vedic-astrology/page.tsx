@@ -3,11 +3,12 @@
 import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
-import { cardsFromTuples, useLanguage } from "../i18n";
+import { cardsFromTuples, copy, useLanguage } from "../i18n";
 
 export default function VedicAstrologyPage() {
   const { t } = useLanguage();
   const page = t.pages.astrology;
+  const intro = "intro" in page ? page.intro : copy.en.pages.astrology.intro;
 
   return (
     <>
@@ -18,6 +19,13 @@ export default function VedicAstrologyPage() {
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
       />
+      <section className="section page-intro" aria-label="About Vedic Astrology">
+        <div className="page-intro-content">
+          {intro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
       <section className="section" aria-labelledby="astrology-services">
         <div className="section-heading">
           <p className="eyebrow">{page.heading.eyebrow}</p>

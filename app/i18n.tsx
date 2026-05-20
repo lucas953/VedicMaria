@@ -200,6 +200,11 @@ export const copy = {
             "Receive grounded insight into your birth chart, planetary cycles, relationships, purpose, and auspicious timing.",
           primary: "Request a Reading"
         },
+        intro: [
+          "Unlock the secrets of your soul with Vedic Astrology, the ancient \"Science of Light\" and so called the \"Eye of Vedas\" that goes far beyond your daily horoscope. Vedic Astrology (Jyotish) uses the Sidereal zodiac to map the actual positions of the stars, giving you a pin-point blueprint of your destiny.",
+          "By diving into your Nakshatras (Moon signs), it uncovers your deepest emotional truths and hidden talents. Even more powerful is its precise timing system, known as Dashas, which acts as a personal GPS to show you exactly when your biggest life shifts will happen.",
+          "It doesn’t just predict your future—it empowers you to change it through karmic insights and practical remedies like mantras and gemstones. Step into alignment and discover the life you were truly born to live."
+        ],
         heading: {
           eyebrow: "Clear readings with practical next steps",
           title: "Cosmic blueprint and karmic understanding",
@@ -284,6 +289,11 @@ export const copy = {
             "Bring harmony to homes, offices, land, and interiors with traditional Vastu insight and practical remedies.",
           primary: "Request Vastu Advice"
         },
+        intro: [
+          "Just as the \"Eye of the Vedas\" reveals the secrets of time, Vastu Shastra unveils the hidden geometry of space. It is the sacred art of Directional Alchemy, a silent language spoken between your home and the cosmos.",
+          "By aligning the five Great Elements—Earth, Water, Fire, Air, and Ether—within your walls, Vastu transforms a mere structure into a living, breathing sanctuary of power.",
+          "It is the architecture of the soul, where the magnetic pulse of the Earth meets the ancient laws of the universe. When your environment is in resonance with the Great Void, the doors to prosperity, health, and spiritual clarity swing open. Do not just inhabit a space—command the energy within it."
+        ],
         heading: {
           eyebrow: "Space harmony",
           title: "A calmer relationship with your environment",
@@ -341,6 +351,11 @@ export const copy = {
             "Explore pilgrimage journeys, retreats, cultural tours, Ayurveda wellness trips, and custom group experiences.",
           primary: "Plan a Journey"
         },
+        intro: [
+          "Step into a Journey of Awakening. Beyond the maps of the modern world lie the ancient energy centers of the Earth—sacred portals where the veil between the human and the divine is thinnest. We invite you to join us on a pilgrimage to India’s hidden temples and power spots, journeying into the heart of a land where every stone tells a story of the infinite.",
+          "These are not merely trips; they are initiations. Whether you are retreating into the deep healing of a traditional Ayurveda sanctuary, or entering our sacred halls to master ancient Vedic arts through our specialized courses, you are stepping into a lineage of timeless wisdom. Our teachings are designed to awaken the dormant knowledge within you, guided by the rhythms of the soul and the secrets of the masters.",
+          "The path is calling—answer the invitation of the ancients and unlock the divine blueprint within."
+        ],
         heading: {
           eyebrow: "Journeys",
           title: "Travel with intention and care",
@@ -636,6 +651,11 @@ export const copy = {
             "Получете заземено разбиране за рождената карта, планетарните цикли, взаимоотношенията, предназначението и благоприятното време.",
           primary: "Заявете прочит"
         },
+        intro: [
+          "Отключете тайните на душата си с ведическата астрология - древната \"Наука за светлината\", наричана още \"Окото на Ведите\", която отива далеч отвъд ежедневния хороскоп. Ведическата астрология (Джйотиш) използва сидералния зодиак, за да картографира действителните позиции на звездите и да ви даде прецизен план на вашата съдба.",
+          "Като навлиза във вашите Накшатри (лунни знаци), тя разкрива най-дълбоките ви емоционални истини и скрити таланти. Още по-силна е нейната точна система за времево разчитане, известна като Даши, която действа като личен GPS и показва кога ще настъпят най-големите житейски промени.",
+          "Тя не просто предсказва бъдещето ви - тя ви дава сила да го променяте чрез кармични прозрения и практични средства като мантри и скъпоценни камъни. Влезте в съзвучие със себе си и открийте живота, за който наистина сте родени."
+        ],
         heading: {
           eyebrow: "Ясни прочити с практични следващи стъпки",
           title: "Космически план и кармично разбиране",
@@ -720,6 +740,11 @@ export const copy = {
             "Внесете хармония в домове, офиси, земя и интериори чрез традиционна Васту мъдрост и практични средства.",
           primary: "Заявете Васту съвет"
         },
+        intro: [
+          "Точно както \"Окото на Ведите\" разкрива тайните на времето, Васту Шастра разкрива скритата геометрия на пространството. Това е свещеното изкуство на алхимията на посоките - тих език между вашия дом и космоса.",
+          "Когато петте Велики елемента - Земя, Вода, Огън, Въздух и Етер - бъдат подредени в хармония във вашето пространство, Васту превръща обикновената постройка в живо, дишащо светилище на сила.",
+          "Това е архитектурата на душата, където магнитният пулс на Земята среща древните закони на Вселената. Когато средата ви е в резонанс с Великата Пустота, вратите към просперитет, здраве и духовна яснота се отварят. Не просто обитавайте пространство - овладейте енергията в него."
+        ],
         heading: {
           eyebrow: "Хармония на пространството",
           title: "По-спокойна връзка със средата",
@@ -777,6 +802,11 @@ export const copy = {
             "Разгледайте поклоннически пътувания, ретрийти, културни турове, Аюрведични програми и персонализирани групови преживявания.",
           primary: "Планирайте пътуване"
         },
+        intro: [
+          "Пристъпете към пътуване на пробуждането. Отвъд картите на съвременния свят се намират древните енергийни центрове на Земята - свещени портали, където завесата между човешкото и божественото е най-тънка. Каним ви да се присъедините към поклонническо пътуване до скритите храмове и силови места на Индия, навлизайки в сърцето на земя, където всеки камък разказва история за безкрая.",
+          "Това не са просто пътувания; това са посвещения. Независимо дали се оттегляте в дълбокото лечение на традиционно Аюрведично светилище, или влизате в нашите свещени зали, за да овладеете древни ведически изкуства чрез специализираните ни курсове, вие пристъпвате в линия на безвременна мъдрост. Нашите учения са създадени да събудят дремещото знание във вас, водени от ритмите на душата и тайните на майсторите.",
+          "Пътят ви призовава - отговорете на поканата на древните и отключете божествения план вътре във вас."
+        ],
         heading: {
           eyebrow: "Пътешествия",
           title: "Пътуване с намерение и грижа",
