@@ -24,7 +24,7 @@ export function CTA({
           <h2 id="community-title">{title}</h2>
           <p>{text}</p>
         </div>
-        <form className="community-form" action="#" method="post">
+        <form className="community-form" aria-describedby="community-form-static-note">
           <label>
             <span className="sr-only">{emailPlaceholder}</span>
             <input
@@ -35,9 +35,12 @@ export function CTA({
               required
             />
           </label>
-          <button className="button primary" type="submit">
+          <button className="button primary" type="button" disabled>
             {buttonLabel}
           </button>
+          <p className="form-note community-note" id="community-form-static-note">
+            Newsletter signup is not connected yet.
+          </p>
         </form>
       </section>
     );

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { resolveTeamSlug, routableTeamSlugs } from "../../teamSlugs";
 import { TeamMemberClient } from "./TeamMemberClient";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routableTeamSlugs.map((slug) => ({ slug }));
 }

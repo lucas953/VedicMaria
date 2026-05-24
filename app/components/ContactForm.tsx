@@ -11,7 +11,10 @@ export function ContactForm({ showServiceFields = true }: ContactFormProps) {
   const form = t.form;
 
   return (
-    <form className="contact-form" action="#" method="post">
+    <form className="contact-form" aria-describedby="contact-form-static-note">
+      <p className="form-note" id="contact-form-static-note">
+        This static form is not connected yet. Please use email, phone, or WhatsApp.
+      </p>
       <div className="form-row">
         <label>
           {form.name}
@@ -51,7 +54,7 @@ export function ContactForm({ showServiceFields = true }: ContactFormProps) {
         {form.message}
         <textarea name="message" rows={6} required />
       </label>
-      <button className="button primary" type="submit">
+      <button className="button primary" type="button" disabled>
         {form.submit}
       </button>
     </form>
