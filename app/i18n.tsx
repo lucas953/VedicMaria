@@ -60,7 +60,8 @@ export const copy = {
     common: {
       learnMore: "Learn more",
       registerInterest: "Register Interest",
-      backToTeam: "Back to Our Team"
+      backToTeam: "Back to Our Team",
+      bookMeeting: "Book a Meeting"
     },
     footer: {
       text:
@@ -515,7 +516,8 @@ export const copy = {
     common: {
       learnMore: "Научете повече",
       registerInterest: "Заявете интерес",
-      backToTeam: "Назад към екипа"
+      backToTeam: "Назад към екипа",
+      bookMeeting: "Запазете среща"
     },
     footer: {
       text:

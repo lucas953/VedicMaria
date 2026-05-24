@@ -4,10 +4,32 @@ type HeroProps = {
   eyebrow?: string;
   title: string;
   description: string;
-  primaryCta?: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
+  primaryCta?: { label: string; href: string; external?: boolean };
+  secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
 };
+
+function HeroLink({
+  cta,
+  className
+}: {
+  cta: { label: string; href: string; external?: boolean };
+  className: string;
+}) {
+  if (cta.external) {
+    return (
+      <a className={className} href={cta.href} target="_blank" rel="noreferrer">
+        {cta.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link className={className} href={cta.href}>
+      {cta.label}
+    </Link>
+  );
+}
 
 export function Hero({
   eyebrow,
@@ -26,14 +48,10 @@ export function Hero({
         {(primaryCta || secondaryCta) && (
           <div className="button-row">
             {primaryCta ? (
-              <Link className="button primary" href={primaryCta.href}>
-                {primaryCta.label}
-              </Link>
+              <HeroLink cta={primaryCta} className="button primary" />
             ) : null}
             {secondaryCta ? (
-              <Link className="button secondary" href={secondaryCta.href}>
-                {secondaryCta.label}
-              </Link>
+              <HeroLink cta={secondaryCta} className="button secondary" />
             ) : null}
           </div>
         )}
