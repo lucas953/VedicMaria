@@ -6,14 +6,28 @@ type ContactFormProps = {
   showServiceFields?: boolean;
 };
 
+const web3FormsAccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+const web3FormsEndpoint = "https://api.web3forms.com/submit";
+
 export function ContactForm({ showServiceFields = true }: ContactFormProps) {
   const { t } = useLanguage();
   const form = t.form;
+  const isConfigured = web3FormsAccessKey.length > 0;
 
   return (
-    <form className="contact-form" aria-describedby="contact-form-static-note">
-      <p className="form-note" id="contact-form-static-note">
-        This static form is not connected yet. Please use email, phone, or WhatsApp.
+    <form
+      className="contact-form"
+      action={web3FormsEndpoint}
+      method="POST"
+      aria-describedby="contact-form-note"
+    >
+      <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+      <input type="hidden" name="subject" value="New message from astrovedalife.com" />
+      <input type="hidden" name="from_name" value="Astro Veda Life Website" />
+      <p className="form-note" id="contact-form-note">
+        {isConfigured
+          ? "Your message will be sent securely through Web3Forms."
+          : "This form needs a Web3Forms access key before it can send messages."}
       </p>
       <div className="form-row">
         <label>
@@ -54,7 +68,7 @@ export function ContactForm({ showServiceFields = true }: ContactFormProps) {
         {form.message}
         <textarea name="message" rows={6} required />
       </label>
-      <button className="button primary" type="button" disabled>
+      <button className="button primary" type="submit" disabled={!isConfigured}>
         {form.submit}
       </button>
     </form>

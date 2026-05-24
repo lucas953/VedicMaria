@@ -4,6 +4,12 @@ This project is configured for a static Next.js export. The build output is gene
 
 ## Build
 
+Create `.env.local` with the Web3Forms access key before building:
+
+```bash
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+```
+
 ```bash
 npm install
 npm run build
@@ -38,4 +44,4 @@ This lets clean URLs such as `/contact/` and `/our-team/maria/` resolve to their
 
 ## Contact Forms
 
-The contact and newsletter forms are currently marked as not connected. To make them functional on static hosting, connect them to an external form service such as Formspree, Basin, Getform, or a CRM-provided endpoint.
+The contact form submits directly to Web3Forms from the browser. For Vercel staging, add `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in the Vercel project environment variables. For Hostinger, set the same value in `.env.local` before running `npm run build`.
