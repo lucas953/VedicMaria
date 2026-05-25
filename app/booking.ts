@@ -1,1 +1,1 @@
-export const consultationBookingUrl = "https://cal.com/david-urba-pfqalh";
+export const consultationBookingUrl = "https://cal.eu/astrovedalife";
