@@ -66,6 +66,7 @@ export const copy = {
       backToAyurveda: "Back to Ayurveda",
       backToTrips: "Back to Trips",
       backToAstrology: "Back to Vedic Astrology",
+      backToConsultation: "Back to Consultation",
       bookMeeting: "Book a Meeting"
     },
     footer: {
@@ -527,6 +528,7 @@ export const copy = {
       backToAyurveda: "Назад към Аюрведа",
       backToTrips: "Назад към пътувания",
       backToAstrology: "Назад към ведическа астрология",
+      backToConsultation: "Назад към консултация",
       bookMeeting: "Запазете среща"
     },
     footer: {

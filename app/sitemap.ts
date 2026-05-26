@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ayurvedaDetails } from "./ayurveda/ayurvedaDetails";
+import { consultationDetails } from "./consultation/consultationDetails";
 import { numerologyDetails } from "./numerology/numerologyDetails";
 import { siteUrl } from "./seo";
 import { canonicalTeamSlugs } from "./teamSlugs";
@@ -36,11 +37,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const astrologyRoutes = astrologyDetails.map(
     (detail) => `/vedic-astrology/${detail.slug}/`
   );
+  const consultationRoutes = consultationDetails.map(
+    (detail) => `/consultation/${detail.slug}/`
+  );
 
   return [
     ...staticRoutes,
     ...astrologyRoutes,
     ...numerologyRoutes,
+    ...consultationRoutes,
     ...vastuRoutes,
     ...ayurvedaRoutes,
     ...tripRoutes,

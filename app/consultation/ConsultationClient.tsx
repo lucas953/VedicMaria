@@ -4,7 +4,8 @@ import { ContactForm } from "../components/ContactForm";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
 import { consultationBookingUrl } from "../booking";
-import { cardsFromTuples, useLanguage } from "../i18n";
+import { useLanguage } from "../i18n";
+import { consultationDetails } from "./consultationDetails";
 
 export default function ConsultationPage() {
   const { t } = useLanguage();
@@ -25,7 +26,14 @@ export default function ConsultationPage() {
           <h2 id="consultation-types">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <ServiceCards services={cardsFromTuples(page.cards)} />
+        <ServiceCards
+          services={consultationDetails.map((detail) => ({
+            title: detail.title,
+            description: detail.description,
+            href: `/consultation/${detail.slug}`,
+            ctaLabel: t.common.learnMore
+          }))}
+        />
       </section>
       <section className="section alt two-column" aria-labelledby="booking-form">
         <div>
