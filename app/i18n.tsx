@@ -63,6 +63,9 @@ export const copy = {
       backToTeam: "Back to Our Team",
       backToNumerology: "Back to Numerology",
       backToVastu: "Back to Vastu",
+      backToAyurveda: "Back to Ayurveda",
+      backToTrips: "Back to Trips",
+      backToAstrology: "Back to Vedic Astrology",
       bookMeeting: "Book a Meeting"
     },
     footer: {
@@ -521,6 +524,9 @@ export const copy = {
       backToTeam: "Назад към екипа",
       backToNumerology: "Назад към нумерология",
       backToVastu: "Назад към Васту",
+      backToAyurveda: "Назад към Аюрведа",
+      backToTrips: "Назад към пътувания",
+      backToAstrology: "Назад към ведическа астрология",
       bookMeeting: "Запазете среща"
     },
     footer: {

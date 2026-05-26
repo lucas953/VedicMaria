@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
+import { ayurvedaDetails } from "./ayurveda/ayurvedaDetails";
 import { numerologyDetails } from "./numerology/numerologyDetails";
 import { siteUrl } from "./seo";
 import { canonicalTeamSlugs } from "./teamSlugs";
+import { tripDetails } from "./trips/tripDetails";
 import { vastuDetails } from "./vastu/vastuDetails";
+import { astrologyDetails } from "./vedic-astrology/astrologyDetails";
 
 const staticRoutes = [
   "/",
@@ -26,13 +29,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (detail) => `/numerology/${detail.slug}/`
   );
   const vastuRoutes = vastuDetails.map((detail) => `/vastu/${detail.slug}/`);
+  const ayurvedaRoutes = ayurvedaDetails.map(
+    (detail) => `/ayurveda/${detail.slug}/`
+  );
+  const tripRoutes = tripDetails.map((detail) => `/trips/${detail.slug}/`);
+  const astrologyRoutes = astrologyDetails.map(
+    (detail) => `/vedic-astrology/${detail.slug}/`
+  );
 
-  return [...staticRoutes, ...numerologyRoutes, ...vastuRoutes, ...teamRoutes].map(
-    (route) => ({
+  return [
+    ...staticRoutes,
+    ...astrologyRoutes,
+    ...numerologyRoutes,
+    ...vastuRoutes,
+    ...ayurvedaRoutes,
+    ...tripRoutes,
+    ...teamRoutes
+  ].map((route) => ({
       url: new URL(route, siteUrl).toString(),
       lastModified,
       changeFrequency: route === "/" ? "weekly" : "monthly",
       priority: route === "/" ? 1 : route.startsWith("/our-team/") ? 0.6 : 0.8
-    })
-  );
+    }));
 }

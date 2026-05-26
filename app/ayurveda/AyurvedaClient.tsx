@@ -3,11 +3,18 @@
 import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
-import { cardsFromTuples, useLanguage } from "../i18n";
+import { useLanguage } from "../i18n";
+import { ayurvedaDetails } from "./ayurvedaDetails";
 
 export default function AyurvedaPage() {
   const { t } = useLanguage();
   const page = t.pages.ayurveda;
+  const services = ayurvedaDetails.map((detail) => ({
+    title: detail.title,
+    description: detail.description,
+    href: `/ayurveda/${detail.slug}`,
+    ctaLabel: t.common.learnMore
+  }));
 
   return (
     <>
@@ -24,7 +31,7 @@ export default function AyurvedaPage() {
           <h2 id="ayurveda-services">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <ServiceCards services={cardsFromTuples(page.cards)} />
+        <ServiceCards services={services} />
       </section>
       <CTA
         title={page.cta.title}

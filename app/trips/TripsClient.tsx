@@ -3,12 +3,19 @@
 import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
-import { cardsFromTuples, copy, useLanguage } from "../i18n";
+import { copy, useLanguage } from "../i18n";
+import { tripDetails } from "./tripDetails";
 
 export default function TripsPage() {
   const { t } = useLanguage();
   const page = t.pages.trips;
   const intro = "intro" in page ? page.intro : copy.en.pages.trips.intro;
+  const services = tripDetails.map((detail) => ({
+    title: detail.title,
+    description: detail.description,
+    href: `/trips/${detail.slug}`,
+    ctaLabel: t.common.learnMore
+  }));
 
   return (
     <>
@@ -32,7 +39,7 @@ export default function TripsPage() {
           <h2 id="trip-services">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <ServiceCards services={cardsFromTuples(page.cards)} />
+        <ServiceCards services={services} />
       </section>
       <CTA
         title={page.cta.title}
