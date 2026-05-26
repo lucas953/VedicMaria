@@ -4,11 +4,17 @@ import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
 import { cardsFromTuples, copy, useLanguage } from "../i18n";
+import { vastuDetails } from "./vastuDetails";
 
 export default function VastuPage() {
   const { t } = useLanguage();
   const page = t.pages.vastu;
   const intro = "intro" in page ? page.intro : copy.en.pages.vastu.intro;
+  const services = cardsFromTuples(page.cards).map((service, index) => ({
+    ...service,
+    href: `/vastu/${vastuDetails[index].slug}`,
+    ctaLabel: t.common.learnMore
+  }));
 
   return (
     <>
@@ -32,7 +38,7 @@ export default function VastuPage() {
           <h2 id="vastu-services">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <ServiceCards services={cardsFromTuples(page.cards)} />
+        <ServiceCards services={services} />
       </section>
       <CTA
         title={page.cta.title}

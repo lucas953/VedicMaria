@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { numerologyDetails } from "./numerology/numerologyDetails";
 import { siteUrl } from "./seo";
 import { canonicalTeamSlugs } from "./teamSlugs";
+import { vastuDetails } from "./vastu/vastuDetails";
 
 const staticRoutes = [
   "/",
@@ -24,11 +25,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const numerologyRoutes = numerologyDetails.map(
     (detail) => `/numerology/${detail.slug}/`
   );
+  const vastuRoutes = vastuDetails.map((detail) => `/vastu/${detail.slug}/`);
 
-  return [...staticRoutes, ...numerologyRoutes, ...teamRoutes].map((route) => ({
-    url: new URL(route, siteUrl).toString(),
-    lastModified,
-    changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : route.startsWith("/our-team/") ? 0.6 : 0.8
-  }));
+  return [...staticRoutes, ...numerologyRoutes, ...vastuRoutes, ...teamRoutes].map(
+    (route) => ({
+      url: new URL(route, siteUrl).toString(),
+      lastModified,
+      changeFrequency: route === "/" ? "weekly" : "monthly",
+      priority: route === "/" ? 1 : route.startsWith("/our-team/") ? 0.6 : 0.8
+    })
+  );
 }
