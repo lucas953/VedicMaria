@@ -67,7 +67,8 @@ export const copy = {
       backToTrips: "Back to Trips",
       backToAstrology: "Back to Vedic Astrology",
       backToConsultation: "Back to Consultation",
-      bookMeeting: "Book a Meeting"
+      bookMeeting: "Book a Meeting",
+      bookSession: "Book a Session"
     },
     footer: {
       text:
@@ -290,6 +291,20 @@ export const copy = {
           title: "Tell us what you need",
           text:
             "Send your preferred service and date. We will reply with availability and session details."
+        }
+      },
+      booking: {
+        hero: {
+          eyebrow: "Book a session",
+          title: "Choose your consultation time",
+          description:
+            "Schedule a calm, focused session for Vedic astrology, guidance, relationship insight, life direction, or follow-up support."
+        },
+        intro: {
+          eyebrow: "Booking calendar",
+          title: "Find a time that feels right",
+          text:
+            "Use the calendar below to choose the session length and available time. You will receive the meeting details after booking."
         }
       },
       vastu: {
@@ -529,7 +544,8 @@ export const copy = {
       backToTrips: "Назад към пътувания",
       backToAstrology: "Назад към ведическа астрология",
       backToConsultation: "Назад към консултация",
-      bookMeeting: "Запазете среща"
+      bookMeeting: "Запазете среща",
+      bookSession: "Запазете сесия"
     },
     footer: {
       text:
@@ -752,6 +768,20 @@ export const copy = {
           title: "Разкажете ни от какво имате нужда",
           text:
             "Изпратете предпочитаната услуга и дата. Ще отговорим с налични часове и подробности за сесията."
+        }
+      },
+      booking: {
+        hero: {
+          eyebrow: "Запазете сесия",
+          title: "Изберете час за консултация",
+          description:
+            "Запазете спокойна и фокусирана сесия за ведическа астрология, насоки, взаимоотношения, житейска посока или последваща подкрепа."
+        },
+        intro: {
+          eyebrow: "Календар за записване",
+          title: "Намерете подходящо време",
+          text:
+            "Използвайте календара по-долу, за да изберете продължителност на сесията и свободен час. След записване ще получите подробностите за срещата."
         }
       },
       vastu: {

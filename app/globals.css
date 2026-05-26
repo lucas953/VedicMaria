@@ -976,6 +976,28 @@ h3 {
   align-items: start;
 }
 
+.booking-section {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(201, 148, 46, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 248, 231, 0.72), rgba(255, 254, 250, 0.94));
+}
+
+.booking-frame-shell {
+  overflow: hidden;
+  border: 1px solid rgba(201, 148, 46, 0.28);
+  border-radius: var(--radius);
+  background: rgba(255, 254, 250, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.booking-frame {
+  display: block;
+  width: 100%;
+  min-height: 820px;
+  border: 0;
+  background: #fff;
+}
+
 .contact-form {
   position: relative;
   display: grid;

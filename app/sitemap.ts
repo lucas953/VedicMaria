@@ -18,6 +18,7 @@ const staticRoutes = [
   "/trips/",
   "/upcoming-events/",
   "/our-team/",
+  "/book-session/",
   "/contact/"
 ];
 

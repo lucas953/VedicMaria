@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import AyurvedaPage from "../../ayurveda/AyurvedaClient";
 import { ayurvedaDetails, getAyurvedaDetail } from "../../ayurveda/ayurvedaDetails";
 import { AyurvedaDetailClient } from "../../ayurveda/[slug]/AyurvedaDetailClient";
+import BookSessionPage from "../../book-session/BookSessionClient";
 import ConsultationPage from "../../consultation/ConsultationClient";
 import {
   consultationDetails,
@@ -49,6 +50,7 @@ const bgStaticRoutes = [
   ["trips"],
   ["upcoming-events"],
   ["our-team"],
+  ["book-session"],
   ["contact"]
 ];
 
@@ -97,6 +99,11 @@ const bgPageMetadata: Record<string, { title: string; description: string }> = {
     title: "Нашият екип",
     description:
       "Запознайте се с екипа на Astro Veda Life, който подкрепя ведическа астрология, нумерология, Аюрведа, Васту, образование и общност."
+  },
+  "book-session": {
+    title: "Запазете сесия",
+    description:
+      "Запазете консултация с Astro Veda Life за ведическа астрология, лични насоки, взаимоотношения, житейска посока или последваща подкрепа."
   },
   contact: {
     title: "Контакт",
@@ -215,6 +222,8 @@ export default async function BgPage({
     page = <UpcomingEventsPage />;
   } else if (path === "our-team") {
     page = <OurTeamPage />;
+  } else if (path === "book-session") {
+    page = <BookSessionPage />;
   } else if (path === "contact") {
     page = <ContactPage />;
   } else if (section === "vedic-astrology" && detailSlug) {

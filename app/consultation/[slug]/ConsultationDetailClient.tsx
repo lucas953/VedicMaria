@@ -1,8 +1,9 @@
 "use client";
 
 import { Hero } from "../../components/Hero";
-import { consultationBookingUrl } from "../../booking";
+import { consultationBookingPath } from "../../booking";
 import { useLanguage } from "../../i18n";
+import { localizePath } from "../../localePaths";
 import { getLocalizedDetail } from "../../localizedDetail";
 import type { ConsultationDetail } from "../consultationDetails";
 
@@ -24,8 +25,7 @@ export function ConsultationDetailClient({
         description={localized.description}
         primaryCta={{
           label: t.common.bookMeeting,
-          href: consultationBookingUrl,
-          external: true
+          href: consultationBookingPath
         }}
         secondaryCta={{ label: t.common.backToConsultation, href: "/consultation" }}
       />
@@ -44,9 +44,7 @@ export function ConsultationDetailClient({
           <div className="button-row">
             <a
               className="button primary"
-              href={consultationBookingUrl}
-              target="_blank"
-              rel="noreferrer"
+              href={localizePath(consultationBookingPath, lang)}
             >
               {t.common.bookMeeting}
             </a>

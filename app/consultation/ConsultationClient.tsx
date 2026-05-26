@@ -3,8 +3,9 @@
 import { ContactForm } from "../components/ContactForm";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
-import { consultationBookingUrl } from "../booking";
+import { consultationBookingPath } from "../booking";
 import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 import { getLocalizedDetail } from "../localizedDetail";
 import { consultationDetails } from "./consultationDetails";
 
@@ -19,7 +20,7 @@ export default function ConsultationPage() {
         eyebrow={page.hero.eyebrow}
         title={page.hero.title}
         description={page.hero.description}
-        primaryCta={{ label: t.common.bookMeeting, href: consultationBookingUrl, external: true }}
+        primaryCta={{ label: t.common.bookMeeting, href: consultationBookingPath }}
       />
       <section className="section" aria-labelledby="consultation-types">
         <div className="section-heading">
@@ -48,9 +49,7 @@ export default function ConsultationPage() {
           <div className="button-row">
             <a
               className="button primary"
-              href={consultationBookingUrl}
-              target="_blank"
-              rel="noreferrer"
+              href={localizePath(consultationBookingPath, lang)}
             >
               {t.common.bookMeeting}
             </a>
