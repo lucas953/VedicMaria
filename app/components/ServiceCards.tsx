@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 
 type Service = {
   title: string;
@@ -9,6 +13,8 @@ type Service = {
 };
 
 export function ServiceCards({ services }: { services: readonly Service[] }) {
+  const { lang } = useLanguage();
+
   return (
     <div className="card-grid">
       {services.map((service) => {
@@ -28,7 +34,11 @@ export function ServiceCards({ services }: { services: readonly Service[] }) {
         );
 
         return service.href ? (
-          <Link className="service-card interactive" href={service.href} key={service.title}>
+          <Link
+            className="service-card interactive"
+            href={localizePath(service.href, lang)}
+            key={service.title}
+          >
             {content}
           </Link>
         ) : (

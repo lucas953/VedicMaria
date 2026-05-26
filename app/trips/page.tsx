@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import TripsPage from "./TripsClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Spiritual and Wellness Trips",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <TripsPage />;
+  return (
+    <SiteChrome>
+      <TripsPage />
+    </SiteChrome>
+  );
 }

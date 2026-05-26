@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createPageMetadata } from "../../seo";
 import { resolveTeamSlug, routableTeamSlugs } from "../../teamSlugs";
 import { TeamMemberClient } from "./TeamMemberClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -73,5 +74,9 @@ export default async function TeamMemberPage({
     notFound();
   }
 
-  return <TeamMemberClient slug={resolvedSlug} />;
+  return (
+    <SiteChrome>
+      <TeamMemberClient slug={resolvedSlug} />
+    </SiteChrome>
+  );
 }

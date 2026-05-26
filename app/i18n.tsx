@@ -968,8 +968,18 @@ const LanguageContext = createContext<{
   t: Copy;
 } | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+export function LanguageProvider({
+  children,
+  initialLanguage = "en"
+}: {
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
   const [lang, setLangState] = useState<Language>(() => {
+    if (initialLanguage) {
+      return initialLanguage;
+    }
+
     if (typeof window === "undefined") {
       return "en";
     }
@@ -984,11 +994,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLang = (nextLang: Language) => {
     setLangState(nextLang);
-    window.localStorage.setItem("site-language", nextLang);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("site-language", nextLang);
+    }
   };
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    window.localStorage.setItem("site-language", lang);
   }, [lang]);
 
   const value = useMemo(() => ({ lang, setLang, t: copy[lang] }), [lang]);

@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import OurTeamPage from "./OurTeamClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Our Team",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <OurTeamPage />;
+  return (
+    <SiteChrome>
+      <OurTeamPage />
+    </SiteChrome>
+  );
 }

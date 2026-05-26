@@ -1,5 +1,6 @@
 import { createPageMetadata } from "./seo";
 import Home from "./HomeClient";
+import { SiteChrome } from "./components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Vedic Astrology, Ayurveda and Vastu Guidance | Astro Veda Life",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <Home />;
+  return (
+    <SiteChrome>
+      <Home />
+    </SiteChrome>
+  );
 }

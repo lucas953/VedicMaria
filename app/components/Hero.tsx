@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 
 type HeroProps = {
   eyebrow?: string;
@@ -11,10 +15,12 @@ type HeroProps = {
 
 function HeroLink({
   cta,
-  className
+  className,
+  lang
 }: {
   cta: { label: string; href: string; external?: boolean };
   className: string;
+  lang: "en" | "bg";
 }) {
   if (cta.external) {
     return (
@@ -25,7 +31,7 @@ function HeroLink({
   }
 
   return (
-    <Link className={className} href={cta.href}>
+    <Link className={className} href={localizePath(cta.href, lang)}>
       {cta.label}
     </Link>
   );
@@ -39,6 +45,8 @@ export function Hero({
   secondaryCta,
   compact = false
 }: HeroProps) {
+  const { lang } = useLanguage();
+
   return (
     <section className={compact ? "hero compact" : "hero"}>
       <div className="hero-content">
@@ -48,10 +56,10 @@ export function Hero({
         {(primaryCta || secondaryCta) && (
           <div className="button-row">
             {primaryCta ? (
-              <HeroLink cta={primaryCta} className="button primary" />
+              <HeroLink cta={primaryCta} className="button primary" lang={lang} />
             ) : null}
             {secondaryCta ? (
-              <HeroLink cta={secondaryCta} className="button secondary" />
+              <HeroLink cta={secondaryCta} className="button secondary" lang={lang} />
             ) : null}
           </div>
         )}

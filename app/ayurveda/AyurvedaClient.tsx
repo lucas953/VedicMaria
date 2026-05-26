@@ -4,17 +4,22 @@ import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
 import { useLanguage } from "../i18n";
+import { getLocalizedDetail } from "../localizedDetail";
 import { ayurvedaDetails } from "./ayurvedaDetails";
 
 export default function AyurvedaPage() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const page = t.pages.ayurveda;
-  const services = ayurvedaDetails.map((detail) => ({
-    title: detail.title,
-    description: detail.description,
-    href: `/ayurveda/${detail.slug}`,
-    ctaLabel: t.common.learnMore
-  }));
+  const services = ayurvedaDetails.map((detail) => {
+    const localized = getLocalizedDetail(detail, lang);
+
+    return {
+      title: localized.title,
+      description: localized.description,
+      href: `/ayurveda/${detail.slug}`,
+      ctaLabel: t.common.learnMore
+    };
+  });
 
   return (
     <>

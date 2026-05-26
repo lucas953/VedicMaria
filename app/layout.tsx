@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { LanguageProvider } from "./i18n";
 import { defaultDescription, defaultOgImage, siteName, siteUrl } from "./seo";
 
 export const metadata: Metadata = {
@@ -54,13 +51,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <LanguageProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </LanguageProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

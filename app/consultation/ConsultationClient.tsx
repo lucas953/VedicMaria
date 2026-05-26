@@ -5,10 +5,11 @@ import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
 import { consultationBookingUrl } from "../booking";
 import { useLanguage } from "../i18n";
+import { getLocalizedDetail } from "../localizedDetail";
 import { consultationDetails } from "./consultationDetails";
 
 export default function ConsultationPage() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const page = t.pages.consultation;
 
   return (
@@ -27,12 +28,16 @@ export default function ConsultationPage() {
           <p>{page.heading.text}</p>
         </div>
         <ServiceCards
-          services={consultationDetails.map((detail) => ({
-            title: detail.title,
-            description: detail.description,
-            href: `/consultation/${detail.slug}`,
-            ctaLabel: t.common.learnMore
-          }))}
+          services={consultationDetails.map((detail) => {
+            const localized = getLocalizedDetail(detail, lang);
+
+            return {
+              title: localized.title,
+              description: localized.description,
+              href: `/consultation/${detail.slug}`,
+              ctaLabel: t.common.learnMore
+            };
+          })}
         />
       </section>
       <section className="section alt two-column" aria-labelledby="booking-form">

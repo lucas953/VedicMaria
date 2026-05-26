@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const contact = t.contact;
 
   return (
     <footer className="site-footer">
       <div>
-        <Link className="footer-brand" href="/">
+        <Link className="footer-brand" href={localizePath("/", lang)}>
           {t.brand.name}
         </Link>
         <p>{t.footer.text}</p>
@@ -20,7 +21,7 @@ export function Footer() {
         <ul>
           {t.nav.slice(1).map((item) => (
             <li key={item.href}>
-              <Link href={item.href}>{item.label}</Link>
+              <Link href={localizePath(item.href, lang)}>{item.label}</Link>
             </li>
           ))}
         </ul>

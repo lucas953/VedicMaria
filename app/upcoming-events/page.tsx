@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import UpcomingEventsPage from "./UpcomingEventsClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Upcoming Events",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <UpcomingEventsPage />;
+  return (
+    <SiteChrome>
+      <UpcomingEventsPage />
+    </SiteChrome>
+  );
 }

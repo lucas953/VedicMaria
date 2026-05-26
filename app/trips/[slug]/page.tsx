@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createPageMetadata } from "../../seo";
 import { getTripDetail, tripDetails } from "../tripDetails";
 import { TripDetailClient } from "./TripDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -45,5 +46,9 @@ export default async function Page({
     notFound();
   }
 
-  return <TripDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <TripDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

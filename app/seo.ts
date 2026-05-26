@@ -20,6 +20,15 @@ export function createPageMetadata({
   image = defaultOgImage
 }: SeoMetadata): Metadata {
   const canonicalPath = path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
+  const pathWithoutLocale =
+    canonicalPath === "/bg/"
+      ? "/"
+      : canonicalPath.startsWith("/bg/")
+        ? canonicalPath.slice(3)
+        : canonicalPath;
+  const englishPath = pathWithoutLocale === "/" ? "/" : pathWithoutLocale;
+  const bulgarianPath =
+    pathWithoutLocale === "/" ? "/bg/" : `/bg${pathWithoutLocale}`;
   const url = new URL(canonicalPath, siteUrl);
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 
@@ -27,7 +36,12 @@ export function createPageMetadata({
     title,
     description,
     alternates: {
-      canonical: url
+      canonical: url.toString(),
+      languages: {
+        en: new URL(englishPath, siteUrl).toString(),
+        bg: new URL(bulgarianPath, siteUrl).toString(),
+        "x-default": new URL(englishPath, siteUrl).toString()
+      }
     },
     openGraph: {
       title: fullTitle,

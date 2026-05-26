@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import ConsultationPage from "./ConsultationClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Book a Consultation",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <ConsultationPage />;
+  return (
+    <SiteChrome>
+      <ConsultationPage />
+    </SiteChrome>
+  );
 }

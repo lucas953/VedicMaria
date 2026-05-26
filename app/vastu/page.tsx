@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import VastuPage from "./VastuClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Vastu Shastra Services",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <VastuPage />;
+  return (
+    <SiteChrome>
+      <VastuPage />
+    </SiteChrome>
+  );
 }

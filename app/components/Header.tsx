@@ -4,15 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLanguage, type Language } from "../i18n";
+import { localizePath, withoutLocalePrefix } from "../localePaths";
 
 export function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const activePathname = withoutLocalePrefix(pathname);
 
   return (
     <header className={isOpen ? "site-header menu-open" : "site-header"}>
-      <Link className="brand" href="/" onClick={() => setIsOpen(false)}>
+      <Link className="brand" href={localizePath("/", lang)} onClick={() => setIsOpen(false)}>
         <span className="brand-mark" aria-hidden="true" />
         <span>
           <strong>{t.brand.name}</strong>
@@ -40,12 +42,14 @@ export function Header() {
       >
         {t.nav.map((item) => {
           const active =
-            item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+            item.href === "/"
+              ? activePathname === "/"
+              : activePathname.startsWith(item.href);
 
           return (
             <Link
               key={item.href}
-              href={item.href}
+              href={localizePath(item.href, lang)}
               className={active ? "active" : ""}
               aria-current={active ? "page" : undefined}
               onClick={() => setIsOpen(false)}
@@ -56,15 +60,18 @@ export function Header() {
         })}
         <div className="language-switch" aria-label="Language selector">
           {(["en", "bg"] as Language[]).map((option) => (
-            <button
+            <Link
               key={option}
-              type="button"
+              href={localizePath(pathname, option)}
               className={lang === option ? "active" : ""}
               aria-pressed={lang === option}
-              onClick={() => setLang(option)}
+              onClick={() => {
+                setLang(option);
+                setIsOpen(false);
+              }}
             >
               {option.toUpperCase()}
-            </button>
+            </Link>
           ))}
         </div>
       </nav>

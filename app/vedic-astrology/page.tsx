@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import VedicAstrologyPage from "./VedicAstrologyClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Vedic Astrology Readings",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <VedicAstrologyPage />;
+  return (
+    <SiteChrome>
+      <VedicAstrologyPage />
+    </SiteChrome>
+  );
 }

@@ -23,6 +23,10 @@ const staticRoutes = [
 
 export const dynamic = "force-static";
 
+function toBgRoute(route: string) {
+  return route === "/" ? "/bg/" : `/bg${route}`;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const teamRoutes = canonicalTeamSlugs.map((slug) => `/our-team/${slug}/`);
@@ -49,7 +53,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...vastuRoutes,
     ...ayurvedaRoutes,
     ...tripRoutes,
-    ...teamRoutes
+    ...teamRoutes,
+    ...staticRoutes.map(toBgRoute),
+    ...astrologyRoutes.map(toBgRoute),
+    ...numerologyRoutes.map(toBgRoute),
+    ...consultationRoutes.map(toBgRoute),
+    ...vastuRoutes.map(toBgRoute),
+    ...ayurvedaRoutes.map(toBgRoute),
+    ...tripRoutes.map(toBgRoute),
+    ...teamRoutes.map(toBgRoute)
   ].map((route) => ({
       url: new URL(route, siteUrl).toString(),
       lastModified,

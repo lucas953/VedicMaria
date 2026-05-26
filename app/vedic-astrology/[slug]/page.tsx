@@ -5,6 +5,7 @@ import {
   getAstrologyDetail
 } from "../astrologyDetails";
 import { AstrologyDetailClient } from "./AstrologyDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -48,5 +49,9 @@ export default async function Page({
     notFound();
   }
 
-  return <AstrologyDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <AstrologyDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

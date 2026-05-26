@@ -4,18 +4,23 @@ import { CTA } from "../components/CTA";
 import { Hero } from "../components/Hero";
 import { ServiceCards } from "../components/ServiceCards";
 import { copy, useLanguage } from "../i18n";
+import { getLocalizedDetail } from "../localizedDetail";
 import { tripDetails } from "./tripDetails";
 
 export default function TripsPage() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const page = t.pages.trips;
   const intro = "intro" in page ? page.intro : copy.en.pages.trips.intro;
-  const services = tripDetails.map((detail) => ({
-    title: detail.title,
-    description: detail.description,
-    href: `/trips/${detail.slug}`,
-    ctaLabel: t.common.learnMore
-  }));
+  const services = tripDetails.map((detail) => {
+    const localized = getLocalizedDetail(detail, lang);
+
+    return {
+      title: localized.title,
+      description: localized.description,
+      href: `/trips/${detail.slug}`,
+      ctaLabel: t.common.learnMore
+    };
+  });
 
   return (
     <>

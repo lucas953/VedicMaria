@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 
 type CTAProps = {
   title: string;
@@ -17,6 +21,8 @@ export function CTA({
   emailPlaceholder = "Enter your email",
   variant = "link"
 }: CTAProps) {
+  const { lang } = useLanguage();
+
   if (variant === "newsletter") {
     return (
       <section className="cta community-cta" aria-labelledby="community-title">
@@ -53,7 +59,7 @@ export function CTA({
         <h2>{title}</h2>
         <p>{text}</p>
       </div>
-      <Link className="button primary" href={href}>
+      <Link className="button primary" href={localizePath(href, lang)}>
         {buttonLabel}
       </Link>
     </section>

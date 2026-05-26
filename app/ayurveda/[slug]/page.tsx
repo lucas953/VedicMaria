@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createPageMetadata } from "../../seo";
 import { ayurvedaDetails, getAyurvedaDetail } from "../ayurvedaDetails";
 import { AyurvedaDetailClient } from "./AyurvedaDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -45,5 +46,9 @@ export default async function Page({
     notFound();
   }
 
-  return <AyurvedaDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <AyurvedaDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

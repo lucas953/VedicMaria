@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import NumerologyPage from "./NumerologyClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Numerology Guidance",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <NumerologyPage />;
+  return (
+    <SiteChrome>
+      <NumerologyPage />
+    </SiteChrome>
+  );
 }

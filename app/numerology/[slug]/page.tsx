@@ -5,6 +5,7 @@ import {
   numerologyDetails
 } from "../numerologyDetails";
 import { NumerologyDetailClient } from "./NumerologyDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -48,5 +49,9 @@ export default async function Page({
     notFound();
   }
 
-  return <NumerologyDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <NumerologyDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

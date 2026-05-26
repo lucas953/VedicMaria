@@ -5,6 +5,7 @@ import {
   getConsultationDetail
 } from "../consultationDetails";
 import { ConsultationDetailClient } from "./ConsultationDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -48,5 +49,9 @@ export default async function Page({
     notFound();
   }
 
-  return <ConsultationDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <ConsultationDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

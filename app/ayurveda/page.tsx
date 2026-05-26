@@ -1,5 +1,6 @@
 import { createPageMetadata } from "../seo";
 import AyurvedaPage from "./AyurvedaClient";
+import { SiteChrome } from "../components/SiteChrome";
 
 export const metadata = createPageMetadata({
   title: "Ayurveda Wellness Guidance",
@@ -9,5 +10,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <AyurvedaPage />;
+  return (
+    <SiteChrome>
+      <AyurvedaPage />
+    </SiteChrome>
+  );
 }

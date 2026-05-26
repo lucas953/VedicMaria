@@ -1,3 +1,8 @@
+"use client";
+
+import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
+
 type Event = {
   date: string;
   title: string;
@@ -12,6 +17,8 @@ export function EventCards({
   events: readonly Event[];
   buttonLabel?: string;
 }) {
+  const { lang } = useLanguage();
+
   return (
     <div className="event-grid">
       {events.map((event) => (
@@ -20,7 +27,7 @@ export function EventCards({
           <h3>{event.title}</h3>
           <p className="location">{event.location}</p>
           <p>{event.description}</p>
-          <a className="button secondary" href="/contact">
+          <a className="button secondary" href={localizePath("/contact", lang)}>
             {buttonLabel}
           </a>
         </article>

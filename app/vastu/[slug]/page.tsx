@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createPageMetadata } from "../../seo";
 import { getVastuDetail, vastuDetails } from "../vastuDetails";
 import { VastuDetailClient } from "./VastuDetailClient";
+import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
@@ -45,5 +46,9 @@ export default async function Page({
     notFound();
   }
 
-  return <VastuDetailClient detail={detail} />;
+  return (
+    <SiteChrome>
+      <VastuDetailClient detail={detail} />
+    </SiteChrome>
+  );
 }

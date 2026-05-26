@@ -3,6 +3,7 @@
 import { Hero } from "../../components/Hero";
 import { consultationBookingUrl } from "../../booking";
 import { useLanguage } from "../../i18n";
+import { getLocalizedDetail } from "../../localizedDetail";
 import type { ConsultationDetail } from "../consultationDetails";
 
 export function ConsultationDetailClient({
@@ -10,16 +11,17 @@ export function ConsultationDetailClient({
 }: {
   detail: ConsultationDetail;
 }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const page = t.pages.consultation;
+  const localized = getLocalizedDetail(detail, lang);
 
   return (
     <>
       <Hero
         compact
         eyebrow={page.hero.eyebrow}
-        title={detail.title}
-        description={detail.description}
+        title={localized.title}
+        description={localized.description}
         primaryCta={{
           label: t.common.bookMeeting,
           href: consultationBookingUrl,
@@ -30,8 +32,8 @@ export function ConsultationDetailClient({
       <section className="section page-intro" aria-labelledby="consultation-detail-title">
         <div className="page-intro-content">
           <p className="eyebrow">{page.heading.eyebrow}</p>
-          <h2 id="consultation-detail-title">{detail.title}</h2>
-          <p>{detail.description}</p>
+          <h2 id="consultation-detail-title">{localized.title}</h2>
+          <p>{localized.description}</p>
         </div>
       </section>
       <section className="section alt two-column" aria-labelledby="consultation-booking">
