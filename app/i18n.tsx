@@ -61,6 +61,7 @@ export const copy = {
       learnMore: "Learn more",
       registerInterest: "Register Interest",
       backToTeam: "Back to Our Team",
+      backToNumerology: "Back to Numerology",
       bookMeeting: "Book a Meeting"
     },
     footer: {
@@ -517,6 +518,7 @@ export const copy = {
       learnMore: "Научете повече",
       registerInterest: "Заявете интерес",
       backToTeam: "Назад към екипа",
+      backToNumerology: "Назад към нумерология",
       bookMeeting: "Запазете среща"
     },
     footer: {

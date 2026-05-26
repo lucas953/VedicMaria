@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { numerologyDetails } from "./numerology/numerologyDetails";
 import { siteUrl } from "./seo";
 import { canonicalTeamSlugs } from "./teamSlugs";
 
@@ -20,8 +21,11 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const teamRoutes = canonicalTeamSlugs.map((slug) => `/our-team/${slug}/`);
+  const numerologyRoutes = numerologyDetails.map(
+    (detail) => `/numerology/${detail.slug}/`
+  );
 
-  return [...staticRoutes, ...teamRoutes].map((route) => ({
+  return [...staticRoutes, ...numerologyRoutes, ...teamRoutes].map((route) => ({
     url: new URL(route, siteUrl).toString(),
     lastModified,
     changeFrequency: route === "/" ? "weekly" : "monthly",
