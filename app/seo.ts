@@ -4,7 +4,7 @@ export const siteUrl = "https://astrovedalife.com";
 export const siteName = "Astro Veda Life";
 export const defaultDescription =
   "Vedic astrology consultations with Ayurveda, Vastu, spiritual travel, events, and personal guidance.";
-export const defaultOgImage = "/Maria.jpg";
+export const defaultOgImage = "/og-image.jpg";
 
 type SeoMetadata = {
   title: string;

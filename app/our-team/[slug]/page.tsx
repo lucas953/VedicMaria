@@ -57,8 +57,7 @@ export async function generateMetadata({
   return createPageMetadata({
     title: member.name,
     description: member.intro,
-    path: `/our-team/${resolvedSlug}`,
-    image: member.image
+    path: `/our-team/${resolvedSlug}`
   });
 }
 
