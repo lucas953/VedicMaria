@@ -983,19 +983,20 @@ h3 {
 }
 
 .booking-frame-shell {
+  max-width: 760px;
   overflow: hidden;
   border: 1px solid rgba(201, 148, 46, 0.28);
   border-radius: var(--radius);
-  background: rgba(255, 254, 250, 0.82);
+  background: rgba(255, 248, 231, 0.72);
   box-shadow: var(--shadow);
 }
 
 .booking-frame {
   display: block;
   width: 100%;
-  min-height: 820px;
+  min-height: 640px;
   border: 0;
-  background: #fff;
+  background: rgba(255, 248, 231, 0.72);
 }
 
 .contact-form {
