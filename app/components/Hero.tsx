@@ -11,6 +11,7 @@ type HeroProps = {
   primaryCta?: { label: string; href: string; external?: boolean };
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
+  visual?: "mandala" | "goddess";
 };
 
 function HeroLink({
@@ -43,12 +44,16 @@ export function Hero({
   description,
   primaryCta,
   secondaryCta,
-  compact = false
+  compact = false,
+  visual = "mandala"
 }: HeroProps) {
   const { lang } = useLanguage();
+  const className = ["hero", compact ? "compact" : "", visual === "goddess" ? "goddess-hero" : ""]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <section className={compact ? "hero compact" : "hero"}>
+    <section className={className}>
       <div className="hero-content">
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
         <h1>{title}</h1>
@@ -64,10 +69,14 @@ export function Hero({
           </div>
         )}
       </div>
-      <div className="hero-visual" aria-hidden="true">
-        <span className="sun-disc" />
-        <span className="mandala-ring" />
-      </div>
+      {visual === "goddess" ? (
+        <div className="hero-visual goddess-visual" aria-hidden="true" />
+      ) : (
+        <div className="hero-visual" aria-hidden="true">
+          <span className="sun-disc" />
+          <span className="mandala-ring" />
+        </div>
+      )}
     </section>
   );
 }

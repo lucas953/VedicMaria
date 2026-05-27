@@ -23,6 +23,7 @@ export default function Home() {
         description={home.hero.description}
         primaryCta={{ label: home.hero.primary, href: "/consultation" }}
         secondaryCta={{ label: home.hero.secondary, href: "/vedic-astrology" }}
+        visual="goddess"
       />
 
       <section className="section events-carousel-section" aria-labelledby="featured-events">
