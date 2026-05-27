@@ -16,6 +16,8 @@ export default function ContactPage() {
         eyebrow={page.hero.eyebrow}
         title={page.hero.title}
         description={page.hero.description}
+        visual="goddess"
+        theme="contact"
       />
       <section className="section two-column" aria-labelledby="contact-form">
         <div>

@@ -16,6 +16,8 @@ export default function UpcomingEventsPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
+        visual="goddess"
+        theme="events"
       />
       <section className="section" aria-labelledby="events-list">
         <div className="section-heading">

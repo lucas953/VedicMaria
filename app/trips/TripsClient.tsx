@@ -30,6 +30,8 @@ export default function TripsPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
+        visual="goddess"
+        theme="trips"
       />
       <section className="section page-intro" aria-label="About Sacred Travel">
         <div className="page-intro-content">

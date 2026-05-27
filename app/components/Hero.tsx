@@ -12,6 +12,18 @@ type HeroProps = {
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
   visual?: "mandala" | "goddess";
+  theme?:
+    | "home"
+    | "astrology"
+    | "consultation"
+    | "vastu"
+    | "numerology"
+    | "ayurveda"
+    | "trips"
+    | "events"
+    | "team"
+    | "contact"
+    | "booking";
 };
 
 function HeroLink({
@@ -45,10 +57,16 @@ export function Hero({
   primaryCta,
   secondaryCta,
   compact = false,
-  visual = "mandala"
+  visual = "mandala",
+  theme = "home"
 }: HeroProps) {
   const { lang } = useLanguage();
-  const className = ["hero", compact ? "compact" : "", visual === "goddess" ? "goddess-hero" : ""]
+  const className = [
+    "hero",
+    compact ? "compact" : "",
+    visual === "goddess" ? "goddess-hero" : "",
+    visual === "goddess" ? `hero-theme-${theme}` : ""
+  ]
     .filter(Boolean)
     .join(" ");
 

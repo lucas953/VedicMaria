@@ -24,6 +24,8 @@ export default function VastuPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
+        visual="goddess"
+        theme="vastu"
       />
       <section className="section page-intro" aria-label="About Vastu Shastra">
         <div className="page-intro-content">

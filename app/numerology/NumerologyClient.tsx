@@ -23,6 +23,8 @@ export default function NumerologyPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
+        visual="goddess"
+        theme="numerology"
       />
       <section className="section" aria-labelledby="numerology-services">
         <div className="section-heading">

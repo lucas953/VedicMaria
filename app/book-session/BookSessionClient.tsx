@@ -15,6 +15,8 @@ export default function BookSessionPage() {
         eyebrow={page.hero.eyebrow}
         title={page.hero.title}
         description={page.hero.description}
+        visual="goddess"
+        theme="booking"
       />
       <section className="section booking-section" aria-labelledby="booking-calendar">
         <div className="section-heading">

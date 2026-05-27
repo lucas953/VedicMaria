@@ -30,6 +30,8 @@ export default function VedicAstrologyPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
+        visual="goddess"
+        theme="astrology"
       />
       <section className="section page-intro" aria-label="About Vedic Astrology">
         <div className="page-intro-content">

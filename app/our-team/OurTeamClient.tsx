@@ -17,6 +17,8 @@ export default function OurTeamPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: t.home.cta.button, href: "/consultation" }}
+        visual="goddess"
+        theme="team"
       />
       <section className="section" aria-labelledby="team-members">
         <div className="section-heading">
