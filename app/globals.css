@@ -306,6 +306,11 @@ main {
   padding-block: clamp(64px, 8vw, 98px);
 }
 
+.hero.goddess-hero {
+  min-height: 660px;
+  padding-block: clamp(96px, 8vw, 124px) clamp(70px, 7vw, 104px);
+}
+
 .hero::before {
   position: absolute;
   inset: 0;
@@ -320,7 +325,7 @@ main {
 
 .hero.goddess-hero::before {
   background:
-    linear-gradient(90deg, rgba(255, 248, 231, 0.98) 0 42%, rgba(240, 248, 237, 0.88) 58%, rgba(171, 230, 225, 0.72) 78%, rgba(89, 195, 198, 0.72) 100%),
+    linear-gradient(90deg, rgba(255, 248, 231, 0.99) 0 42%, rgba(240, 248, 237, 0.9) 58%, rgba(171, 230, 225, 0.72) 78%, rgba(89, 195, 198, 0.72) 100%),
     repeating-linear-gradient(90deg, transparent 0 66px, rgba(189, 138, 37, 0.035) 67px 68px);
 }
 
@@ -328,6 +333,10 @@ main {
   position: relative;
   z-index: 1;
   max-width: 780px;
+}
+
+.goddess-hero .hero-content {
+  max-width: 730px;
 }
 
 .eyebrow {
@@ -355,6 +364,12 @@ h1 {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 0.94;
+}
+
+.goddess-hero h1 {
+  max-width: 730px;
+  font-size: clamp(3.6rem, 5.9vw, 5.55rem);
+  line-height: 0.98;
 }
 
 h2 {
@@ -447,7 +462,7 @@ h3 {
 
 .goddess-visual {
   align-self: stretch;
-  min-height: 520px;
+  min-height: 500px;
 }
 
 .goddess-visual::before {
@@ -455,9 +470,9 @@ h3 {
   inset: 0;
   content: "";
   background-image: url("/goddess-hero-transparent.png");
-  background-position: right bottom;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: auto 80%;
+  background-size: auto clamp(430px, 72%, 560px);
   filter: drop-shadow(0 24px 34px rgba(23, 78, 82, 0.22));
 }
 
@@ -1209,6 +1224,14 @@ textarea {
     min-height: auto;
   }
 
+  .hero.goddess-hero {
+    padding-block: clamp(48px, 8vw, 72px) clamp(58px, 9vw, 82px);
+  }
+
+  .goddess-hero h1 {
+    font-size: clamp(3.1rem, 12vw, 4.8rem);
+  }
+
   .hero-visual {
     min-height: 300px;
     order: -1;
@@ -1221,12 +1244,12 @@ textarea {
   }
 
   .goddess-visual {
-    min-height: 320px;
+    min-height: 330px;
   }
 
   .goddess-visual::before {
     background-position: center bottom;
-    background-size: auto 88%;
+    background-size: auto 92%;
   }
 
   .founder-portrait {
