@@ -1,13 +1,15 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import { getTripDetail, tripDetails } from "../tripDetails";
 import { TripDetailClient } from "./TripDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return tripDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(tripDetails);
 }
 
 export async function generateMetadata({
@@ -15,22 +17,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getTripDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getTripDetail,
+    fallback: {
       title: "Spiritual and Wellness Trips",
       description:
         "Explore pilgrimage journeys, retreats, cultural tours, Ayurveda wellness trips, and custom spiritual travel experiences.",
       path: "/trips"
-    });
-  }
-
-  return createPageMetadata({
-    title: detail.title,
-    description: detail.description,
-    path: `/trips/${detail.slug}`
+    },
+    pathPrefix: "/trips"
   });
 }
 
@@ -39,16 +35,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getTripDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <TripDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getTripDetail,
+    render: (detail) => <TripDetailClient detail={detail} />
+  });
 }

@@ -1,13 +1,15 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import { ayurvedaDetails, getAyurvedaDetail } from "../ayurvedaDetails";
 import { AyurvedaDetailClient } from "./AyurvedaDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return ayurvedaDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(ayurvedaDetails);
 }
 
 export async function generateMetadata({
@@ -15,22 +17,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getAyurvedaDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getAyurvedaDetail,
+    fallback: {
       title: "Ayurveda Wellness Guidance",
       description:
         "Support balance through Ayurveda lifestyle guidance, dosha awareness, food choices, daily rhythm, and seasonal care.",
       path: "/ayurveda"
-    });
-  }
-
-  return createPageMetadata({
-    title: detail.title,
-    description: detail.description,
-    path: `/ayurveda/${detail.slug}`
+    },
+    pathPrefix: "/ayurveda"
   });
 }
 
@@ -39,16 +35,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getAyurvedaDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <AyurvedaDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getAyurvedaDetail,
+    render: (detail) => <AyurvedaDetailClient detail={detail} />
+  });
 }

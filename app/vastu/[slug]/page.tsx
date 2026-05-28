@@ -1,13 +1,15 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import { getVastuDetail, vastuDetails } from "../vastuDetails";
 import { VastuDetailClient } from "./VastuDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return vastuDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(vastuDetails);
 }
 
 export async function generateMetadata({
@@ -15,22 +17,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getVastuDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getVastuDetail,
+    fallback: {
       title: "Vastu Shastra Services",
       description:
         "Bring harmony to homes, offices, land, and interiors with traditional Vastu Shastra insight and practical remedies.",
       path: "/vastu"
-    });
-  }
-
-  return createPageMetadata({
-    title: detail.title,
-    description: detail.description,
-    path: `/vastu/${detail.slug}`
+    },
+    pathPrefix: "/vastu"
   });
 }
 
@@ -39,16 +35,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getVastuDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <VastuDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getVastuDetail,
+    render: (detail) => <VastuDetailClient detail={detail} />
+  });
 }

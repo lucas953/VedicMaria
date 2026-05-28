@@ -1,16 +1,18 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import {
   consultationDetails,
   getConsultationDetail
 } from "../consultationDetails";
 import { ConsultationDetailClient } from "./ConsultationDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return consultationDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(consultationDetails);
 }
 
 export async function generateMetadata({
@@ -18,22 +20,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getConsultationDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getConsultationDetail,
+    fallback: {
       title: "Book a Consultation",
       description:
         "Book an online or in-person consultation for Vedic astrology, Vastu, Ayurveda lifestyle guidance, or spiritual coaching.",
       path: "/consultation"
-    });
-  }
-
-  return createPageMetadata({
-    title: detail.title,
-    description: detail.description,
-    path: `/consultation/${detail.slug}`
+    },
+    pathPrefix: "/consultation"
   });
 }
 
@@ -42,16 +38,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getConsultationDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <ConsultationDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getConsultationDetail,
+    render: (detail) => <ConsultationDetailClient detail={detail} />
+  });
 }

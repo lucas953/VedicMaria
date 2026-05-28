@@ -1,16 +1,18 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import {
   astrologyDetails,
   getAstrologyDetail
 } from "../astrologyDetails";
 import { AstrologyDetailClient } from "./AstrologyDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return astrologyDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(astrologyDetails);
 }
 
 export async function generateMetadata({
@@ -18,22 +20,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getAstrologyDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getAstrologyDetail,
+    fallback: {
       title: "Vedic Astrology Readings",
       description:
         "Receive Vedic astrology insight into your birth chart, planetary timing, relationships, life purpose, and practical remedies.",
       path: "/vedic-astrology"
-    });
-  }
-
-  return createPageMetadata({
-    title: detail.title,
-    description: detail.description,
-    path: `/vedic-astrology/${detail.slug}`
+    },
+    pathPrefix: "/vedic-astrology"
   });
 }
 
@@ -42,16 +38,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getAstrologyDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <AstrologyDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getAstrologyDetail,
+    render: (detail) => <AstrologyDetailClient detail={detail} />
+  });
 }

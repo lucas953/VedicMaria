@@ -1,16 +1,18 @@
-import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import {
+  createDetailMetadata,
+  generateDetailStaticParams,
+  renderDetailPage
+} from "../../detailPages";
 import {
   getNumerologyDetail,
   numerologyDetails
 } from "../numerologyDetails";
 import { NumerologyDetailClient } from "./NumerologyDetailClient";
-import { SiteChrome } from "../../components/SiteChrome";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return numerologyDetails.map((detail) => ({ slug: detail.slug }));
+  return generateDetailStaticParams(numerologyDetails);
 }
 
 export async function generateMetadata({
@@ -18,22 +20,17 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getNumerologyDetail(slug);
-
-  if (!detail) {
-    return createPageMetadata({
+  return createDetailMetadata({
+    params,
+    getDetail: getNumerologyDetail,
+    fallback: {
       title: "Numerology Guidance",
       description:
         "Explore life path numbers, name numerology, personal year cycles, relationship numbers, and timing for meaningful decisions.",
       path: "/numerology"
-    });
-  }
-
-  return createPageMetadata({
-    title: `${detail.title} Numerology`,
-    description: detail.description,
-    path: `/numerology/${detail.slug}`
+    },
+    pathPrefix: "/numerology",
+    title: (detail) => `${detail.title} Numerology`
   });
 }
 
@@ -42,16 +39,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const detail = getNumerologyDetail(slug);
-
-  if (!detail) {
-    notFound();
-  }
-
-  return (
-    <SiteChrome>
-      <NumerologyDetailClient detail={detail} />
-    </SiteChrome>
-  );
+  return renderDetailPage({
+    params,
+    getDetail: getNumerologyDetail,
+    render: (detail) => <NumerologyDetailClient detail={detail} />
+  });
 }
