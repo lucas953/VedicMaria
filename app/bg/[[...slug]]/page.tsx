@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import AyurvedaPage from "../../ayurveda/AyurvedaClient";
 import { ayurvedaDetails, getAyurvedaDetail } from "../../ayurveda/ayurvedaDetails";
 import { AyurvedaDetailClient } from "../../ayurveda/[slug]/AyurvedaDetailClient";
@@ -40,6 +41,18 @@ type BgParams = {
   slug?: string[];
 };
 
+type BgDetail = {
+  bg: {
+    title: string;
+    description: string;
+  };
+};
+
+type DetailRoute = {
+  getDetail: (slug: string) => BgDetail | undefined;
+  render: (detail: BgDetail) => ReactNode;
+};
+
 const bgStaticRoutes = [
   [],
   ["vedic-astrology"],
@@ -53,6 +66,71 @@ const bgStaticRoutes = [
   ["book-session"],
   ["contact"]
 ];
+
+const topLevelPages: Record<string, () => ReactNode> = {
+  "": () => <Home />,
+  "vedic-astrology": () => <VedicAstrologyPage />,
+  numerology: () => <NumerologyPage />,
+  consultation: () => <ConsultationPage />,
+  vastu: () => <VastuPage />,
+  ayurveda: () => <AyurvedaPage />,
+  trips: () => <TripsPage />,
+  "upcoming-events": () => <UpcomingEventsPage />,
+  "our-team": () => <OurTeamPage />,
+  "book-session": () => <BookSessionPage />,
+  contact: () => <ContactPage />
+};
+
+const detailRoutes: Record<string, DetailRoute> = {
+  "vedic-astrology": {
+    getDetail: getAstrologyDetail,
+    render: (detail) => (
+      <AstrologyDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getAstrologyDetail>>}
+      />
+    )
+  },
+  numerology: {
+    getDetail: getNumerologyDetail,
+    render: (detail) => (
+      <NumerologyDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getNumerologyDetail>>}
+      />
+    )
+  },
+  consultation: {
+    getDetail: getConsultationDetail,
+    render: (detail) => (
+      <ConsultationDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getConsultationDetail>>}
+      />
+    )
+  },
+  vastu: {
+    getDetail: getVastuDetail,
+    render: (detail) => (
+      <VastuDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getVastuDetail>>}
+      />
+    )
+  },
+  ayurveda: {
+    getDetail: getAyurvedaDetail,
+    render: (detail) => (
+      <AyurvedaDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getAyurvedaDetail>>}
+      />
+    )
+  },
+  trips: {
+    getDetail: getTripDetail,
+    render: (detail) => (
+      <TripDetailClient
+        detail={detail as NonNullable<ReturnType<typeof getTripDetail>>}
+      />
+    )
+  }
+};
 
 const bgPageMetadata: Record<string, { title: string; description: string }> = {
   "": {
@@ -145,20 +223,7 @@ export async function generateMetadata({
   const [section, detailSlug] = resolvedParams.slug ?? [];
 
   if (detailSlug) {
-    const detail =
-      section === "vedic-astrology"
-        ? getAstrologyDetail(detailSlug)
-        : section === "numerology"
-          ? getNumerologyDetail(detailSlug)
-          : section === "consultation"
-            ? getConsultationDetail(detailSlug)
-            : section === "vastu"
-              ? getVastuDetail(detailSlug)
-              : section === "ayurveda"
-                ? getAyurvedaDetail(detailSlug)
-                : section === "trips"
-                  ? getTripDetail(detailSlug)
-                  : null;
+    const detail = section ? detailRoutes[section]?.getDetail(detailSlug) : null;
 
     if (detail) {
       return createPageMetadata({
@@ -202,79 +267,19 @@ export default async function BgPage({
   const resolvedParams = await params;
   const path = pathFromParams(resolvedParams);
   const [section, detailSlug] = resolvedParams.slug ?? [];
-  let page: React.ReactNode;
+  const topLevelPage = topLevelPages[path]?.();
+  let page: ReactNode | null = topLevelPage ?? null;
 
-  if (path === "") {
-    page = <Home />;
-  } else if (path === "vedic-astrology") {
-    page = <VedicAstrologyPage />;
-  } else if (path === "numerology") {
-    page = <NumerologyPage />;
-  } else if (path === "consultation") {
-    page = <ConsultationPage />;
-  } else if (path === "vastu") {
-    page = <VastuPage />;
-  } else if (path === "ayurveda") {
-    page = <AyurvedaPage />;
-  } else if (path === "trips") {
-    page = <TripsPage />;
-  } else if (path === "upcoming-events") {
-    page = <UpcomingEventsPage />;
-  } else if (path === "our-team") {
-    page = <OurTeamPage />;
-  } else if (path === "book-session") {
-    page = <BookSessionPage />;
-  } else if (path === "contact") {
-    page = <ContactPage />;
-  } else if (section === "vedic-astrology" && detailSlug) {
-    const detail = getAstrologyDetail(detailSlug);
+  if (!page && section && detailSlug && detailRoutes[section]) {
+    const detailRoute = detailRoutes[section];
+    const detail = detailRoute.getDetail(detailSlug);
 
     if (!detail) {
       notFound();
     }
 
-    page = <AstrologyDetailClient detail={detail} />;
-  } else if (section === "numerology" && detailSlug) {
-    const detail = getNumerologyDetail(detailSlug);
-
-    if (!detail) {
-      notFound();
-    }
-
-    page = <NumerologyDetailClient detail={detail} />;
-  } else if (section === "consultation" && detailSlug) {
-    const detail = getConsultationDetail(detailSlug);
-
-    if (!detail) {
-      notFound();
-    }
-
-    page = <ConsultationDetailClient detail={detail} />;
-  } else if (section === "vastu" && detailSlug) {
-    const detail = getVastuDetail(detailSlug);
-
-    if (!detail) {
-      notFound();
-    }
-
-    page = <VastuDetailClient detail={detail} />;
-  } else if (section === "ayurveda" && detailSlug) {
-    const detail = getAyurvedaDetail(detailSlug);
-
-    if (!detail) {
-      notFound();
-    }
-
-    page = <AyurvedaDetailClient detail={detail} />;
-  } else if (section === "trips" && detailSlug) {
-    const detail = getTripDetail(detailSlug);
-
-    if (!detail) {
-      notFound();
-    }
-
-    page = <TripDetailClient detail={detail} />;
-  } else if (section === "our-team" && detailSlug) {
+    page = detailRoute.render(detail);
+  } else if (!page && section === "our-team" && detailSlug) {
     const resolvedSlug = resolveTeamSlug(detailSlug);
 
     if (!resolvedSlug) {
@@ -282,7 +287,9 @@ export default async function BgPage({
     }
 
     page = <TeamMemberClient slug={resolvedSlug} />;
-  } else {
+  }
+
+  if (!page) {
     notFound();
   }
 
