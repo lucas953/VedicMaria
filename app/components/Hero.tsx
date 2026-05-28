@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { HeroTheme } from "../heroThemes";
 import { useLanguage } from "../i18n";
 import { localizePath } from "../localePaths";
 
@@ -12,18 +13,7 @@ type HeroProps = {
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
   visual?: "mandala" | "goddess";
-  theme?:
-    | "home"
-    | "astrology"
-    | "consultation"
-    | "vastu"
-    | "numerology"
-    | "ayurveda"
-    | "trips"
-    | "events"
-    | "team"
-    | "contact"
-    | "booking";
+  theme?: HeroTheme;
 };
 
 function HeroLink({
