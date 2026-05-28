@@ -9,6 +9,8 @@ type Service = {
   description: string;
   href?: string;
   image?: string;
+  imagePosition?: string;
+  imageSize?: string;
   ctaLabel?: string;
 };
 
@@ -22,7 +24,16 @@ export function ServiceCards({ services }: { services: readonly Service[] }) {
           <>
             <div
               className="card-image"
-              style={service.image ? { background: service.image } : undefined}
+              style={
+                service.image
+                  ? {
+                      backgroundImage: service.image,
+                      backgroundPosition: service.imagePosition ?? "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: service.imageSize ?? "cover"
+                    }
+                  : undefined
+              }
               aria-hidden="true"
             />
             <div className="card-body">

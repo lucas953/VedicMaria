@@ -543,15 +543,31 @@ h3 {
   min-height: 500px;
 }
 
-.goddess-visual::before {
+.goddess-visual::before,
+.vastu-visual::before {
   position: absolute;
   inset: 0;
   content: "";
+  filter: drop-shadow(0 24px 34px rgba(23, 78, 82, 0.22));
+}
+
+.goddess-visual::before {
   background-image: url("/goddess-hero-transparent.png");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: auto clamp(430px, 72%, 560px);
-  filter: drop-shadow(0 24px 34px rgba(23, 78, 82, 0.22));
+}
+
+.vastu-visual {
+  align-self: stretch;
+  min-height: 500px;
+}
+
+.vastu-visual::before {
+  background-image: url("/vastu-shastra.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(520px, 86%) auto;
 }
 
 .sun-disc,
@@ -860,6 +876,9 @@ h3 {
 .card-image {
   min-height: 188px;
   background: linear-gradient(135deg, var(--sand), var(--gold), var(--terracotta));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-body,
@@ -1321,13 +1340,20 @@ textarea {
       repeating-linear-gradient(90deg, transparent 0 66px, rgba(189, 138, 37, 0.025) 67px 68px);
   }
 
-  .goddess-visual {
+  .goddess-visual,
+  .vastu-visual {
     min-height: 330px;
   }
 
-  .goddess-visual::before {
+  .goddess-visual::before,
+  .vastu-visual::before {
     background-position: center bottom;
     background-size: auto 92%;
+  }
+
+  .vastu-visual::before {
+    background-position: center;
+    background-size: 88% auto;
   }
 
   .founder-portrait {

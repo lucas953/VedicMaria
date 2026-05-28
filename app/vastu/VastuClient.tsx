@@ -6,6 +6,14 @@ import { ServiceCards } from "../components/ServiceCards";
 import { cardsFromTuples, copy, useLanguage } from "../i18n";
 import { vastuDetails } from "./vastuDetails";
 
+const vastuCardImages = [
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/vastu-card-1.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/vastu-card-2.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/vastu-card-3.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/vastu-card-4.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/vastu-card-5.jpg")'
+] as const;
+
 export default function VastuPage() {
   const { t } = useLanguage();
   const page = t.pages.vastu;
@@ -13,6 +21,9 @@ export default function VastuPage() {
   const services = cardsFromTuples(page.cards).map((service, index) => ({
     ...service,
     href: `/vastu/${vastuDetails[index].slug}`,
+    image: vastuCardImages[index % vastuCardImages.length],
+    imagePosition: "center",
+    imageSize: "cover",
     ctaLabel: t.common.learnMore
   }));
 
@@ -24,7 +35,7 @@ export default function VastuPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
-        visual="goddess"
+        visual="vastu"
         theme="vastu"
       />
       <section className="section page-intro" aria-label="About Vastu Shastra">

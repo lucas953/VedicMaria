@@ -12,7 +12,7 @@ type HeroProps = {
   primaryCta?: { label: string; href: string; external?: boolean };
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
-  visual?: "mandala" | "goddess";
+  visual?: "mandala" | "goddess" | "vastu";
   theme?: HeroTheme;
 };
 
@@ -51,11 +51,12 @@ export function Hero({
   theme = "home"
 }: HeroProps) {
   const { lang } = useLanguage();
+  const hasImageVisual = visual === "goddess" || visual === "vastu";
   const className = [
     "hero",
     compact ? "compact" : "",
-    visual === "goddess" ? "goddess-hero" : "",
-    visual === "goddess" ? `hero-theme-${theme}` : ""
+    hasImageVisual ? "goddess-hero" : "",
+    hasImageVisual ? `hero-theme-${theme}` : ""
   ]
     .filter(Boolean)
     .join(" ");
@@ -77,13 +78,13 @@ export function Hero({
           </div>
         )}
       </div>
-      {visual === "goddess" ? (
-        <div className="hero-visual goddess-visual" aria-hidden="true" />
-      ) : (
+      {visual === "mandala" ? (
         <div className="hero-visual" aria-hidden="true">
           <span className="sun-disc" />
           <span className="mandala-ring" />
         </div>
+      ) : (
+        <div className={`hero-visual ${visual}-visual`} aria-hidden="true" />
       )}
     </section>
   );
