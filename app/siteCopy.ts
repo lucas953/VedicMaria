@@ -190,6 +190,29 @@ export const copy = {
           "A practical introduction to reading rooms, entrances, elements, and simple remedies for home harmony."
       }
     ],
+    pastEvents: [
+      {
+        date: "March 16, 2026",
+        title: "Vedic Astrology Introduction",
+        location: "Online",
+        description:
+          "A welcoming session on the foundations of Jyotish, birth charts, planetary rhythm, and practical spiritual timing."
+      },
+      {
+        date: "April 20, 2026",
+        title: "Ayurveda Spring Renewal",
+        location: "Sofia, Bulgaria",
+        description:
+          "A seasonal gathering with simple Ayurvedic practices for lighter routines, digestion, and renewed daily energy."
+      },
+      {
+        date: "May 18, 2026",
+        title: "Meditation and Mantra Evening",
+        location: "Online",
+        description:
+          "A gentle community circle with guided meditation, mantra practice, and reflective space for inner steadiness."
+      }
+    ],
     pages: {
       astrology: {
         hero: {
@@ -401,6 +424,12 @@ export const copy = {
           title: "Placeholder Events",
           text:
             "These sample events can be replaced with the latest workshops, retreats, and community gatherings."
+        },
+        pastHeading: {
+          eyebrow: "Archive",
+          title: "Passed Events",
+          text:
+            "A look back at recent circles, workshops, and learning gatherings hosted by Astro Veda Life."
         }
       },
       team: {
@@ -667,6 +696,29 @@ export const copy = {
           "Практично въведение в стаи, входове, елементи и прости средства за хармония у дома."
       }
     ],
+    pastEvents: [
+      {
+        date: "16 март 2026",
+        title: "Въведение във ведическата астрология",
+        location: "Онлайн",
+        description:
+          "Въвеждаща среща за основите на Джйотиш, рождените карти, планетарния ритъм и практичното духовно време."
+      },
+      {
+        date: "20 април 2026",
+        title: "Аюрведично пролетно обновяване",
+        location: "София, България",
+        description:
+          "Сезонна среща с прости Аюрведични практики за по-лек режим, храносмилане и обновена ежедневна енергия."
+      },
+      {
+        date: "18 май 2026",
+        title: "Вечер на медитация и мантра",
+        location: "Онлайн",
+        description:
+          "Нежен общностен кръг с водена медитация, мантра практика и пространство за вътрешна стабилност."
+      }
+    ],
     pages: {
       astrology: {
         hero: {
@@ -878,6 +930,12 @@ export const copy = {
           title: "Примерни събития",
           text:
             "Тези примерни събития могат да бъдат заменени с актуални семинари, ретрийти и общностни срещи."
+        },
+        pastHeading: {
+          eyebrow: "Архив",
+          title: "Преминали събития",
+          text:
+            "Поглед назад към скорошни кръгове, семинари и срещи за учене, водени от Astro Veda Life."
         }
       },
       team: {

@@ -12,10 +12,12 @@ type Event = {
 
 export function EventCards({
   events,
-  buttonLabel = "Register Interest"
+  buttonLabel = "Register Interest",
+  showButton = true
 }: {
   events: readonly Event[];
   buttonLabel?: string;
+  showButton?: boolean;
 }) {
   const { lang } = useLanguage();
 
@@ -27,9 +29,11 @@ export function EventCards({
           <h3>{event.title}</h3>
           <p className="location">{event.location}</p>
           <p>{event.description}</p>
-          <a className="button secondary" href={localizePath("/contact", lang)}>
-            {buttonLabel}
-          </a>
+          {showButton ? (
+            <a className="button secondary" href={localizePath("/contact", lang)}>
+              {buttonLabel}
+            </a>
+          ) : null}
         </article>
       ))}
     </div>

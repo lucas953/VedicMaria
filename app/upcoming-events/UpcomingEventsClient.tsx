@@ -27,6 +27,14 @@ export default function UpcomingEventsPage() {
         </div>
         <EventCards events={t.events} buttonLabel={t.common.registerInterest} />
       </section>
+      <section className="section alt" aria-labelledby="past-events-list">
+        <div className="section-heading">
+          <p className="eyebrow">{page.pastHeading.eyebrow}</p>
+          <h2 id="past-events-list">{page.pastHeading.title}</h2>
+          <p>{page.pastHeading.text}</p>
+        </div>
+        <EventCards events={t.pastEvents} showButton={false} />
+      </section>
     </>
   );
 }
