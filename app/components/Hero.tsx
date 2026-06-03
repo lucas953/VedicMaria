@@ -12,7 +12,7 @@ type HeroProps = {
   primaryCta?: { label: string; href: string; external?: boolean };
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
-  visual?: "mandala" | "goddess" | "vastu";
+  visual?: "mandala" | "goddess" | "vastu" | "ayurveda";
   theme?: HeroTheme;
 };
 
@@ -51,7 +51,7 @@ export function Hero({
   theme = "home"
 }: HeroProps) {
   const { lang } = useLanguage();
-  const hasImageVisual = visual === "goddess" || visual === "vastu";
+  const hasImageVisual = visual === "goddess" || visual === "vastu" || visual === "ayurveda";
   const className = [
     "hero",
     compact ? "compact" : "",

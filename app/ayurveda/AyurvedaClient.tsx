@@ -7,16 +7,27 @@ import { useLanguage } from "../i18n";
 import { getLocalizedDetail } from "../localizedDetail";
 import { ayurvedaDetails } from "./ayurvedaDetails";
 
+const ayurvedaCardImages = [
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/ayurveda 01.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/ayurveda 03.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/ayurveda 04.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/ayurveda 06.jpg")',
+  'linear-gradient(rgba(50, 76, 53, 0.08), rgba(50, 76, 53, 0.08)), url("/ayurveda 07.jpg")'
+] as const;
+
 export default function AyurvedaPage() {
   const { lang, t } = useLanguage();
   const page = t.pages.ayurveda;
-  const services = ayurvedaDetails.map((detail) => {
+  const services = ayurvedaDetails.map((detail, index) => {
     const localized = getLocalizedDetail(detail, lang);
 
     return {
       title: localized.title,
       description: localized.description,
       href: `/ayurveda/${detail.slug}`,
+      image: ayurvedaCardImages[index % ayurvedaCardImages.length],
+      imagePosition: "center",
+      imageSize: "cover",
       ctaLabel: t.common.learnMore
     };
   });
@@ -29,7 +40,7 @@ export default function AyurvedaPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
-        visual="goddess"
+        visual="ayurveda"
         theme="ayurveda"
       />
       <section className="section" aria-labelledby="ayurveda-services">
