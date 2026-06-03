@@ -17,6 +17,7 @@ const staticRoutes = [
   "/ayurveda/",
   "/trips/",
   "/upcoming-events/",
+  "/upcoming-events/ayurvedic-consultations-bansko/",
   "/our-team/",
   "/book-session/",
   "/contact/"

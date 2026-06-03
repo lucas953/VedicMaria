@@ -169,6 +169,15 @@ export const copy = {
     },
     events: [
       {
+        date: "29 June - 10 July 2026",
+        title: "Ayurvedic Consultations in Bansko",
+        location: "Pirin Sense, Bansko",
+        description:
+          "Personal Ayurvedic consultations with Dr. Venu Sasikumar for stress, fatigue, digestion, sleep, lifestyle balance, prevention, and general wellbeing.",
+        href: "/upcoming-events/ayurvedic-consultations-bansko",
+        image: "/images/events/ayurveda-bansko-hero.jpg"
+      },
+      {
         date: "June 22, 2026",
         title: "New Moon Intention Circle",
         location: "Online",
@@ -674,6 +683,15 @@ export const copy = {
       ]
     },
     events: [
+      {
+        date: "29 юни - 10 юли 2026",
+        title: "Аюрведични консултации в Банско",
+        location: "Pirin Sense, Банско",
+        description:
+          "Индивидуални Аюрведични консултации с д-р Venu Sasikumar за стрес, умора, храносмилане, сън, баланс в начина на живот, превенция и общо благополучие.",
+        href: "/upcoming-events/ayurvedic-consultations-bansko",
+        image: "/images/events/ayurveda-bansko-hero.jpg"
+      },
       {
         date: "22 юни 2026",
         title: "Новолунен кръг за намерения",

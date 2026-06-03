@@ -9,6 +9,7 @@ type Event = {
   title: string;
   location: string;
   description: string;
+  href?: string;
 };
 
 export function EventCarousel({
@@ -69,7 +70,7 @@ export function EventCarousel({
               <h3>{event.title}</h3>
               <p className="location">{event.location}</p>
               <p>{event.description}</p>
-              <a className="button secondary" href={localizePath("/contact", lang)}>
+              <a className="button secondary" href={event.href ?? localizePath("/contact", lang)}>
                 {buttonLabel}
               </a>
             </article>
