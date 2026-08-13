@@ -5,8 +5,6 @@ import { SiteChrome } from "../../components/SiteChrome";
 import { createPageMetadata } from "../../seo";
 
 const eventPath = "/upcoming-events/ayurvedic-consultations-bansko";
-const whatsappHref =
-  "https://wa.me/WHATSAPP_NUMBER_PLACEHOLDER?text=Hello%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20consultation%20in%20Bansko";
 
 const benefits = [
   "Stress",
@@ -48,7 +46,7 @@ const faqs = [
   {
     question: "Can I book online?",
     answer:
-      "Yes. You can request your appointment through WhatsApp or the booking form on this page."
+      "This event has now passed. Please check the upcoming events page for future consultation dates."
   },
   {
     question: "What should I bring?",
@@ -60,7 +58,7 @@ const faqs = [
 export const metadata: Metadata = createPageMetadata({
   title: "Ayurvedic Consultations in Bansko",
   description:
-    "Book an Ayurvedic consultation with Dr. Venu Sasikumar at Pirin Sense, Bansko, from 29 June to 10 July.",
+    "Past Ayurvedic consultations with Dr. Venu Sasikumar at Pirin Sense, Bansko, from 29 June to 10 July.",
   path: eventPath,
   image: "/images/events/ayurveda-bansko-hero.jpg"
 });
@@ -70,7 +68,7 @@ export default function AyurvedicConsultationsBanskoPage() {
     <SiteChrome>
       <section className="event-landing-hero">
         <div className="event-landing-copy">
-          <p className="eyebrow">Upcoming Event</p>
+          <p className="eyebrow">Past Event</p>
           <h1>Ayurvedic Consultations in Bansko</h1>
           <p className="event-subtitle">
             Dr. Venu Sasikumar | 29 June - 10 July | Pirin Sense
@@ -81,17 +79,10 @@ export default function AyurvedicConsultationsBanskoPage() {
             wellbeing, with practical recommendations adapted to you.
           </p>
           <div className="button-row">
-            <a className="button primary" href={whatsappHref}>
-              Book your consultation
-            </a>
-            <a className="button secondary" href="#booking">
-              View booking details
-            </a>
+            <Link className="button secondary" href="/upcoming-events">
+              Back to events
+            </Link>
           </div>
-          <p className="event-note">
-            Placeholder: replace the WhatsApp number before launch. Instagram
-            CTA can use: DM BANSKO or use the link in bio to book.
-          </p>
         </div>
         <div className="event-hero-media">
           <img
@@ -211,56 +202,6 @@ export default function AyurvedicConsultationsBanskoPage() {
         </div>
       </section>
 
-      <section id="booking" className="section event-booking" aria-labelledby="event-booking">
-        <div className="event-booking-panel">
-          <div>
-            <p className="eyebrow">Booking</p>
-            <h2 id="event-booking">Book your consultation</h2>
-            <p>
-              Consultations are available from 29 June to 10 July at Pirin
-              Sense, Bansko. Appointments are limited and should be booked in
-              advance.
-            </p>
-            <div className="event-date-list">
-              <span>Available dates</span>
-              <strong>29 June - 10 July</strong>
-              <p>Exact appointment times confirmed by message.</p>
-            </div>
-            <a className="button primary" href={whatsappHref}>
-              Book on WhatsApp
-            </a>
-          </div>
-
-          <form className="event-booking-form">
-            <h3>Booking request</h3>
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="your@email.com" />
-            </label>
-            <label>
-              <span>Preferred date</span>
-              <input type="text" name="date" placeholder="Example: 2 July" />
-            </label>
-            <label>
-              <span>Message</span>
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Tell us briefly what you would like support with."
-              />
-            </label>
-            <button className="button primary" type="button">
-              Send booking request
-            </button>
-            <p>Placeholder: connect this form to the booking integration before launch.</p>
-          </form>
-        </div>
-      </section>
-
       <section className="section alt" aria-labelledby="event-faq">
         <div className="section-heading">
           <p className="eyebrow">FAQ</p>
@@ -278,16 +219,13 @@ export default function AyurvedicConsultationsBanskoPage() {
 
       <section className="event-final-cta" aria-labelledby="event-final-cta">
         <div>
-          <h2 id="event-final-cta">Ready to book your Ayurvedic consultation?</h2>
+          <h2 id="event-final-cta">This event has now passed</h2>
           <p>
-            Send us a message with the word BANSKO or book directly through
-            WhatsApp.
+            Future Ayurvedic consultations and gatherings will be added to the
+            events page when new dates are confirmed.
           </p>
         </div>
         <div className="button-row">
-          <a className="button primary" href={whatsappHref}>
-            Book your consultation
-          </a>
           <Link className="button secondary" href="/upcoming-events">
             Back to events
           </Link>

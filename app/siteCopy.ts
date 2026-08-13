@@ -39,9 +39,9 @@ export const copy = {
       { label: "Contact", href: navPaths.contact }
     ],
     contact: {
-      email: "hello@vedicastrology.example",
-      phone: "+1 (555) 019-8726",
-      whatsapp: "+15550198726",
+      email: "contact@astrovedalife.com",
+      phone: "+359 898590313",
+      whatsapp: "+359 898590313",
       location: "Online consultations worldwide, with in-person sessions by appointment"
     },
     common: {
@@ -170,6 +170,8 @@ export const copy = {
     events: [
       {
         date: "29 June - 10 July 2026",
+        startDate: "2026-06-29",
+        endDate: "2026-07-10",
         title: "Ayurvedic Consultations in Bansko",
         location: "Pirin Sense, Bansko",
         description:
@@ -179,6 +181,8 @@ export const copy = {
       },
       {
         date: "June 22, 2026",
+        startDate: "2026-06-22",
+        endDate: "2026-06-22",
         title: "New Moon Intention Circle",
         location: "Online",
         description:
@@ -186,6 +190,8 @@ export const copy = {
       },
       {
         date: "July 12, 2026",
+        startDate: "2026-07-12",
+        endDate: "2026-07-12",
         title: "Ayurveda Summer Balance Workshop",
         location: "Austin, TX",
         description:
@@ -193,15 +199,25 @@ export const copy = {
       },
       {
         date: "August 9, 2026",
+        startDate: "2026-08-09",
+        endDate: "2026-08-09",
         title: "Vastu for Peaceful Homes",
         location: "Online",
         description:
           "A practical introduction to reading rooms, entrances, elements, and simple remedies for home harmony."
       }
     ],
+    eventsEmpty: {
+      date: "New dates soon",
+      title: "No upcoming events",
+      location: "Check back soon",
+      description: "New workshops, consultations, and gatherings will be added here."
+    },
     pastEvents: [
       {
         date: "March 16, 2026",
+        startDate: "2026-03-16",
+        endDate: "2026-03-16",
         title: "Vedic Astrology Introduction",
         location: "Online",
         description:
@@ -209,6 +225,8 @@ export const copy = {
       },
       {
         date: "April 20, 2026",
+        startDate: "2026-04-20",
+        endDate: "2026-04-20",
         title: "Ayurveda Spring Renewal",
         location: "Sofia, Bulgaria",
         description:
@@ -216,6 +234,8 @@ export const copy = {
       },
       {
         date: "May 18, 2026",
+        startDate: "2026-05-18",
+        endDate: "2026-05-18",
         title: "Meditation and Mantra Evening",
         location: "Online",
         description:
@@ -554,9 +574,9 @@ export const copy = {
       { label: "Контакт", href: navPaths.contact }
     ],
     contact: {
-      email: "hello@vedicastrology.example",
-      phone: "+1 (555) 019-8726",
-      whatsapp: "+15550198726",
+      email: "contact@astrovedalife.com",
+      phone: "+359 898590313",
+      whatsapp: "+359 898590313",
       location: "Онлайн консултации по целия свят и присъствени срещи с предварителна уговорка"
     },
     common: {
@@ -685,6 +705,8 @@ export const copy = {
     events: [
       {
         date: "29 юни - 10 юли 2026",
+        startDate: "2026-06-29",
+        endDate: "2026-07-10",
         title: "Аюрведични консултации в Банско",
         location: "Pirin Sense, Банско",
         description:
@@ -694,6 +716,8 @@ export const copy = {
       },
       {
         date: "22 юни 2026",
+        startDate: "2026-06-22",
+        endDate: "2026-06-22",
         title: "Новолунен кръг за намерения",
         location: "Онлайн",
         description:
@@ -701,6 +725,8 @@ export const copy = {
       },
       {
         date: "12 юли 2026",
+        startDate: "2026-07-12",
+        endDate: "2026-07-12",
         title: "Аюрведа семинар за летен баланс",
         location: "София, България",
         description:
@@ -708,15 +734,25 @@ export const copy = {
       },
       {
         date: "9 август 2026",
+        startDate: "2026-08-09",
+        endDate: "2026-08-09",
         title: "Васту за спокоен дом",
         location: "Онлайн",
         description:
           "Практично въведение в стаи, входове, елементи и прости средства за хармония у дома."
       }
     ],
+    eventsEmpty: {
+      date: "Очаквайте нови дати",
+      title: "Няма предстоящи събития",
+      location: "Проверете отново скоро",
+      description: "Тук ще бъдат добавени нови семинари, консултации и срещи."
+    },
     pastEvents: [
       {
         date: "16 март 2026",
+        startDate: "2026-03-16",
+        endDate: "2026-03-16",
         title: "Въведение във ведическата астрология",
         location: "Онлайн",
         description:
@@ -724,6 +760,8 @@ export const copy = {
       },
       {
         date: "20 април 2026",
+        startDate: "2026-04-20",
+        endDate: "2026-04-20",
         title: "Аюрведично пролетно обновяване",
         location: "София, България",
         description:
@@ -731,6 +769,8 @@ export const copy = {
       },
       {
         date: "18 май 2026",
+        startDate: "2026-05-18",
+        endDate: "2026-05-18",
         title: "Вечер на медитация и мантра",
         location: "Онлайн",
         description:

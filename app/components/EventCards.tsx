@@ -2,26 +2,38 @@
 
 import { useLanguage } from "../i18n";
 import { localizePath } from "../localePaths";
-
-type Event = {
-  date: string;
-  title: string;
-  location: string;
-  description: string;
-  href?: string;
-  image?: string;
-};
+import type { DatedEvent } from "../eventDates";
 
 export function EventCards({
   events,
   buttonLabel = "Register Interest",
-  showButton = true
+  showButton = true,
+  emptyMessage
 }: {
-  events: readonly Event[];
+  events: readonly DatedEvent[];
   buttonLabel?: string;
   showButton?: boolean;
+  emptyMessage?: {
+    date: string;
+    title: string;
+    location: string;
+    description: string;
+  };
 }) {
   const { lang } = useLanguage();
+
+  if (events.length === 0 && emptyMessage) {
+    return (
+      <div className="event-grid">
+        <article className="event-card">
+          <time>{emptyMessage.date}</time>
+          <h3>{emptyMessage.title}</h3>
+          <p className="location">{emptyMessage.location}</p>
+          <p>{emptyMessage.description}</p>
+        </article>
+      </div>
+    );
+  }
 
   return (
     <div className="event-grid">

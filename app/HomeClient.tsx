@@ -6,10 +6,15 @@ import { EventCarousel } from "./components/EventCarousel";
 import { Hero } from "./components/Hero";
 import { ServiceCards } from "./components/ServiceCards";
 import { useLanguage } from "./i18n";
+import { useCurrentEventGroups } from "./useCurrentEventGroups";
 
 export default function Home() {
   const { t } = useLanguage();
   const home = t.home;
+  const { upcomingEvents } = useCurrentEventGroups({
+    events: t.events,
+    pastEvents: t.pastEvents
+  });
   const services = home.services.map((service) => ({
     ...service,
     ctaLabel: t.common.learnMore
@@ -32,7 +37,11 @@ export default function Home() {
           <h2 id="featured-events">{home.eventHeading.title}</h2>
           <p>{home.eventHeading.text}</p>
         </div>
-        <EventCarousel events={t.events} buttonLabel={t.common.registerInterest} />
+        <EventCarousel
+          events={upcomingEvents}
+          buttonLabel={t.common.registerInterest}
+          emptyMessage={t.eventsEmpty}
+        />
       </section>
 
       <section className="section founder-section" aria-labelledby="founder-title">

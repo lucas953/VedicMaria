@@ -3,10 +3,15 @@
 import { EventCards } from "../components/EventCards";
 import { Hero } from "../components/Hero";
 import { useLanguage } from "../i18n";
+import { useCurrentEventGroups } from "../useCurrentEventGroups";
 
 export default function UpcomingEventsPage() {
   const { t } = useLanguage();
   const page = t.pages.upcoming;
+  const { upcomingEvents, pastEvents } = useCurrentEventGroups({
+    events: t.events,
+    pastEvents: t.pastEvents
+  });
 
   return (
     <>
@@ -25,7 +30,11 @@ export default function UpcomingEventsPage() {
           <h2 id="events-list">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <EventCards events={t.events} buttonLabel={t.common.registerInterest} />
+        <EventCards
+          events={upcomingEvents}
+          buttonLabel={t.common.registerInterest}
+          emptyMessage={t.eventsEmpty}
+        />
       </section>
       <section className="section alt" aria-labelledby="past-events-list">
         <div className="section-heading">
@@ -33,7 +42,7 @@ export default function UpcomingEventsPage() {
           <h2 id="past-events-list">{page.pastHeading.title}</h2>
           <p>{page.pastHeading.text}</p>
         </div>
-        <EventCards events={t.pastEvents} showButton={false} />
+        <EventCards events={pastEvents} showButton={false} />
       </section>
     </>
   );

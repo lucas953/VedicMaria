@@ -1,27 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { DatedEvent } from "../eventDates";
 import { useLanguage } from "../i18n";
 import { localizePath } from "../localePaths";
 
-type Event = {
-  date: string;
-  title: string;
-  location: string;
-  description: string;
-  href?: string;
-};
-
 export function EventCarousel({
   events,
-  buttonLabel
+  buttonLabel,
+  emptyMessage
 }: {
-  events: readonly Event[];
+  events: readonly DatedEvent[];
   buttonLabel: string;
+  emptyMessage: {
+    date: string;
+    title: string;
+    location: string;
+    description: string;
+  };
 }) {
   const { lang } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const totalEvents = events.length;
+  const visibleIndex = totalEvents === 0 ? 0 : activeIndex % totalEvents;
 
   useEffect(() => {
     if (totalEvents < 2) {
@@ -36,6 +37,10 @@ export function EventCarousel({
   }, [totalEvents]);
 
   const moveSlide = (direction: "previous" | "next") => {
+    if (totalEvents === 0) {
+      return;
+    }
+
     setActiveIndex((index) => {
       if (direction === "next") {
         return (index + 1) % totalEvents;
@@ -44,6 +49,19 @@ export function EventCarousel({
       return (index - 1 + totalEvents) % totalEvents;
     });
   };
+
+  if (totalEvents === 0) {
+    return (
+      <div className="event-grid">
+        <article className="event-card">
+          <time>{emptyMessage.date}</time>
+          <h3>{emptyMessage.title}</h3>
+          <p className="location">{emptyMessage.location}</p>
+          <p>{emptyMessage.description}</p>
+        </article>
+      </div>
+    );
+  }
 
   return (
     <div className="event-carousel">
@@ -58,13 +76,13 @@ export function EventCarousel({
       <div className="event-carousel-viewport">
         <div
           className="event-carousel-track"
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          style={{ transform: `translateX(-${visibleIndex * 100}%)` }}
         >
           {events.map((event, index) => (
             <article
               className="event-card carousel-card"
               key={event.title}
-              aria-hidden={index !== activeIndex}
+              aria-hidden={index !== visibleIndex}
             >
               <time>{event.date}</time>
               <h3>{event.title}</h3>
@@ -82,9 +100,9 @@ export function EventCarousel({
           <button
             key={event.title}
             type="button"
-            className={index === activeIndex ? "active" : ""}
+            className={index === visibleIndex ? "active" : ""}
             aria-label={`Show ${event.title}`}
-            aria-current={index === activeIndex}
+            aria-current={index === visibleIndex}
             onClick={() => setActiveIndex(index)}
           />
         ))}
