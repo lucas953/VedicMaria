@@ -545,7 +545,8 @@ h3 {
 
 .goddess-visual::before,
 .vastu-visual::before,
-.ayurveda-visual::before {
+.ayurveda-visual::before,
+.image-visual::before {
   position: absolute;
   inset: 0;
   content: "";
@@ -560,13 +561,15 @@ h3 {
 }
 
 .vastu-visual,
-.ayurveda-visual {
+.ayurveda-visual,
+.image-visual {
   align-self: stretch;
   min-height: 500px;
 }
 
 .vastu-visual::before,
-.ayurveda-visual::before {
+.ayurveda-visual::before,
+.image-visual::before {
   background-image: url("/vastu-shastra.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -575,6 +578,14 @@ h3 {
 
 .ayurveda-visual::before {
   background-image: url("/ayurveda main.jpg");
+}
+
+.image-visual::before {
+  border: 1px solid rgba(255, 248, 231, 0.42);
+  border-radius: 18px;
+  background-image: var(--hero-image);
+  background-size: cover;
+  box-shadow: 0 30px 70px rgba(54, 34, 24, 0.28);
 }
 
 .sun-disc,
@@ -1668,21 +1679,28 @@ textarea {
 
   .goddess-visual,
   .vastu-visual,
-  .ayurveda-visual {
+  .ayurveda-visual,
+  .image-visual {
     min-height: 330px;
   }
 
   .goddess-visual::before,
   .vastu-visual::before,
-  .ayurveda-visual::before {
+  .ayurveda-visual::before,
+  .image-visual::before {
     background-position: center bottom;
     background-size: auto 92%;
   }
 
   .vastu-visual::before,
-  .ayurveda-visual::before {
+  .ayurveda-visual::before,
+  .image-visual::before {
     background-position: center;
     background-size: 88% auto;
+  }
+
+  .image-visual::before {
+    background-size: cover;
   }
 
   .founder-portrait {

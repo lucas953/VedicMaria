@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import type { HeroTheme } from "../heroThemes";
 import { useLanguage } from "../i18n";
 import { localizePath } from "../localePaths";
@@ -12,7 +13,8 @@ type HeroProps = {
   primaryCta?: { label: string; href: string; external?: boolean };
   secondaryCta?: { label: string; href: string; external?: boolean };
   compact?: boolean;
-  visual?: "mandala" | "goddess" | "vastu" | "ayurveda";
+  visual?: "mandala" | "goddess" | "vastu" | "ayurveda" | "image";
+  imageSrc?: string;
   theme?: HeroTheme;
 };
 
@@ -48,10 +50,16 @@ export function Hero({
   secondaryCta,
   compact = false,
   visual = "mandala",
+  imageSrc,
   theme = "home"
 }: HeroProps) {
   const { lang } = useLanguage();
-  const hasImageVisual = visual === "goddess" || visual === "vastu" || visual === "ayurveda";
+  const hasImageVisual =
+    visual === "goddess" || visual === "vastu" || visual === "ayurveda" || visual === "image";
+  const imageStyle =
+    visual === "image" && imageSrc
+      ? ({ "--hero-image": `url("${imageSrc}")` } as CSSProperties)
+      : undefined;
   const className = [
     "hero",
     compact ? "compact" : "",
@@ -84,7 +92,11 @@ export function Hero({
           <span className="mandala-ring" />
         </div>
       ) : (
-        <div className={`hero-visual ${visual}-visual`} aria-hidden="true" />
+        <div
+          className={`hero-visual ${visual}-visual`}
+          style={imageStyle}
+          aria-hidden="true"
+        />
       )}
     </section>
   );

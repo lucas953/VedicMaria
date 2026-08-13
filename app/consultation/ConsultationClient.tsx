@@ -21,7 +21,8 @@ export default function ConsultationPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: t.common.bookMeeting, href: consultationBookingPath }}
-        visual="goddess"
+        visual="image"
+        imageSrc="/images/heroes/ashtalakshmi-tanjore.webp"
         theme="consultation"
       />
       <section className="section" aria-labelledby="consultation-types">

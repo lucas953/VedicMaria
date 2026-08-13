@@ -23,7 +23,8 @@ export default function NumerologyPage() {
         title={page.hero.title}
         description={page.hero.description}
         primaryCta={{ label: page.hero.primary, href: "/contact" }}
-        visual="goddess"
+        visual="image"
+        imageSrc="/images/heroes/consultation-statue.webp"
         theme="numerology"
       />
       <section className="section" aria-labelledby="numerology-services">
