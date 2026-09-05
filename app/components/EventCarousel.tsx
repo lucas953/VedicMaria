@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { DatedEvent } from "../eventDates";
 import { useLanguage } from "../i18n";
@@ -85,26 +86,32 @@ export function EventCarousel({
               aria-hidden={index !== visibleIndex}
             >
               {event.image ? (
-                <div
-                  className="event-card-image carousel-card-image"
-                  style={{ backgroundImage: `url("${event.image}")` }}
-                  aria-hidden="true"
-                />
+                <div className="carousel-card-image">
+                  <Image
+                    src={event.image}
+                    alt=""
+                    width={720}
+                    height={1080}
+                    aria-hidden="true"
+                  />
+                </div>
               ) : null}
-              <time>{event.date}</time>
-              <h3>{event.title}</h3>
-              <p className="location">{event.location}</p>
-              <p>{event.description}</p>
-              <a
-                className="button secondary"
-                href={
-                  event.href
-                    ? localizePath(event.href, lang)
-                    : localizePath("/contact", lang)
-                }
-              >
-                {buttonLabel}
-              </a>
+              <div className="carousel-card-content">
+                <time>{event.date}</time>
+                <h3>{event.title}</h3>
+                <p className="location">{event.location}</p>
+                <p>{event.description}</p>
+                <a
+                  className="button secondary"
+                  href={
+                    event.href
+                      ? localizePath(event.href, lang)
+                      : localizePath("/contact", lang)
+                  }
+                >
+                  {buttonLabel}
+                </a>
+              </div>
             </article>
           ))}
         </div>

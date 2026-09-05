@@ -1427,13 +1427,37 @@ h3 {
 }
 
 .carousel-card {
+  display: grid;
   flex: 0 0 100%;
   min-height: 100%;
+  grid-template-columns: minmax(250px, 34%) 1fr;
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
 }
 
 .carousel-card-image {
-  min-height: clamp(220px, 32vw, 360px);
-  background-position: center 22%;
+  display: grid;
+  min-height: 100%;
+  background: #f7eee1;
+  place-items: center;
+}
+
+.carousel-card-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.carousel-card-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(26px, 4vw, 42px);
 }
 
 .carousel-card .button {
@@ -1753,6 +1777,20 @@ textarea {
 
   .event-hero-media {
     order: -1;
+  }
+
+  .carousel-card {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-card-image {
+    min-height: auto;
+    padding: 18px 18px 0;
+  }
+
+  .carousel-card-image img {
+    max-height: 620px;
+    border-radius: 16px;
   }
 
   .event-final-cta {
