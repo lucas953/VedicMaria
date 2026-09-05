@@ -27,6 +27,10 @@ const eventRoutes = [
   "/upcoming-events/ayurvedic-consultations-bansko/"
 ];
 
+const localizedEventRoutes = [
+  "/upcoming-events/ayurveda-pulse-diagnosis-workshop/"
+];
+
 export const dynamic = "force-static";
 
 function toBgRoute(route: string) {
@@ -62,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tripRoutes,
     ...teamRoutes,
     ...staticRoutes.map(toBgRoute),
+    ...localizedEventRoutes.map(toBgRoute),
     ...astrologyRoutes.map(toBgRoute),
     ...numerologyRoutes.map(toBgRoute),
     ...consultationRoutes.map(toBgRoute),

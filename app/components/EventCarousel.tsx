@@ -91,9 +91,9 @@ export function EventCarousel({
               <a
                 className="button secondary"
                 href={
-                  event.href?.startsWith("/upcoming-events/")
-                    ? event.href
-                    : event.href ?? localizePath("/contact", lang)
+                  event.href
+                    ? localizePath(event.href, lang)
+                    : localizePath("/contact", lang)
                 }
               >
                 {buttonLabel}

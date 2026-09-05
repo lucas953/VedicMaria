@@ -46,7 +46,7 @@ export const copy = {
     },
     common: {
       learnMore: "Learn more",
-      registerInterest: "Register Interest",
+      registerInterest: "More info",
       backToTeam: "Back to Our Team",
       backToNumerology: "Back to Numerology",
       backToVastu: "Back to Vastu",
@@ -177,7 +177,7 @@ export const copy = {
         description:
           "A 90-minute practical workshop on Ayurveda and pulse diagnosis. Feel the pulse, read the body, and discover Ayurveda through direct experience.",
         href: "/upcoming-events/ayurveda-pulse-diagnosis-workshop",
-        image: "/ayurveda main.jpg"
+        image: "/images/events/ayurveda-pulse-workshop-en.png"
       },
       {
         date: "29 June - 10 July 2026",
@@ -457,7 +457,7 @@ export const copy = {
           title: "Upcoming Events",
           description:
             "Join seasonal classes, meditation circles, Vedic astrology workshops, and wellness gatherings.",
-          primary: "Register Interest"
+          primary: "More info"
         },
         heading: {
           eyebrow: "Calendar",
@@ -592,7 +592,7 @@ export const copy = {
     },
     common: {
       learnMore: "Научете повече",
-      registerInterest: "Заявете интерес",
+      registerInterest: "Повече информация",
       backToTeam: "Назад към екипа",
       backToNumerology: "Назад към нумерология",
       backToVastu: "Назад към Васту",
@@ -718,12 +718,12 @@ export const copy = {
         date: "26 септември 2026 | 18:30",
         startDate: "2026-09-26",
         endDate: "2026-09-26",
-        title: "Какво ви казва вашият пулс?",
+        title: "Какво ти казва твоят пулс?",
         location: "Yoga Vibe, San Stefano Plaza",
         description:
-          "90-минутен практически семинар по Аюрведа и пулсова диагностика. Усетете пулса, разчетете тялото и открийте Аюрведа чрез пряко преживяване.",
+          "Прочети и усети тялото си чрез хилядолетното знание на Аюрведа в 90-минутен практически семинар по Аюрведа и пулсова диагностика.",
         href: "/upcoming-events/ayurveda-pulse-diagnosis-workshop",
-        image: "/ayurveda main.jpg"
+        image: "/images/events/ayurveda-pulse-workshop-bg.png"
       },
       {
         date: "29 юни - 10 юли 2026",
@@ -1003,7 +1003,7 @@ export const copy = {
           title: "Предстоящи събития",
           description:
             "Присъединете се към сезонни занятия, медитативни кръгове, семинари по ведическа астрология и уелнес срещи.",
-          primary: "Заявете интерес"
+          primary: "Повече информация"
         },
         heading: {
           eyebrow: "Календар",
