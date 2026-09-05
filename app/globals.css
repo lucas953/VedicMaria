@@ -1431,6 +1431,11 @@ h3 {
   min-height: 100%;
 }
 
+.carousel-card-image {
+  min-height: clamp(220px, 32vw, 360px);
+  background-position: center 22%;
+}
+
 .carousel-card .button {
   width: fit-content;
 }

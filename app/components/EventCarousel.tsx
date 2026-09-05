@@ -84,6 +84,13 @@ export function EventCarousel({
               key={event.title}
               aria-hidden={index !== visibleIndex}
             >
+              {event.image ? (
+                <div
+                  className="event-card-image carousel-card-image"
+                  style={{ backgroundImage: `url("${event.image}")` }}
+                  aria-hidden="true"
+                />
+              ) : null}
               <time>{event.date}</time>
               <h3>{event.title}</h3>
               <p className="location">{event.location}</p>
