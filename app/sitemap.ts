@@ -17,10 +17,14 @@ const staticRoutes = [
   "/ayurveda/",
   "/trips/",
   "/upcoming-events/",
-  "/upcoming-events/ayurvedic-consultations-bansko/",
   "/our-team/",
   "/book-session/",
   "/contact/"
+];
+
+const eventRoutes = [
+  "/upcoming-events/ayurveda-pulse-diagnosis-workshop/",
+  "/upcoming-events/ayurvedic-consultations-bansko/"
 ];
 
 export const dynamic = "force-static";
@@ -49,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...eventRoutes,
     ...astrologyRoutes,
     ...numerologyRoutes,
     ...consultationRoutes,

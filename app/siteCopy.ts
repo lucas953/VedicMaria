@@ -169,6 +169,17 @@ export const copy = {
     },
     events: [
       {
+        date: "26 September 2026 | 18:30",
+        startDate: "2026-09-26",
+        endDate: "2026-09-26",
+        title: "What Is Your Pulse Telling You?",
+        location: "Yoga Vibe, San Stefano Plaza",
+        description:
+          "A 90-minute practical workshop on Ayurveda and pulse diagnosis. Feel the pulse, read the body, and discover Ayurveda through direct experience.",
+        href: "/upcoming-events/ayurveda-pulse-diagnosis-workshop",
+        image: "/ayurveda main.jpg"
+      },
+      {
         date: "29 June - 10 July 2026",
         startDate: "2026-06-29",
         endDate: "2026-07-10",
@@ -703,6 +714,17 @@ export const copy = {
       ]
     },
     events: [
+      {
+        date: "26 септември 2026 | 18:30",
+        startDate: "2026-09-26",
+        endDate: "2026-09-26",
+        title: "Какво ви казва вашият пулс?",
+        location: "Yoga Vibe, San Stefano Plaza",
+        description:
+          "90-минутен практически семинар по Аюрведа и пулсова диагностика. Усетете пулса, разчетете тялото и открийте Аюрведа чрез пряко преживяване.",
+        href: "/upcoming-events/ayurveda-pulse-diagnosis-workshop",
+        image: "/ayurveda main.jpg"
+      },
       {
         date: "29 юни - 10 юли 2026",
         startDate: "2026-06-29",

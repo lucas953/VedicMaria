@@ -51,7 +51,14 @@ export function EventCards({
           <p className="location">{event.location}</p>
           <p>{event.description}</p>
           {showButton ? (
-            <a className="button secondary" href={event.href ?? localizePath("/contact", lang)}>
+            <a
+              className="button secondary"
+              href={
+                event.href?.startsWith("/upcoming-events/")
+                  ? event.href
+                  : event.href ?? localizePath("/contact", lang)
+              }
+            >
               {buttonLabel}
             </a>
           ) : null}
