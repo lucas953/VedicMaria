@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useLanguage } from "../i18n";
 import { localizePath } from "../localePaths";
 import type { DatedEvent } from "../eventDates";
@@ -41,8 +42,15 @@ export function EventCards({
         <article className="event-card" key={event.title}>
           {event.image ? (
             <div
-              className="event-card-image"
-              style={{ backgroundImage: `url("${event.image}")` }}
+              className={`event-card-image ${
+                event.imageFit === "contain" ? "contain" : ""
+              }`}
+              style={
+                {
+                  backgroundImage: `url("${event.image}")`,
+                  "--event-image": `url("${event.image}")`
+                } as CSSProperties
+              }
               aria-hidden="true"
             />
           ) : null}

@@ -7,6 +7,7 @@ export type DatedEvent = {
   endDate?: string;
   href?: string;
   image?: string;
+  imageFit?: "cover" | "contain";
 };
 
 function parseIsoDate(value: string) {

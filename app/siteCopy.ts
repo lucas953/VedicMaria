@@ -169,6 +169,19 @@ export const copy = {
     },
     events: [
       {
+        date: "25-31 January 2027",
+        startDate: "2027-01-25",
+        endDate: "2027-01-31",
+        title: "Pancha Maha Bhuta - A Journey Through the Five Elements",
+        location: "Starting point: Chennai, South India",
+        description:
+          "A 7-day South India journey through the temples of Earth, Water, Fire, Air, and Ether, with Vedic astrologer Arjun Chakraborty throughout the trip.",
+        href: "/upcoming-events/pancha-maha-bhuta",
+        image: "/images/events/pancha-maha-bhuta-2027-bg.png",
+        imageFit: "contain"
+      },
+
+      {
         date: "26 September 2026 | 18:30",
         startDate: "2026-09-26",
         endDate: "2026-09-26",
@@ -461,9 +474,9 @@ export const copy = {
         },
         heading: {
           eyebrow: "Calendar",
-          title: "Placeholder Events",
+          title: "Upcoming Events",
           text:
-            "These sample events can be replaced with the latest workshops, retreats, and community gatherings."
+            "Explore the latest workshops, retreats, and community gatherings."
         },
         pastHeading: {
           eyebrow: "Archive",
@@ -714,6 +727,19 @@ export const copy = {
       ]
     },
     events: [
+      {
+        date: "25-31 януари 2027 г.",
+        startDate: "2027-01-25",
+        endDate: "2027-01-31",
+        title: "Панча Маха Бхута - Пътешествие през петте елемента",
+        location: "Начало: Ченай, Южна Индия",
+        description:
+          "7-дневно пътуване в Южна Индия през храмовете на Земя, Вода, Огън, Въздух и Етер, с ведическия астролог Арджун Чакраборти през целия маршрут.",
+        href: "/upcoming-events/pancha-maha-bhuta",
+        image: "/images/events/pancha-maha-bhuta-2027-bg.png",
+        imageFit: "contain"
+      },
+
       {
         date: "26 септември 2026 | 18:30",
         startDate: "2026-09-26",
@@ -1007,9 +1033,9 @@ export const copy = {
         },
         heading: {
           eyebrow: "Календар",
-          title: "Примерни събития",
+          title: "Предстоящи събития",
           text:
-            "Тези примерни събития могат да бъдат заменени с актуални семинари, ретрийти и общностни срещи."
+            "Разгледайте актуалните семинари, ритрийти и общностни срещи."
         },
         pastHeading: {
           eyebrow: "Архив",

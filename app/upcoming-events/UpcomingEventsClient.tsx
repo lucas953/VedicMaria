@@ -1,6 +1,7 @@
 "use client";
 
 import { EventCards } from "../components/EventCards";
+import { EventCarousel } from "../components/EventCarousel";
 import { Hero } from "../components/Hero";
 import { useLanguage } from "../i18n";
 import { useCurrentEventGroups } from "../useCurrentEventGroups";
@@ -24,13 +25,13 @@ export default function UpcomingEventsPage() {
         visual="goddess"
         theme="events"
       />
-      <section className="section" aria-labelledby="events-list">
+      <section className="section events-carousel-section" aria-labelledby="events-list">
         <div className="section-heading">
           <p className="eyebrow">{page.heading.eyebrow}</p>
           <h2 id="events-list">{page.heading.title}</h2>
           <p>{page.heading.text}</p>
         </div>
-        <EventCards
+        <EventCarousel
           events={upcomingEvents}
           buttonLabel={t.common.registerInterest}
           emptyMessage={t.eventsEmpty}

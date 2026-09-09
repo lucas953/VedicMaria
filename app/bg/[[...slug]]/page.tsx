@@ -27,6 +27,7 @@ import { getTripDetail, tripDetails } from "../../trips/tripDetails";
 import { TripDetailClient } from "../../trips/[slug]/TripDetailClient";
 import UpcomingEventsPage from "../../upcoming-events/UpcomingEventsClient";
 import { AyurvedaPulseDiagnosisWorkshopClient } from "../../upcoming-events/ayurveda-pulse-diagnosis-workshop/AyurvedaPulseDiagnosisWorkshopClient";
+import { PanchaMahaBhutaClient } from "../../upcoming-events/pancha-maha-bhuta/PanchaMahaBhutaClient";
 import VastuPage from "../../vastu/VastuClient";
 import { getVastuDetail, vastuDetails } from "../../vastu/vastuDetails";
 import { VastuDetailClient } from "../../vastu/[slug]/VastuDetailClient";
@@ -64,6 +65,7 @@ const bgStaticRoutes = [
   ["trips"],
   ["upcoming-events"],
   ["upcoming-events", "ayurveda-pulse-diagnosis-workshop"],
+  ["upcoming-events", "pancha-maha-bhuta"],
   ["our-team"],
   ["book-session"],
   ["contact"]
@@ -81,6 +83,7 @@ const topLevelPages: Record<string, () => ReactNode> = {
   "upcoming-events/ayurveda-pulse-diagnosis-workshop": () => (
     <AyurvedaPulseDiagnosisWorkshopClient />
   ),
+  "upcoming-events/pancha-maha-bhuta": () => <PanchaMahaBhutaClient />,
   "our-team": () => <OurTeamPage />,
   "book-session": () => <BookSessionPage />,
   contact: () => <ContactPage />
@@ -182,6 +185,11 @@ const bgPageMetadata: Record<string, { title: string; description: string }> = {
     title: "Какво ти казва твоят пулс?",
     description:
       "90-минутен практически семинар по Аюрведа и пулсова диагностика в Yoga Vibe, San Stefano Plaza, на 26 септември 2026."
+  },
+  "upcoming-events/pancha-maha-bhuta": {
+    title: "Панча Маха Бхута",
+    description:
+      "7-дневно пътуване в Южна Индия през храмовете на петте елемента от 25 до 31 януари 2027 г."
   },
   "our-team": {
     title: "Нашият екип",

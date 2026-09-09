@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import type { DatedEvent } from "../eventDates";
 import { useLanguage } from "../i18n";
@@ -24,6 +25,7 @@ export function EventCarousel({
   const [activeIndex, setActiveIndex] = useState(0);
   const totalEvents = events.length;
   const visibleIndex = totalEvents === 0 ? 0 : activeIndex % totalEvents;
+  const nextIndex = totalEvents > 1 ? (visibleIndex + 1) % totalEvents : null;
 
   useEffect(() => {
     if (totalEvents < 2) {
@@ -65,28 +67,36 @@ export function EventCarousel({
   }
 
   return (
-    <div className="event-carousel">
-      <div className="carousel-controls" aria-label="Event carousel controls">
-        <button type="button" aria-label="Previous event" onClick={() => moveSlide("previous")}>
-          <span aria-hidden="true">{"<"}</span>
-        </button>
-        <button type="button" aria-label="Next event" onClick={() => moveSlide("next")}>
-          <span aria-hidden="true">{">"}</span>
-        </button>
-      </div>
-      <div className="event-carousel-viewport">
-        <div
-          className="event-carousel-track"
-          style={{ transform: `translateX(-${visibleIndex * 100}%)` }}
-        >
+    <div className="event-carousel featured-carousel">
+      {totalEvents > 1 ? (
+        <div className="carousel-controls" aria-label="Event carousel controls">
+          <button type="button" aria-label="Previous event" onClick={() => moveSlide("previous")}>
+            <span aria-hidden="true">{"<"}</span>
+          </button>
+          <button type="button" aria-label="Next event" onClick={() => moveSlide("next")}>
+            <span aria-hidden="true">{">"}</span>
+          </button>
+        </div>
+      ) : null}
+      <div className="event-carousel-stage">
+        <div className="event-carousel-main">
           {events.map((event, index) => (
             <article
-              className="event-card carousel-card"
+              className={`event-card carousel-card featured-card ${
+                index === visibleIndex
+                  ? "featured-active"
+                  : index === nextIndex
+                    ? "featured-side"
+                    : "featured-hidden"
+              }`}
               key={event.title}
-              aria-hidden={index !== visibleIndex}
+              aria-hidden={index !== visibleIndex && index !== nextIndex}
             >
               {event.image ? (
-                <div className="carousel-card-image">
+                <div
+                  className="carousel-card-image"
+                  style={{ "--event-image": `url("${event.image}")` } as CSSProperties}
+                >
                   <Image
                     src={event.image}
                     alt=""
@@ -116,18 +126,20 @@ export function EventCarousel({
           ))}
         </div>
       </div>
-      <div className="carousel-dots" aria-label="Choose event">
-        {events.map((event, index) => (
-          <button
-            key={event.title}
-            type="button"
-            className={index === visibleIndex ? "active" : ""}
-            aria-label={`Show ${event.title}`}
-            aria-current={index === visibleIndex}
-            onClick={() => setActiveIndex(index)}
-          />
-        ))}
-      </div>
+      {totalEvents > 1 ? (
+        <div className="carousel-dots" aria-label="Choose event">
+          {events.map((event, index) => (
+            <button
+              key={event.title}
+              type="button"
+              className={index === visibleIndex ? "active" : ""}
+              aria-label={`Show ${event.title}`}
+              aria-current={index === visibleIndex}
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

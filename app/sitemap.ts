@@ -23,11 +23,13 @@ const staticRoutes = [
 ];
 
 const eventRoutes = [
+  "/upcoming-events/pancha-maha-bhuta/",
   "/upcoming-events/ayurveda-pulse-diagnosis-workshop/",
   "/upcoming-events/ayurvedic-consultations-bansko/"
 ];
 
 const localizedEventRoutes = [
+  "/upcoming-events/pancha-maha-bhuta/",
   "/upcoming-events/ayurveda-pulse-diagnosis-workshop/"
 ];
 
