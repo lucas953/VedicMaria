@@ -184,7 +184,7 @@ const bgPageMetadata: Record<string, { title: string; description: string }> = {
   "upcoming-events/ayurveda-pulse-diagnosis-workshop": {
     title: "Какво ти казва твоят пулс?",
     description:
-      "90-минутен практически семинар по Аюрведа и пулсова диагностика в Yoga Vibe, San Stefano Plaza, на 26 септември 2026."
+      "90-минутен практически семинар по Аюрведа и пулсова диагностика в Yoga Vibe, San Stefano Plaza, на 27 септември 2026."
   },
   "upcoming-events/pancha-maha-bhuta": {
     title: "Панча Маха Бхута",

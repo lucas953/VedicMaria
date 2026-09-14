@@ -18,7 +18,7 @@ const content = {
     infoEyebrow: "Hands-on Ayurveda",
     reserveEyebrow: "Reserve",
     title: "What is your pulse telling you?",
-    subtitle: "26.09.2026 | 18:30 | Yoga Vibe, San Stefano Plaza",
+    subtitle: "27.09.2026 | 17:30 | Yoga Vibe, San Stefano Plaza",
     intro:
       "Read and feel your body through the ancient wisdom of Ayurveda in a 90-minute practical workshop on Ayurveda and pulse diagnosis.",
     poster: "/images/events/ayurveda-pulse-workshop-en.png",
@@ -45,7 +45,7 @@ const content = {
     stripeSoon: "Stripe payment coming soon",
     whatsapp: "Reserve via WhatsApp",
     detailsLabel: "Workshop details",
-    detailsDate: "26 September 2026, 18:30",
+    detailsDate: "27 September 2026, 17:30",
     detailsPlace: "Yoga Vibe, San Stefano Plaza | 90 minutes",
     finalTitle: "Feel the pulse. Read the body. Discover Ayurveda.",
     finalText:
@@ -60,7 +60,7 @@ const content = {
     infoEyebrow: "Практическа Аюрведа",
     reserveEyebrow: "Запази място",
     title: "Какво ти казва твоят пулс?",
-    subtitle: "26.09.2026 | 18:30 | Yoga Vibe, San Stefano Plaza",
+    subtitle: "27.09.2026 | 17:30 | Yoga Vibe, San Stefano Plaza",
     intro:
       "Прочети и усети тялото си чрез хилядолетното знание на Аюрведа в 90-минутен практически семинар по Аюрведа и пулсова диагностика.",
     poster: "/images/events/ayurveda-pulse-workshop-bg.png",
@@ -87,7 +87,7 @@ const content = {
     stripeSoon: "Stripe плащането предстои",
     whatsapp: "Запази през WhatsApp",
     detailsLabel: "Детайли за семинара",
-    detailsDate: "26 септември 2026, 18:30",
+    detailsDate: "27 септември 2026, 17:30",
     detailsPlace: "Yoga Vibe, San Stefano Plaza | 90 минути",
     finalTitle: "Усети пулса. Прочети тялото си. Опознай Аюрведа.",
     finalText:

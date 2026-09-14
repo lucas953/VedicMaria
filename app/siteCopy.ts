@@ -182,9 +182,9 @@ export const copy = {
       },
 
       {
-        date: "26 September 2026 | 18:30",
-        startDate: "2026-09-26",
-        endDate: "2026-09-26",
+        date: "27 September 2026 | 17:30",
+        startDate: "2026-09-27",
+        endDate: "2026-09-27",
         title: "What Is Your Pulse Telling You?",
         location: "Yoga Vibe, San Stefano Plaza",
         description:
@@ -741,9 +741,9 @@ export const copy = {
       },
 
       {
-        date: "26 септември 2026 | 18:30",
-        startDate: "2026-09-26",
-        endDate: "2026-09-26",
+        date: "27 септември 2026 | 17:30",
+        startDate: "2026-09-27",
+        endDate: "2026-09-27",
         title: "Какво ти казва твоят пулс?",
         location: "Yoga Vibe, San Stefano Plaza",
         description:
