@@ -9,6 +9,7 @@ import { copy } from "../../siteCopy";
 
 const whatsappNumber = copy.en.contact.whatsapp.replace(/[^\d]/g, "");
 const hasStripeLink = ayurvedaPulseWorkshopStripeUrl.length > 0;
+const paymentQr = "/images/events/ayurveda-pulse-stripe-qr.jpg";
 
 const content = {
   en: {
@@ -101,6 +102,15 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
   const { lang } = useLanguage();
   const page = content[lang];
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${page.whatsappText}`;
+  const reserveText =
+    lang === "bg"
+      ? "Запазете своето място чрез сигурния Stripe линк за плащане. За въпроси се свържете с Astro Veda Life по WhatsApp."
+      : "Reserve your seat through the secure Stripe payment link. For questions, contact Astro Veda Life on WhatsApp.";
+  const qrLabel = lang === "bg" ? "Сканирайте за плащане със Stripe" : "Scan to pay with Stripe";
+  const qrAlt =
+    lang === "bg"
+      ? "Stripe QR код за плащане за семинара по Аюрведа и пулсова диагностика"
+      : "Stripe payment QR code for the Ayurveda pulse diagnosis workshop";
 
   return (
     <>
@@ -165,7 +175,7 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
           <div>
             <p className="eyebrow">{page.reserveEyebrow}</p>
             <h2 id="workshop-reserve">{page.reserveTitle}</h2>
-            <p>{page.reserveText}</p>
+            <p>{reserveText}</p>
             <div className="event-date-list">
               <span>{page.detailsLabel}</span>
               <strong>{page.detailsDate}</strong>
@@ -190,6 +200,12 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
                 {page.whatsapp}
               </a>
             </div>
+            {hasStripeLink && (
+              <figure className="event-payment-qr">
+                <img src={paymentQr} alt={qrAlt} />
+                <figcaption>{qrLabel}</figcaption>
+              </figure>
+            )}
           </div>
           <div className="event-booking-poster">
             <img src={page.poster} alt={page.posterAlt} />
@@ -202,13 +218,35 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
           <h2 id="workshop-final-cta">{page.finalTitle}</h2>
           <p>{page.finalText}</p>
         </div>
-        <div className="button-row">
-          <a className="button primary" href={whatsappHref}>
-            {page.whatsapp}
-          </a>
-          <Link className="button secondary" href={localizePath("/upcoming-events", lang)}>
-            {page.back}
-          </Link>
+        <div className="event-payment-actions">
+          <div className="button-row">
+            {hasStripeLink ? (
+              <a
+                className="button primary"
+                href={ayurvedaPulseWorkshopStripeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {page.stripeReady}
+              </a>
+            ) : (
+              <button className="button primary" type="button" disabled>
+                {page.stripeSoon}
+              </button>
+            )}
+            <a className="button secondary" href={whatsappHref}>
+              {page.whatsapp}
+            </a>
+            <Link className="button secondary" href={localizePath("/upcoming-events", lang)}>
+              {page.back}
+            </Link>
+          </div>
+          {hasStripeLink && (
+            <figure className="event-payment-qr">
+              <img src={paymentQr} alt={qrAlt} />
+              <figcaption>{qrLabel}</figcaption>
+            </figure>
+          )}
         </div>
       </section>
     </>
