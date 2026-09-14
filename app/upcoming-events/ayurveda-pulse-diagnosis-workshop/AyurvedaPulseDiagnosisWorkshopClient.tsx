@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ayurvedaPulseWorkshopStripeUrl } from "../../eventPaymentLinks";
 import { useLanguage } from "../../i18n";
 import { localizePath } from "../../localePaths";
@@ -147,7 +148,10 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
           )}
           <p className="event-note">{page.note}</p>
         </div>
-        <div className="event-hero-media event-poster-media">
+        <div
+          className="event-hero-media event-poster-media"
+          style={{ "--event-image": `url("${page.poster}")` } as CSSProperties}
+        >
           <img src={page.poster} alt={page.posterAlt} />
         </div>
       </section>
@@ -213,7 +217,10 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
               </figure>
             )}
           </div>
-          <div className="event-booking-poster">
+          <div
+            className="event-booking-poster"
+            style={{ "--event-image": `url("${page.poster}")` } as CSSProperties}
+          >
             <img src={page.poster} alt={page.posterAlt} />
           </div>
         </div>
