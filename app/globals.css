@@ -1505,6 +1505,11 @@ h3 {
   font-weight: 700;
 }
 
+.event-hero-payment-qr {
+  margin-top: 18px;
+  width: min(100%, 190px);
+}
+
 .event-carousel {
   position: relative;
   width: min(100%, 1380px);

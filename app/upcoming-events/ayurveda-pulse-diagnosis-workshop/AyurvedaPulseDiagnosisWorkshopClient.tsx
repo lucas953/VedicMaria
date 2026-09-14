@@ -139,6 +139,12 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
               {page.whatsapp}
             </a>
           </div>
+          {hasStripeLink && (
+            <figure className="event-payment-qr event-hero-payment-qr">
+              <img src={paymentQr} alt={qrAlt} />
+              <figcaption>{qrLabel}</figcaption>
+            </figure>
+          )}
           <p className="event-note">{page.note}</p>
         </div>
         <div className="event-hero-media event-poster-media">
