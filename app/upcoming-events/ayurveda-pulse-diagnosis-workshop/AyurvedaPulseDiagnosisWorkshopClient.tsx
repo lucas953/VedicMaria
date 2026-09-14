@@ -51,7 +51,7 @@ const content = {
     finalText:
       "Join a practical evening of Ayurveda, Yoga, pulse diagnosis, and direct experience.",
     back: "Back to events",
-    note: "Limited to 30 places. Price: 30 EUR.",
+    note: "Price: 30 EUR.",
     whatsappText:
       "Hello%2C%20I%20would%20like%20to%20reserve%20a%20place%20for%20the%20Ayurveda%20pulse%20diagnosis%20workshop."
   },
@@ -93,7 +93,7 @@ const content = {
     finalText:
       "Присъедини се към практическа вечер на Аюрведа, Йога, пулсова диагностика и лично преживяване.",
     back: "Назад към събитията",
-    note: "Местата са ограничени до 30. Цена: 30 EUR.",
+    note: "Цена: 30 EUR.",
     whatsappText:
       "Здравейте%2C%20искам%20да%20запазя%20място%20за%20семинара%20по%20Аюрведа%20и%20пулсова%20диагностика."
   }
