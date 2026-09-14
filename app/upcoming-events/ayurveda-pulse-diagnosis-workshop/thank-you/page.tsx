@@ -25,7 +25,7 @@ export default function AyurvedaPulseThankYouPage() {
         <section className="payment-thankyou-card" aria-labelledby="payment-confirmed">
           <div className="payment-thankyou-copy">
             <p className="eyebrow">Payment confirmed</p>
-            <h1 id="payment-confirmed">Your place is confirmed 🌿</h1>
+            <h1 id="payment-confirmed">Your place is confirmed</h1>
             <p className="payment-thankyou-lead">
               Thank you for joining <em>What Is Your Pulse Telling You?</em>
             </p>
