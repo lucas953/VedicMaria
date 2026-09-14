@@ -3,12 +3,13 @@
 
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { panchaMahaBhutaStripeUrl } from "../../eventPaymentLinks";
 import { useLanguage } from "../../i18n";
 import { localizePath } from "../../localePaths";
 import { copy } from "../../siteCopy";
 
 const poster = "/images/events/pancha-maha-bhuta-2027-bg.png";
-const email = copy.en.contact.email;
+const paymentQr = "/images/events/pancha-maha-bhuta-stripe-qr.jpg";
 const whatsappNumber = copy.en.contact.whatsapp.replace(/[^\d]/g, "");
 
 const content = {
@@ -190,10 +191,17 @@ const content = {
 export function PanchaMahaBhutaClient() {
   const { lang } = useLanguage();
   const page = content[lang];
-  const mailHref = `mailto:${email}?subject=${encodeURIComponent(
-    page.title
-  )}&body=${encodeURIComponent(page.reserveText)}`;
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${page.whatsappText}`;
+  const paymentButton = lang === "bg" ? "Запази и плати" : "Reserve and pay";
+  const qrLabel = lang === "bg" ? "Сканирайте за плащане със Stripe" : "Scan to pay with Stripe";
+  const qrAlt =
+    lang === "bg"
+      ? "Stripe QR код за плащане за Панча Маха Бхута"
+      : "Stripe payment QR code for Pancha Maha Bhuta";
+  const reserveText =
+    lang === "bg"
+      ? "Запазете своето място чрез сигурния Stripe линк за плащане. За въпроси се свържете с Astro Veda Life по WhatsApp."
+      : "Reserve your place through the secure Stripe payment link. For questions, contact Astro Veda Life on WhatsApp.";
 
   return (
     <>
@@ -206,8 +214,13 @@ export function PanchaMahaBhutaClient() {
           <p>{page.price}</p>
           <p>{page.intro}</p>
           <div className="button-row">
-            <a className="button primary" href={mailHref}>
-              {page.emailButton}
+            <a
+              className="button primary"
+              href={panchaMahaBhutaStripeUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {paymentButton}
             </a>
             <a className="button secondary" href={whatsappHref}>
               {page.whatsappButton}
@@ -293,18 +306,29 @@ export function PanchaMahaBhutaClient() {
       <section className="event-final-cta" aria-labelledby="pancha-register">
         <div>
           <h2 id="pancha-register">{page.reserveTitle}</h2>
-          <p>{page.reserveText}</p>
+          <p>{reserveText}</p>
         </div>
-        <div className="button-row">
-          <a className="button primary" href={mailHref}>
-            {page.emailButton}
-          </a>
-          <a className="button secondary" href={whatsappHref}>
-            {page.whatsappButton}
-          </a>
-          <Link className="button secondary" href={localizePath("/upcoming-events", lang)}>
-            {page.back}
-          </Link>
+        <div className="event-payment-actions">
+          <div className="button-row">
+            <a
+              className="button primary"
+              href={panchaMahaBhutaStripeUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {paymentButton}
+            </a>
+            <a className="button secondary" href={whatsappHref}>
+              {page.whatsappButton}
+            </a>
+            <Link className="button secondary" href={localizePath("/upcoming-events", lang)}>
+              {page.back}
+            </Link>
+          </div>
+          <figure className="event-payment-qr">
+            <img src={paymentQr} alt={qrAlt} />
+            <figcaption>{qrLabel}</figcaption>
+          </figure>
         </div>
       </section>
     </>
