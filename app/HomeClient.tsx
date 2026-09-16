@@ -50,7 +50,7 @@ export default function Home() {
             src="/Maria.jpg"
             alt="Maria, founder of Vedic Astrology"
             fill
-            sizes="(max-width: 900px) 100vw, 38vw"
+            sizes="(max-width: 900px) 100vw, 28vw"
             priority
           />
         </div>
