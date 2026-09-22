@@ -595,6 +595,17 @@ h3 {
   box-shadow: 0 30px 70px rgba(54, 34, 24, 0.28);
 }
 
+.image-visual.image-proportional {
+  align-self: center;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: var(--hero-image-aspect-ratio);
+}
+
+.image-visual.image-proportional::before {
+  background-size: contain;
+}
+
 .sun-disc,
 .mandala-ring {
   position: absolute;

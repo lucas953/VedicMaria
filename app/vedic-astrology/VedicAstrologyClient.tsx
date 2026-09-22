@@ -18,6 +18,11 @@ export default function VedicAstrologyPage() {
       title: localized.title,
       description: localized.description,
       href: `/vedic-astrology/${detail.slug}`,
+      image: detail.slug === "birth-chart-reading"
+        ? 'url("/images/heroes/birth-chart-reading.webp")'
+        : undefined,
+      imagePosition: "center",
+      imageSize: "cover",
       ctaLabel: t.common.learnMore
     };
   });

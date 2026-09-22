@@ -35,6 +35,10 @@ export function AstrologyDetailClient({ detail }: { detail: AstrologyDetail }) {
         description={localized.description}
         primaryCta={{ label: t.pages.astrology.hero.primary, href: "/contact" }}
         secondaryCta={{ label: t.common.backToAstrology, href: "/vedic-astrology" }}
+        visual={detail.slug === "birth-chart-reading" ? "image" : "mandala"}
+        imageSrc={detail.slug === "birth-chart-reading" ? "/images/heroes/birth-chart-reading.webp" : undefined}
+        imageAspectRatio={detail.slug === "birth-chart-reading" ? "875 / 617" : undefined}
+        theme="astrology"
       />
       <section className="section page-intro" aria-labelledby="astrology-detail-title">
         <div className="page-intro-content">

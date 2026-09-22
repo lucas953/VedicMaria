@@ -15,6 +15,7 @@ type HeroProps = {
   compact?: boolean;
   visual?: "mandala" | "goddess" | "vastu" | "ayurveda" | "image";
   imageSrc?: string;
+  imageAspectRatio?: string;
   theme?: HeroTheme;
 };
 
@@ -51,6 +52,7 @@ export function Hero({
   compact = false,
   visual = "mandala",
   imageSrc,
+  imageAspectRatio,
   theme = "home"
 }: HeroProps) {
   const { lang } = useLanguage();
@@ -58,7 +60,10 @@ export function Hero({
     visual === "goddess" || visual === "vastu" || visual === "ayurveda" || visual === "image";
   const imageStyle =
     visual === "image" && imageSrc
-      ? ({ "--hero-image": `url("${imageSrc}")` } as CSSProperties)
+      ? ({
+          "--hero-image": `url("${imageSrc}")`,
+          "--hero-image-aspect-ratio": imageAspectRatio
+        } as CSSProperties)
       : undefined;
   const className = [
     "hero",
@@ -93,7 +98,7 @@ export function Hero({
         </div>
       ) : (
         <div
-          className={`hero-visual ${visual}-visual`}
+          className={`hero-visual ${visual}-visual${imageAspectRatio ? " image-proportional" : ""}`}
           style={imageStyle}
           aria-hidden="true"
         />
