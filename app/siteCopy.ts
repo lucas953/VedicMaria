@@ -493,10 +493,10 @@ export const copy = {
             "A small, thoughtful team supporting astrology, education, consultation, retreats, and community events with care."
         },
         heading: {
-          eyebrow: "Guides and collaborators",
-          title: "Grounded support for your spiritual journey",
+          subtitle: "The Art of Personal Guidance",
+          title: "Support tailored to your question",
           text:
-            "This page can grow with practitioner profiles, guest teachers, retreat collaborators, and event partners."
+            "Discover the expert who best resonates with your needs, offering personalised consultations in Vedic Astrology, Vastu, Ayurveda and Nadi palm-leaf reading."
         },
         cards: [
           ["Maria", "Founder, clinical psychologist, and Vedic astrology practitioner bringing depth, empathy, and spiritual insight."],
@@ -1064,10 +1064,10 @@ export const copy = {
             "Малък и внимателен екип, който подкрепя астрология, обучение, консултации, ретрийти и общностни събития с грижа."
         },
         heading: {
-          eyebrow: "Водачи и сътрудници",
-          title: "Заземена подкрепа за вашия духовен път",
+          subtitle: "Изкуството на личното напътствие",
+          title: "Подкрепа, съобразена с вашия въпрос",
           text:
-            "Тази страница може да се развива с профили на практици, гост-учители, партньори за ретрийти и събития."
+            "Открийте специалиста, който най-добре откликва на вашите потребности и предлага индивидуални консултации по ведическа астрология, Васту, Аюрведа и Нади прочит на палмови листа."
         },
         cards: [
           ["Мария", "Основател, клиничен психолог и практик по ведическа астрология, който носи дълбочина, емпатия и духовна проницателност."],

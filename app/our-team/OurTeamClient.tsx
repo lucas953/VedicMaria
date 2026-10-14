@@ -23,8 +23,8 @@ export default function OurTeamPage() {
       />
       <section className="section" aria-labelledby="team-members">
         <div className="section-heading">
-          <p className="eyebrow">{page.heading.eyebrow}</p>
           <h2 id="team-members">{page.heading.title}</h2>
+          <p><strong>{page.heading.subtitle}</strong></p>
           <p>{page.heading.text}</p>
         </div>
         <div className="team-grid">
