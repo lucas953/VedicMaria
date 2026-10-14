@@ -562,6 +562,18 @@ export const copy = {
               "He inherited his profession and vocation from his uncle, a famous astrologer for his time in Calcutta. Vedic astrology is a teaching that is traditionally and often passed down within the family in India. This is how the secrets and sacredness of knowledge are preserved.",
               "Arjun Chakraborty has visited Bulgaria several times at the invitation of the Bulgarian Association for Vedic Astrology and the East-West Indological Foundation. He has given lectures and trainings on Vedic astrology not only in Bulgaria, but also in Lithuania, Latvia, Estonia, Kazakhstan, and Russia."
             ]
+          },
+          {
+            slug: "palani",
+            name: "Palani",
+            role: "Nadi readings",
+            image: "/team-palani.jpeg",
+            intro: "Nadi Palm Leaf Reading - The Secrets of Destiny",
+            bio: [
+              "Rooted in the ancient wisdom of South India, Nadi Astrology is a sacred tradition attributed to the enlightened sages, the Rishis.",
+              "The reading begins with your thumbprint, guiding the search for the palm-leaf manuscript believed to hold your story. Through a series of yes-or-no questions, the reader seeks to identify the correct leaf. Once confirmed, the manuscript traditionally reveals your name, your parents’ names and your time of birth, before unfolding insights into your life, relationships and karma.",
+              "An extraordinary encounter with an ancient spiritual legacy, offering a glimpse into the mysteries of destiny and the timeless wisdom of the Rishis."
+            ]
           }
         ]
       },
@@ -1124,6 +1136,18 @@ export const copy = {
               "В продължение на близо 10 години пътува по света, изнася лекции и обучава начинаещи и напреднали любители на ведическата астрология.",
               "Той наследява професията и призванието си от своя чичо, известен астролог за времето си в Калкута. Ведическата астрология е учение, което в Индия традиционно често се предава в семейството. Така се съхраняват тайните и свещеността на знанието.",
               "Арджун Чакраборти е посещавал България няколко пъти по покана на Българската асоциация по ведическа астрология и фондация Изток-Запад. Изнасял е лекции и обучения по ведическа астрология не само в България, но и в Литва, Латвия, Естония, Казахстан и Русия."
+            ]
+          },
+          {
+            slug: "palani",
+            name: "Палани",
+            role: "Нади прочити",
+            image: "/team-palani.jpeg",
+            intro: "Нади прочит на палмови листа - Тайните на съдбата",
+            bio: [
+              "Вкоренена в древната мъдрост на Южна Индия, Нади астрологията е свещена традиция, приписвана на просветлените мъдреци — Ришите.",
+              "Прочитът започва с отпечатъка на вашия палец, който насочва търсенето на ръкописа върху палмов лист, за който се вярва, че пази вашата история. Чрез поредица от въпроси с отговор „да“ или „не“ четецът се стреми да открие правилния лист. След като той бъде потвърден, според традицията ръкописът разкрива вашето име, имената на родителите ви и часа на раждането ви, преди да даде прозрения за живота, взаимоотношенията и кармата ви.",
+              "Необикновена среща с древно духовно наследство, която предлага поглед към тайните на съдбата и непреходната мъдрост на Ришите."
             ]
           }
         ]

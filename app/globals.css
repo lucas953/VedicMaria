@@ -763,7 +763,7 @@ h3 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(18px, 2.4vw, 28px);
 }
 
@@ -794,6 +794,8 @@ h3 {
 .team-photo {
   position: relative;
   width: 164px;
+  max-width: 100%;
+  flex-shrink: 0;
   aspect-ratio: 1;
   min-height: 0;
   margin-bottom: 22px;
@@ -822,6 +824,7 @@ h3 {
 }
 
 .team-content h3 {
+  overflow-wrap: anywhere;
   margin-bottom: 14px;
   font-size: clamp(1.55rem, 2.3vw, 2rem);
 }
@@ -833,6 +836,21 @@ h3 {
 
 .team-content .button {
   margin-top: auto;
+}
+
+@supports (grid-template-rows: subgrid) {
+  .team-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    row-gap: 0;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .team-content .button {
+    align-self: end;
+  }
 }
 
 .team-bio-section {
@@ -856,6 +874,11 @@ h3 {
 .team-bio-photo img {
   object-fit: cover;
   object-position: center;
+}
+
+.team-bio-photo.team-bio-photo-landscape {
+  min-height: 0;
+  aspect-ratio: 1170 / 782;
 }
 
 .team-bio-content {

@@ -25,6 +25,11 @@ const teamMetadata: Record<string, { name: string; intro: string; image: string 
       "Meet Dr. Venu Sasikumar, an Ayurveda practitioner and lecturer specializing in holistic healing, Panchakarma, and wellness education.",
     image: "/team-venu.jpg"
   },
+  palani: {
+    name: "Palani",
+    intro: "Nadi Palm Leaf Reading - The Secrets of Destiny. Meet Palani and discover the ancient palm-leaf reading tradition of South India.",
+    image: "/team-palani.jpeg"
+  },
   "arjun-chakraborty": {
     name: "Arjun Chakraborty",
     intro:

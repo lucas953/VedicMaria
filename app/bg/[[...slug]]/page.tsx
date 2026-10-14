@@ -38,6 +38,7 @@ import {
 } from "../../vedic-astrology/astrologyDetails";
 import { AstrologyDetailClient } from "../../vedic-astrology/[slug]/AstrologyDetailClient";
 import { SiteChrome } from "../../components/SiteChrome";
+import { copy } from "../../siteCopy";
 
 type BgParams = {
   slug?: string[];
@@ -253,10 +254,13 @@ export async function generateMetadata({
   }
 
   if (section === "our-team" && detailSlug) {
+    const member = copy.bg.pages.team.members.find(
+      (item) => item.slug === resolveTeamSlug(detailSlug)
+    );
     return createPageMetadata({
-      title: "Член на екипа",
+      title: member?.name ?? "Член на екипа",
       description:
-        "Запознайте се с екипа на Astro Veda Life и неговата работа във ведическа астрология, Аюрведа, Васту и духовно образование.",
+        member?.intro ?? "Запознайте се с екипа на Astro Veda Life и неговата работа във ведическа астрология, Аюрведа, Васту и духовно образование.",
       path: bgPath(path)
     });
   }

@@ -2,7 +2,8 @@ export const canonicalTeamSlugs = [
   "maria",
   "paritosh-banerjee",
   "venu-sasikumar",
-  "arjun-chakraborty"
+  "arjun-chakraborty",
+  "palani"
 ] as const;
 
 const aliases: Record<string, (typeof canonicalTeamSlugs)[number]> = {

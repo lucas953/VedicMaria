@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "../../components/Hero";
 import { useLanguage } from "../../i18n";
+import { localizePath } from "../../localePaths";
 
 export function TeamMemberClient({ slug }: { slug: string }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const member = t.pages.team.members.find((item) => item.slug === slug);
 
   if (!member) {
@@ -23,7 +24,7 @@ export function TeamMemberClient({ slug }: { slug: string }) {
         primaryCta={{ label: t.common.backToTeam, href: "/our-team" }}
       />
       <section className="section team-bio-section" aria-labelledby="team-bio-title">
-        <div className="team-bio-photo">
+        <div className={`team-bio-photo${member.slug === "palani" ? " team-bio-photo-landscape" : ""}`}>
           <Image src={member.image} alt={member.name} fill sizes="(max-width: 900px) 100vw, 34vw" />
         </div>
         <article className="team-bio-content">
@@ -32,7 +33,7 @@ export function TeamMemberClient({ slug }: { slug: string }) {
           {member.bio.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <Link className="button secondary" href="/our-team">
+          <Link className="button secondary" href={localizePath("/our-team", lang)}>
             {t.common.backToTeam}
           </Link>
         </article>

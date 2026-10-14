@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { useLanguage } from "../i18n";
+import { localizePath } from "../localePaths";
 
 export default function OurTeamPage() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const page = t.pages.team;
 
   return (
@@ -34,14 +35,14 @@ export default function OurTeamPage() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  sizes="(max-width: 900px) 160px, 180px"
+                  sizes="164px"
                 />
               </div>
               <div className="team-content">
                 <p className="team-role">{member.role}</p>
                 <h3>{member.name}</h3>
-                <p>{member.intro}</p>
-                <Link className="button secondary" href={`/our-team/${member.slug}`}>
+                <p>{member.slug === "palani" ? <strong>{member.intro}</strong> : member.intro}</p>
+                <Link className="button secondary" href={localizePath(`/our-team/${member.slug}`, lang)}>
                   {t.common.learnMore}
                 </Link>
               </div>
