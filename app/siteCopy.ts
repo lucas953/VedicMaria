@@ -1,3 +1,5 @@
+import { lectureListings } from "./upcoming-events/vedic-astrology-lectures/eventCopy";
+
 const navPaths = {
   home: "/",
   astrology: "/vedic-astrology",
@@ -168,6 +170,7 @@ export const copy = {
       ]
     },
     events: [
+      ...lectureListings("en"),
       {
         date: "25-31 January 2027",
         startDate: "2027-01-25",
@@ -739,6 +742,7 @@ export const copy = {
       ]
     },
     events: [
+      ...lectureListings("bg"),
       {
         date: "25-31 януари 2027 г.",
         startDate: "2027-01-25",

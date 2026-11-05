@@ -28,6 +28,8 @@ import { TripDetailClient } from "../../trips/[slug]/TripDetailClient";
 import UpcomingEventsPage from "../../upcoming-events/UpcomingEventsClient";
 import { AyurvedaPulseDiagnosisWorkshopClient } from "../../upcoming-events/ayurveda-pulse-diagnosis-workshop/AyurvedaPulseDiagnosisWorkshopClient";
 import { PanchaMahaBhutaClient } from "../../upcoming-events/pancha-maha-bhuta/PanchaMahaBhutaClient";
+import { LecturesClient } from "../../upcoming-events/vedic-astrology-lectures/LecturesClient";
+import { lectureCopy } from "../../upcoming-events/vedic-astrology-lectures/eventCopy";
 import VastuPage from "../../vastu/VastuClient";
 import { getVastuDetail, vastuDetails } from "../../vastu/vastuDetails";
 import { VastuDetailClient } from "../../vastu/[slug]/VastuDetailClient";
@@ -67,6 +69,7 @@ const bgStaticRoutes = [
   ["upcoming-events"],
   ["upcoming-events", "ayurveda-pulse-diagnosis-workshop"],
   ["upcoming-events", "pancha-maha-bhuta"],
+  ["upcoming-events", "vedic-astrology-lectures"],
   ["our-team"],
   ["book-session"],
   ["contact"]
@@ -85,6 +88,7 @@ const topLevelPages: Record<string, () => ReactNode> = {
     <AyurvedaPulseDiagnosisWorkshopClient />
   ),
   "upcoming-events/pancha-maha-bhuta": () => <PanchaMahaBhutaClient />,
+  "upcoming-events/vedic-astrology-lectures": () => <LecturesClient />,
   "our-team": () => <OurTeamPage />,
   "book-session": () => <BookSessionPage />,
   contact: () => <ContactPage />
@@ -142,6 +146,10 @@ const detailRoutes: Record<string, DetailRoute> = {
 };
 
 const bgPageMetadata: Record<string, { title: string; description: string }> = {
+  "upcoming-events/vedic-astrology-lectures": {
+    title: lectureCopy.bg.title,
+    description: lectureCopy.bg.description
+  },
   "": {
     title: "Ведическа астрология, Аюрведа и Васту насоки",
     description:
