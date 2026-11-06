@@ -1,12 +1,12 @@
 {
   "redirects": [
     {
-      "source": "/upcoming-events/ayurveda-pulse-diagnosis-workshop/thank-you/:path*",
+      "source": "/upcoming-events/ayurveda-pulse-diagnosis-workshop/thank-you/",
       "destination": "/upcoming-events/ayurveda-pulse-diagnosis-workshop/",
       "permanent": true
     },
     {
-      "source": "/bg/upcoming-events/ayurveda-pulse-diagnosis-workshop/thank-you/:path*",
+      "source": "/bg/upcoming-events/ayurveda-pulse-diagnosis-workshop/thank-you/",
       "destination": "/bg/upcoming-events/ayurveda-pulse-diagnosis-workshop/",
       "permanent": true
     }
