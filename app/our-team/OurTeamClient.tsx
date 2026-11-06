@@ -17,7 +17,7 @@ export default function OurTeamPage() {
         eyebrow={page.hero.eyebrow}
         title={page.hero.title}
         description={page.hero.description}
-        primaryCta={{ label: t.home.cta.button, href: "/consultation" }}
+        primaryCta={{ label: page.hero.primary, href: "/consultation" }}
         visual="goddess"
         theme="team"
       />

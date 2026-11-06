@@ -27,6 +27,7 @@ import { getTripDetail, tripDetails } from "../../trips/tripDetails";
 import { TripDetailClient } from "../../trips/[slug]/TripDetailClient";
 import UpcomingEventsPage from "../../upcoming-events/UpcomingEventsClient";
 import { AyurvedaPulseDiagnosisWorkshopClient } from "../../upcoming-events/ayurveda-pulse-diagnosis-workshop/AyurvedaPulseDiagnosisWorkshopClient";
+import { BanskoBgClient } from "../../upcoming-events/ayurvedic-consultations-bansko/BanskoBgClient";
 import { PanchaMahaBhutaClient } from "../../upcoming-events/pancha-maha-bhuta/PanchaMahaBhutaClient";
 import { LecturesClient } from "../../upcoming-events/vedic-astrology-lectures/LecturesClient";
 import { lectureCopy } from "../../upcoming-events/vedic-astrology-lectures/eventCopy";
@@ -68,6 +69,7 @@ const bgStaticRoutes = [
   ["trips"],
   ["upcoming-events"],
   ["upcoming-events", "ayurveda-pulse-diagnosis-workshop"],
+  ["upcoming-events", "ayurvedic-consultations-bansko"],
   ["upcoming-events", "pancha-maha-bhuta"],
   ["upcoming-events", "vedic-astrology-lectures"],
   ["our-team"],
@@ -84,6 +86,7 @@ const topLevelPages: Record<string, () => ReactNode> = {
   ayurveda: () => <AyurvedaPage />,
   trips: () => <TripsPage />,
   "upcoming-events": () => <UpcomingEventsPage />,
+  "upcoming-events/ayurvedic-consultations-bansko": () => <BanskoBgClient />,
   "upcoming-events/ayurveda-pulse-diagnosis-workshop": () => (
     <AyurvedaPulseDiagnosisWorkshopClient />
   ),
@@ -146,6 +149,11 @@ const detailRoutes: Record<string, DetailRoute> = {
 };
 
 const bgPageMetadata: Record<string, { title: string; description: string }> = {
+  "upcoming-events/ayurvedic-consultations-bansko": {
+    title: "Аюрведични консултации в Банско",
+    description:
+      "Минали аюрведични консултации с д-р Вену Сасикумар в Pirin Sense, Банско, от 29 юни до 10 юли 2026 г."
+  },
   "upcoming-events/vedic-astrology-lectures": {
     title: lectureCopy.bg.title,
     description: lectureCopy.bg.description

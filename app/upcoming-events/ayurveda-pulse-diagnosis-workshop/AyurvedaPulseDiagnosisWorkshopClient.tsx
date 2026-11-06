@@ -3,20 +3,17 @@
 
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ayurvedaPulseWorkshopStripeUrl } from "../../eventPaymentLinks";
 import { useLanguage } from "../../i18n";
 import { localizePath } from "../../localePaths";
 import { copy } from "../../siteCopy";
 
 const whatsappNumber = copy.en.contact.whatsapp.replace(/[^\d]/g, "");
-const hasStripeLink = ayurvedaPulseWorkshopStripeUrl.length > 0;
-const paymentQr = "/images/events/ayurveda-pulse-stripe-qr.jpg";
 
 const content = {
   en: {
-    eyebrow: "Upcoming Workshop",
+    eyebrow: "Past Workshop",
     infoEyebrow: "Hands-on Ayurveda",
-    reserveEyebrow: "Reserve",
+    reserveEyebrow: "Event archive",
     title: "What is your pulse telling you?",
     subtitle: "27.09.2026 | 17:30 | Yoga Vibe, San Stefano Plaza",
     intro:
@@ -38,27 +35,26 @@ const content = {
     experienceTitle: "Feel, observe, and explore the pulse",
     experienceText:
       "This is more than a lecture. It is a hands-on experience of Ayurveda: an opportunity to connect with ancient wisdom through the pulse, observation, and your own direct experience.",
-    reserveTitle: "30 EUR | 30 places available",
+    reserveTitle: "Event has expired",
     reserveText:
-      "Reserve your seat for the Ayurveda and pulse diagnosis workshop. Online card payment will open here once the Stripe Payment Link is ready.",
-    stripeReady: "Reserve and pay 30 EUR",
-    stripeSoon: "Stripe payment coming soon",
-    whatsapp: "Reserve via WhatsApp",
+      "This workshop took place on 27 September 2026. Registration through this page is closed. Explore upcoming events for new dates.",
+    expired: "Event has expired",
+    whatsapp: "Contact us on WhatsApp",
     detailsLabel: "Workshop details",
     detailsDate: "27 September 2026, 17:30",
     detailsPlace: "Yoga Vibe, San Stefano Plaza | 90 minutes",
-    finalTitle: "Feel the pulse. Read the body. Discover Ayurveda.",
+    finalTitle: "Discover upcoming events",
     finalText:
-      "Join a practical evening of Ayurveda, Yoga, pulse diagnosis, and direct experience.",
+      "Explore our upcoming workshops and gatherings for new opportunities to learn and connect.",
     back: "Back to events",
-    note: "Price: 30 EUR.",
+    note: "This event has ended. Registration through this page is closed.",
     whatsappText:
-      "Hello%2C%20I%20would%20like%20to%20reserve%20a%20place%20for%20the%20Ayurveda%20pulse%20diagnosis%20workshop."
+      "Hello, I would like information about future Ayurveda workshops."
   },
   bg: {
-    eyebrow: "Предстоящ семинар",
+    eyebrow: "Минал семинар",
     infoEyebrow: "Практическа Аюрведа",
-    reserveEyebrow: "Запази място",
+    reserveEyebrow: "Архив на събитията",
     title: "Какво ти казва твоят пулс?",
     subtitle: "27.09.2026 | 17:30 | Yoga Vibe, San Stefano Plaza",
     intro:
@@ -80,38 +76,28 @@ const content = {
     experienceTitle: "Усети, наблюдавай и изследвай пулса",
     experienceText:
       "Това не е просто лекция. Това е практическо преживяване на Аюрведа - среща с едно древно знание чрез пулса, наблюдението и собственото ти усещане.",
-    reserveTitle: "30 EUR | 30 места",
+    reserveTitle: "Събитието е приключило",
     reserveText:
-      "Запази своето място за семинара по Аюрведа и пулсова диагностика. Онлайн плащането с карта ще бъде активно тук, когато Stripe линкът е готов.",
-    stripeReady: "Запази и плати 30 EUR",
-    stripeSoon: "Stripe плащането предстои",
-    whatsapp: "Запази през WhatsApp",
+      "Този семинар се проведе на 27 септември 2026 г. Записването през тази страница е затворено. Разгледайте предстоящите събития за нови дати.",
+    expired: "Събитието е приключило",
+    whatsapp: "Свържете се по WhatsApp",
     detailsLabel: "Детайли за семинара",
     detailsDate: "27 септември 2026, 17:30",
     detailsPlace: "Yoga Vibe, San Stefano Plaza | 90 минути",
-    finalTitle: "Усети пулса. Прочети тялото си. Опознай Аюрведа.",
+    finalTitle: "Разгледайте предстоящите събития",
     finalText:
-      "Присъедини се към практическа вечер на Аюрведа, Йога, пулсова диагностика и лично преживяване.",
+      "Открийте предстоящите ни семинари и срещи за нови възможности за учене и общуване.",
     back: "Назад към събитията",
-    note: "Цена: 30 EUR.",
+    note: "Събитието е приключило. Записването през тази страница е затворено.",
     whatsappText:
-      "Здравейте%2C%20искам%20да%20запазя%20място%20за%20семинара%20по%20Аюрведа%20и%20пулсова%20диагностика."
+      "Здравейте, бих искал/а информация за бъдещи семинари по Аюрведа."
   }
 };
 
 export function AyurvedaPulseDiagnosisWorkshopClient() {
   const { lang } = useLanguage();
   const page = content[lang];
-  const whatsappHref = `https://wa.me/${whatsappNumber}?text=${page.whatsappText}`;
-  const reserveText =
-    lang === "bg"
-      ? "Запазете своето място чрез сигурния Stripe линк за плащане. За въпроси се свържете с Astro Veda Life по WhatsApp."
-      : "Reserve your seat through the secure Stripe payment link. For questions, contact Astro Veda Life on WhatsApp.";
-  const qrLabel = lang === "bg" ? "Сканирайте за плащане със Stripe" : "Scan to pay with Stripe";
-  const qrAlt =
-    lang === "bg"
-      ? "Stripe QR код за плащане за семинара по Аюрведа и пулсова диагностика"
-      : "Stripe payment QR code for the Ayurveda pulse diagnosis workshop";
+  const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(page.whatsappText)}`;
 
   return (
     <>
@@ -122,30 +108,13 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
           <p className="event-subtitle">{page.subtitle}</p>
           <p>{page.intro}</p>
           <div className="button-row">
-            {hasStripeLink ? (
-              <a
-                className="button primary"
-                href={ayurvedaPulseWorkshopStripeUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {page.stripeReady}
-              </a>
-            ) : (
-              <button className="button primary" type="button" disabled>
-                {page.stripeSoon}
-              </button>
-            )}
+            <button className="button primary" type="button" disabled>
+              {page.expired}
+            </button>
             <a className="button secondary" href={whatsappHref}>
               {page.whatsapp}
             </a>
           </div>
-          {hasStripeLink && (
-            <figure className="event-payment-qr event-hero-payment-qr">
-              <img src={paymentQr} alt={qrAlt} />
-              <figcaption>{qrLabel}</figcaption>
-            </figure>
-          )}
           <p className="event-note">{page.note}</p>
         </div>
         <div
@@ -185,37 +154,20 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
           <div>
             <p className="eyebrow">{page.reserveEyebrow}</p>
             <h2 id="workshop-reserve">{page.reserveTitle}</h2>
-            <p>{reserveText}</p>
+            <p>{page.reserveText}</p>
             <div className="event-date-list">
               <span>{page.detailsLabel}</span>
               <strong>{page.detailsDate}</strong>
               <p>{page.detailsPlace}</p>
             </div>
             <div className="button-row">
-              {hasStripeLink ? (
-                <a
-                  className="button primary"
-                  href={ayurvedaPulseWorkshopStripeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {page.stripeReady}
-                </a>
-              ) : (
-                <button className="button primary" type="button" disabled>
-                  {page.stripeSoon}
-                </button>
-              )}
+              <button className="button primary" type="button" disabled>
+                {page.expired}
+              </button>
               <a className="button secondary" href={whatsappHref}>
                 {page.whatsapp}
               </a>
             </div>
-            {hasStripeLink && (
-              <figure className="event-payment-qr">
-                <img src={paymentQr} alt={qrAlt} />
-                <figcaption>{qrLabel}</figcaption>
-              </figure>
-            )}
           </div>
           <div
             className="event-booking-poster"
@@ -233,20 +185,9 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
         </div>
         <div className="event-payment-actions">
           <div className="button-row">
-            {hasStripeLink ? (
-              <a
-                className="button primary"
-                href={ayurvedaPulseWorkshopStripeUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {page.stripeReady}
-              </a>
-            ) : (
-              <button className="button primary" type="button" disabled>
-                {page.stripeSoon}
-              </button>
-            )}
+            <button className="button primary" type="button" disabled>
+              {page.expired}
+            </button>
             <a className="button secondary" href={whatsappHref}>
               {page.whatsapp}
             </a>
@@ -254,12 +195,6 @@ export function AyurvedaPulseDiagnosisWorkshopClient() {
               {page.back}
             </Link>
           </div>
-          {hasStripeLink && (
-            <figure className="event-payment-qr">
-              <img src={paymentQr} alt={qrAlt} />
-              <figcaption>{qrLabel}</figcaption>
-            </figure>
-          )}
         </div>
       </section>
     </>

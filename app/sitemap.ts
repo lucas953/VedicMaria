@@ -30,6 +30,7 @@ const eventRoutes = [
 ];
 
 const localizedEventRoutes = [
+  "/upcoming-events/ayurvedic-consultations-bansko/",
   "/upcoming-events/vedic-astrology-lectures/",
   "/upcoming-events/pancha-maha-bhuta/",
   "/upcoming-events/ayurveda-pulse-diagnosis-workshop/"

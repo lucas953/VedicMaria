@@ -492,6 +492,7 @@ export const copy = {
         hero: {
           eyebrow: "Our team",
           title: "Meet the people behind the work",
+          primary: "Explore consultations",
           description:
             "A small, thoughtful team supporting astrology, education, consultation, retreats, and community events with care."
         },
@@ -1064,6 +1065,7 @@ export const copy = {
         hero: {
           eyebrow: "Нашият екип",
           title: "Запознайте се с хората зад работата",
+          primary: "Разгледайте консултациите",
           description:
             "Малък и внимателен екип, който подкрепя астрология, обучение, консултации, ретрийти и общностни събития с грижа."
         },
